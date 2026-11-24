@@ -41,6 +41,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 - `main` reste toujours déployable ; chaque étape se fait sur une branche `feat/<nom>` ou `docs/<nom>`.
 - Créer des branches et commiter **en local sans me demander**. **Ne jamais pousser sans que je le demande.**
 - Fusion dans `main` uniquement par **pull request**, **après mon accord**. La PR dit ce qui change, comment le vérifier, avec des captures pour le visuel.
+- **Ne jamais supprimer une branche** (locale ou distante) sans mon accord, même après une fusion : pas de `--delete-branch`. Proposer le nettoyage et attendre ma réponse.
 
 ## Sécurité
 

@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.1 — 2026-11-24 · Statut : **validé** (v1.1 : légendes de la galerie adaptées aux photos)
 > Version 1 — 2026-11-24 · Statut : **validé** (ton, prix, section « Notre façon de faire », avis fictifs signalés)
 > Ton : chaleureux, simple, vouvoiement. Phrases courtes. Aucune promesse invérifiable.
 > Tout est fictif : adresse, téléphone, e-mail, avis.
@@ -52,14 +53,14 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 
 **Titre :** Quelques réalisations
 
-Légendes (texte alternatif à adapter aux photos choisies) :
-1. Bouquet champêtre de printemps : renoncules, tulipes et eucalyptus
-2. Bouquet de mariée aux tons pêche et crème
-3. Centres de table pour un mariage en Pays de Retz
-4. Arche fleurie pour une cérémonie laïque
-5. Bouquet d'automne : dahlias, chrysanthèmes et feuillages
-6. Composition pour l'accueil d'un cabinet nantais
-7. Couronne de l'Avent en branches de sapin et baies (saisonnier)
+Légendes et textes alternatifs (adaptés aux photos le 24/11, voir `photos.md`) :
+1. Bouquet champêtre de printemps : tulipes et renoncules, noué d'un ruban blanc
+2. Bouquet de mariée aux tons pêche et crème : roses et gypsophile
+3. Centre de table pour un mariage en Pays de Retz, posé sur un rondin de bois
+4. Arche de feuillages et de fleurs aux tons d'automne pour une cérémonie laïque en plein air
+5. Bouquet d'automne : dahlias orange et rouges
+6. Composition de roses pour un dîner d'entreprise
+7. Couronne de l'Avent en branches de sapin, avec ses bougies rouges
 8. L'atelier, un matin d'arrivage
 
 ## 7. Avis
