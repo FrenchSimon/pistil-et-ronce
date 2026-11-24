@@ -7,8 +7,8 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 |---|---|---|---|---|
 | 1 | Textes | `docs/textes.md` | 0,5 j | ✅ validé le 24/11 |
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
-| 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ⏳ prochaine |
-| 4 | Stack | Proposition argumentée | 0,25 j | — |
+| 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
+| 4 | Stack | Proposition argumentée | 0,25 j | ⏳ prochaine |
 | 5 | Réalisation | Site complet en local | 2 j | — |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
@@ -24,12 +24,12 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 
 ## 3. Direction artistique — `docs/direction-artistique`
 
-- [ ] Ambiance : 2 ou 3 pistes courtes (mots-clés, références de style, pas de copie d'un vrai fleuriste).
-- [ ] Palette avec contrastes AA vérifiés pour chaque paire texte/fond.
-- [ ] Typographies libres et auto-hébergeables (titre + texte), avec sous-ensembles latins.
+- [x] Ambiance : 2 ou 3 pistes courtes (mots-clés, références de style, pas de copie d'un vrai fleuriste).
+- [x] Palette avec contrastes AA vérifiés pour chaque paire texte/fond.
+- [x] Typographies libres et auto-hébergeables (titre + texte), avec sous-ensembles latins.
 - [x] Logo typographique « Pistil & Ronce » et favicon (vectorisés dans `contenu/logo/`).
-- [ ] Composants : boutons, liens, champs, cartes de prestation, bandeau démo, états de focus.
-- [ ] **Livrable :** planche de style + maquette de l'accroche en mobile et en bureau.
+- [x] Composants : boutons, liens, champs, cartes de prestation, bandeau démo, états de focus.
+- [x] **Livrable :** planche de style + maquette de l'accroche en mobile et en bureau.
 
 ## 4. Stack
 

@@ -1,6 +1,6 @@
 # Direction artistique et maquette — Pistil & Ronce
 
-> Version 1 — 2026-11-24 · Statut : **à valider** (remplace la version 0 : accent rouille → pivoine, boutons « feuille », décor ronce ; décisions ouvertes tranchées le 24/11)
+> Version 1 — 2026-11-24 · Statut : **validé le 24/11** (remplace la version 0 : accent rouille → pivoine, boutons « feuille », décor ronce ; décisions ouvertes tranchées le 24/11)
 > **Ce fichier est la seule référence** : toutes les valeurs, la structure de la page et les tracés SVG sont ici. Les maquettes de travail ne servent pas de référence ; leurs écarts seront corrigés pendant la réalisation.
 
 ## Pour l'agent qui réalise le site
