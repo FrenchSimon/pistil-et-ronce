@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.3 — 2026-11-24 · Statut : **validé** (v1.3 : texte alternatif de la photo d'accroche ajouté)
 > Version 1.2 — 2026-11-24 · Statut : **validé** (v1.2 : surtitre et légende de la photo d'accroche ajoutés)
 > Version 1.1 — 2026-11-24 · Statut : **validé** (v1.1 : légendes de la galerie adaptées aux photos)
 > Version 1 — 2026-11-24 · Statut : **validé** (ton, prix, section « Notre façon de faire », avis fictifs signalés)
@@ -36,6 +37,8 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 **Infos rapides :** Ouvert du mardi au dimanche matin · Livraison dans Nantes et alentours · 2 rue des Glaneuses, Nantes
 
 **Légende de la photo :** Bouquet de saison, papier kraft et raphia
+
+**Texte alternatif de la photo :** Bouquet de roses anciennes et de bleuets sur papier kraft
 
 ## 4. Prestations
 

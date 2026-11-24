@@ -185,3 +185,46 @@ textarea {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+/* Bouton « feuille » principal (un seul aplat pivoine visible par écran) */
+
+.bouton-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: var(--rayon-feuille);
+  background: var(--pivoine);
+  color: var(--papier);
+  font-family: var(--police-texte);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bouton-principal:hover {
+  background: var(--sapin);
+}
+
+/* Lien d'action : pivoine souligné, survol sapin souligné 2 px */
+
+.lien-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--pivoine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.lien-action:hover {
+  color: var(--sapin);
+  text-decoration-thickness: 2px;
+}

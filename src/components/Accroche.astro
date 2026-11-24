@@ -1,0 +1,180 @@
+---
+import { Picture } from 'astro:assets';
+import photo from '../../contenu/photos/accroche-bouquet-kraft.jpg';
+import Ronces from '../assets/deco/ronces-accroche.svg';
+
+const infos = [
+  { etiquette: 'Horaires', texte: 'Ouvert du mardi au dimanche matin' },
+  { etiquette: 'Livraison', texte: 'Livraison dans Nantes et alentours' },
+  { etiquette: 'Boutique', texte: '2 rue des Glaneuses, Nantes' },
+];
+---
+
+<div class="accroche__decor" aria-hidden="true">
+  <Ronces />
+</div>
+
+<section id="accroche" class="accroche conteneur" aria-labelledby="accroche-titre">
+  <div class="accroche__texte">
+    <p class="accroche__surtitre">Fleuriste à Nantes</p>
+    <h1 id="accroche-titre" class="accroche__titre">
+      Des fleurs de saison, <em>cueillies près de chez vous</em>
+    </h1>
+    <p class="accroche__chapeau">
+      Pistil &amp; Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs
+      choisies chaque semaine chez des producteurs de la région.
+    </p>
+
+    <div class="accroche__actions">
+      <a class="bouton-principal" href="#contact">
+        Commander un bouquet
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M1 6 Q9 -1 17 6 Q9 13 1 6 Z M3 6 H14"></path></svg>
+      </a>
+      <a class="lien-action" href="#realisations">Voir nos réalisations</a>
+    </div>
+
+    <dl class="accroche__infos">
+      {infos.map(({ etiquette, texte }) => (
+        <div>
+          <dt class="etiquette">{etiquette}</dt>
+          <dd>{texte}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+
+  <figure class="accroche__photo">
+    <Picture
+      src={photo}
+      formats={['avif', 'webp']}
+      widths={[480, 720, 960, 1440]}
+      sizes="(min-width: 900px) 600px, calc(100vw - 40px)"
+      alt="Bouquet de roses anciennes et de bleuets sur papier kraft"
+      width={960}
+      height={720}
+      priority
+    />
+    <figcaption>Bouquet de saison,<br /> papier kraft et raphia</figcaption>
+  </figure>
+</section>
+
+<style>
+  /* Décor F : derrière l'en-tête et l'accroche, jamais sous le texte, masqué sous 900 px */
+  .accroche__decor {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .accroche__decor {
+      display: block;
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: -1;
+      height: 900px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .accroche__decor :global(svg) {
+      max-width: none;
+    }
+  }
+
+  .accroche {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pas-5) clamp(32px, 7vw, 112px);
+    padding-block: var(--pas-5) var(--espace-section);
+  }
+
+  .accroche__texte {
+    flex: 1 1 460px;
+    max-width: 640px;
+  }
+
+  .accroche__surtitre {
+    margin-bottom: var(--pas-2);
+    color: var(--sapin-doux);
+    font-family: var(--police-titre);
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .accroche__titre {
+    font-size: clamp(42px, 4.6vw, 64px);
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  .accroche__titre em {
+    font-style: italic;
+  }
+
+  .accroche__chapeau {
+    max-width: 34em;
+    margin-top: var(--pas-3);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .accroche__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pas-3) var(--pas-4);
+    margin-top: var(--pas-4);
+  }
+
+  .accroche__infos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--pas-3);
+    margin: var(--pas-5) 0 0;
+    padding-top: var(--pas-3);
+    border-top: 1px solid var(--lin);
+  }
+
+  .accroche__infos dt {
+    margin-bottom: 4px;
+    color: var(--sapin-doux);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .accroche__infos dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .accroche__photo {
+    flex: 1 1 360px;
+    max-width: 600px;
+  }
+
+  .accroche__photo :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    padding: 14px;
+    border: 1px solid var(--lin);
+    background: var(--papier-clair);
+    box-shadow: var(--ombre-cadre);
+    object-fit: cover;
+    object-position: 62% 50%;
+  }
+
+  .accroche__photo figcaption {
+    margin-top: var(--pas-2);
+    color: var(--sapin-doux);
+    font-family: var(--police-titre);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+</style>
