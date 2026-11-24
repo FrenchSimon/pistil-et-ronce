@@ -37,7 +37,7 @@ CSS natif, un seul petit script pour le formulaire, images optimisées au build,
 
 ### 1. Pipeline d'images
 
-- Les originaux restent dans `contenu/photos/` et sont importés depuis les composants : Astro ne traite que les images importées, quel que soit leur dossier. On évite ainsi de casser les liens de la planche contact et des pistes d'ambiance. Les originaux restent versionnés (21 Mo, acceptable), seuls les fichiers optimisés sont servis.
+- Les originaux restent dans `contenu/photos/`, versionnés (21 Mo), pour ne pas casser les liens de la planche contact et des pistes d'ambiance. `npm run photos` (sharp) en tire des versions étalonnées de 2 000 px au plus dans `src/assets/photos/` (7 Mo, versionnées), importées depuis les composants : Astro ne traite que les images importées. Seuls les fichiers optimisés sont servis.
 - `<Picture>` avec `formats={['avif', 'webp']}`, repli JPEG, largeurs adaptées à chaque emplacement (par exemple 480 à 1920 px pour l'accroche, 400 à 800 px pour les cartes), `sizes` calé sur la grille de la DA. `width` et `height` sont écrits par Astro, donc pas de décalage de mise en page (CLS).
 - Accroche : `loading="eager"` et `fetchpriority="high"` (image LCP). Toutes les autres : `loading="lazy"`.
 - `contenu/photos/planche.html` et `candidats.tsv` restent dans `contenu/` (documents de travail de l'étape 2), hors du site.

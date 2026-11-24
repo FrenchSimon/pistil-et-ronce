@@ -24,6 +24,7 @@ npm run dev      # serveur de développement : http://localhost:4321
 npm run build    # site statique dans dist/
 npm run preview  # aperçu du build
 npm run check    # contrôle des types et des composants Astro
+npm run photos   # étalonne les photos de contenu/photos/ vers src/assets/photos/
 ```
 
 ## Organisation du code
@@ -45,5 +46,5 @@ npm run check    # contrôle des types et des composants Astro
 
 ## Contenu
 
-- `contenu/photos/` : originaux des 12 photos retenues (3000 px) et planche contact des candidats (`planche.html`).
+- `contenu/photos/` : originaux des 12 photos retenues (3000 px) et planche contact des candidats (`planche.html`). Le site utilise leurs versions étalonnées (`src/assets/photos/`, générées par `npm run photos`).
 - `contenu/logo/` : logo et favicon vectorisés, utilisés directement par le site.
