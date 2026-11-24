@@ -1,0 +1,293 @@
+---
+// Calendrier des saisons (piste 07 de la DA) : ouvert au clic dans un popover natif,
+// sans script. Échap ou un clic à l'extérieur le referment.
+const mois = [
+  'janvier',
+  'février',
+  'mars',
+  'avril',
+  'mai',
+  'juin',
+  'juillet',
+  'août',
+  'septembre',
+  'octobre',
+  'novembre',
+  'décembre',
+];
+
+// Mois en saison, numérotés de 1 (janvier) à 12 (décembre)
+const fleurs = [
+  { nom: 'Tulipe', saison: [2, 3, 4] },
+  { nom: 'Renoncule', saison: [2, 3, 4] },
+  { nom: 'Pivoine', saison: [5, 6] },
+  { nom: 'Dahlia', saison: [7, 8, 9, 10] },
+  { nom: 'Cosmos', saison: [7, 8, 9] },
+];
+---
+
+<button class="bouton-secondaire calendrier__ouvrir" type="button" popovertarget="calendrier">
+  Calendrier des saisons
+</button>
+
+<div class="calendrier" id="calendrier" popover aria-labelledby="calendrier-titre">
+  <div class="calendrier__haut">
+    <h3 id="calendrier-titre">Calendrier des saisons</h3>
+    <button class="calendrier__fermer" type="button" popovertarget="calendrier" popovertargetaction="hide">
+      <span aria-hidden="true">×</span>
+      <span class="visuellement-masque">Fermer le calendrier</span>
+    </button>
+  </div>
+
+  <div class="calendrier__defilement">
+    <table aria-describedby="calendrier-legende">
+      <thead>
+        <tr>
+          <th scope="col"><span class="visuellement-masque">Fleur</span></th>
+          {mois.map((nom) => (
+            <th scope="col">
+              <span aria-hidden="true">{nom[0].toUpperCase()}</span>
+              <span class="visuellement-masque">{nom}</span>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {fleurs.map(({ nom, saison }) => (
+          <tr>
+            <th scope="row">{nom}</th>
+            {mois.map((_, i) =>
+              saison.includes(i + 1) ? (
+                <td>
+                  <span class="pastille pastille--saison" aria-hidden="true"></span>
+                  <span class="visuellement-masque">en saison</span>
+                </td>
+              ) : (
+                <td>
+                  <span class="pastille" aria-hidden="true"></span>
+                </td>
+              ),
+            )}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="calendrier__legende" id="calendrier-legende">
+    <span class="pastille pastille--saison" aria-hidden="true"></span>
+    Pastille pivoine&nbsp;: en saison. Les fleurs proposées varient selon les producteurs.
+  </p>
+</div>
+
+<style>
+  .calendrier__ouvrir {
+    margin-top: var(--pas-5);
+  }
+
+  /* Fenêtre centrée par le navigateur (popover) */
+  .calendrier {
+    width: min(440px, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    padding: var(--pas-3);
+    border: 1px solid var(--lin);
+    background: var(--papier-clair);
+    color: var(--sapin);
+    box-shadow: var(--ombre-cadre);
+  }
+
+  .calendrier::backdrop {
+    background: rgba(31, 58, 46, 0.25);
+  }
+
+  .calendrier__haut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pas-2);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--lin);
+  }
+
+  h3 {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .calendrier__fermer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--sapin);
+    border-radius: var(--rayon-feuille-petit);
+    background: transparent;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .calendrier__fermer:hover {
+    background: var(--sapin);
+    color: var(--papier);
+  }
+
+  /* Sur les écrans les plus étroits, le tableau défile ; la colonne des fleurs reste fixe */
+  .calendrier__defilement {
+    margin-top: var(--pas-2);
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  thead th {
+    width: 22px;
+    padding-bottom: 6px;
+    color: var(--sapin-doux);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-align: center;
+  }
+
+  tbody th {
+    position: sticky;
+    left: 0;
+    min-width: 96px;
+    padding: 4px var(--pas-1) 4px 0;
+    background: var(--papier-clair);
+    font-family: var(--police-titre);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  thead th:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--papier-clair);
+  }
+
+  thead th,
+  td {
+    min-width: 22px;
+  }
+
+  td {
+    width: 22px;
+    text-align: center;
+  }
+
+  .pastille {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--lin);
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  .pastille--saison {
+    border-color: var(--pivoine);
+    background: var(--pivoine);
+  }
+
+  /* Survol (souris) : la ligne de la fleur et la colonne du mois se teintent, intitulés en évidence.
+     Simple confort de lecture : l'information reste entière dans le tableau, au clavier et au toucher. */
+  @media (hover: hover) {
+    tbody tr:hover > *,
+    table:has(:is(td, th):nth-child(2):hover) :is(td, th):nth-child(2),
+    table:has(:is(td, th):nth-child(3):hover) :is(td, th):nth-child(3),
+    table:has(:is(td, th):nth-child(4):hover) :is(td, th):nth-child(4),
+    table:has(:is(td, th):nth-child(5):hover) :is(td, th):nth-child(5),
+    table:has(:is(td, th):nth-child(6):hover) :is(td, th):nth-child(6),
+    table:has(:is(td, th):nth-child(7):hover) :is(td, th):nth-child(7),
+    table:has(:is(td, th):nth-child(8):hover) :is(td, th):nth-child(8),
+    table:has(:is(td, th):nth-child(9):hover) :is(td, th):nth-child(9),
+    table:has(:is(td, th):nth-child(10):hover) :is(td, th):nth-child(10),
+    table:has(:is(td, th):nth-child(11):hover) :is(td, th):nth-child(11),
+    table:has(:is(td, th):nth-child(12):hover) :is(td, th):nth-child(12),
+    table:has(:is(td, th):nth-child(13):hover) :is(td, th):nth-child(13) {
+      background: var(--lin);
+    }
+
+    tbody tr:hover > th,
+    table:has(:is(td, th):nth-child(2):hover) thead th:nth-child(2),
+    table:has(:is(td, th):nth-child(3):hover) thead th:nth-child(3),
+    table:has(:is(td, th):nth-child(4):hover) thead th:nth-child(4),
+    table:has(:is(td, th):nth-child(5):hover) thead th:nth-child(5),
+    table:has(:is(td, th):nth-child(6):hover) thead th:nth-child(6),
+    table:has(:is(td, th):nth-child(7):hover) thead th:nth-child(7),
+    table:has(:is(td, th):nth-child(8):hover) thead th:nth-child(8),
+    table:has(:is(td, th):nth-child(9):hover) thead th:nth-child(9),
+    table:has(:is(td, th):nth-child(10):hover) thead th:nth-child(10),
+    table:has(:is(td, th):nth-child(11):hover) thead th:nth-child(11),
+    table:has(:is(td, th):nth-child(12):hover) thead th:nth-child(12),
+    table:has(:is(td, th):nth-child(13):hover) thead th:nth-child(13) {
+      color: var(--pivoine);
+    }
+
+    tbody tr:hover .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(2):hover) td:nth-child(2) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(3):hover) td:nth-child(3) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(4):hover) td:nth-child(4) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(5):hover) td:nth-child(5) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(6):hover) td:nth-child(6) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(7):hover) td:nth-child(7) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(8):hover) td:nth-child(8) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(9):hover) td:nth-child(9) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(10):hover) td:nth-child(10) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(11):hover) td:nth-child(11) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(12):hover) td:nth-child(12) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(13):hover) td:nth-child(13) .pastille:not(.pastille--saison) {
+      border-color: var(--sauge);
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    th,
+    td {
+      transition: background-color 120ms ease;
+    }
+  }
+
+  /* Petits écrans : grille resserrée pour tenir sans défilement dès 320 px */
+  @media (max-width: 399.98px) {
+    .calendrier {
+      padding: var(--pas-2);
+    }
+
+    thead th,
+    td {
+      width: 15px;
+      min-width: 15px;
+      letter-spacing: 0;
+    }
+
+    tbody th {
+      min-width: 80px;
+      font-size: 16px;
+    }
+
+    .pastille {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .calendrier__legende {
+    margin-top: var(--pas-2);
+    color: var(--sapin-doux);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .calendrier__legende .pastille {
+    margin-right: 6px;
+    vertical-align: -1px;
+  }
+</style>

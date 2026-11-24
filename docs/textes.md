@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.4 — 2026-11-24 · Statut : **validé** (v1.4 : calendrier des saisons ajouté à « Notre façon de faire », repris de la piste 07 de la DA)
 > Version 1.3 — 2026-11-24 · Statut : **validé** (v1.3 : texte alternatif de la photo d'accroche ajouté)
 > Version 1.2 — 2026-11-24 · Statut : **validé** (v1.2 : surtitre et légende de la photo d'accroche ajoutés)
 > Version 1.1 — 2026-11-24 · Statut : **validé** (v1.1 : légendes de la galerie adaptées aux photos)
@@ -56,6 +57,20 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 - **De saison :** pas de roses en janvier. Ce qui pousse en ce moment, au meilleur de sa forme.
 - **D'ici :** la plupart de nos fleurs viennent de producteurs de Loire-Atlantique et de l'Anjou.
 - **Sans plastique :** emballage en papier kraft et raphia.
+
+**Bouton :** Calendrier des saisons (ouvre une fenêtre au clic)
+
+**Fenêtre — titre :** Calendrier des saisons
+
+| Fleur | En saison |
+|---|---|
+| Tulipe | février – avril |
+| Renoncule | février – avril |
+| Pivoine | mai – juin |
+| Dahlia | juillet – octobre |
+| Cosmos | juillet – septembre |
+
+**Légende :** Pastille pivoine : en saison. Les fleurs proposées varient selon les producteurs.
 
 ## 6. Réalisations (galerie, 6 à 8 photos)
 
