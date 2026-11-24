@@ -11,13 +11,17 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "photos": "node scripts/etalonner-photos.mjs"
+    "photos": "node scripts/etalonner-photos.mjs",
+    "plan:extraire": "node scripts/plan/extraire.mjs",
+    "plan": "node scripts/plan/dessiner.mjs"
   },
   "dependencies": {
     "astro": "7.4.13"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
+    "d3-geo": "3.1.2",
+    "playwright": "1.65.1",
     "sharp": "0.35.5",
     "typescript": "6.0.3"
   }
