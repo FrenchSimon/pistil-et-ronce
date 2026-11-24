@@ -1,0 +1,204 @@
+---
+import Base from '../layouts/Base.astro';
+import LienSortant from '../components/LienSortant.astro';
+
+/* Textes de docs/textes.md § 11 */
+const title = 'Mentions légales et confidentialité — Pistil & Ronce (démo)';
+const description =
+  'Éditeur, hébergeur et crédits du site de démonstration Pistil & Ronce, boutique fictive. Aucune donnée collectée, aucun cookie.';
+
+const photographes = [
+  { nom: 'William Warby', profil: 'https://unsplash.com/@wwarby' },
+  { nom: 'Matthew Nevins Bell', profil: 'https://unsplash.com/@matthewnevinsbell' },
+  { nom: 'Céline Druguet', profil: 'https://unsplash.com/@celala' },
+  { nom: 'Aleksandra Dementeva', profil: 'https://unsplash.com/@alexphotogram' },
+  { nom: 'laura novara', profil: 'https://unsplash.com/@elleenne' },
+  { nom: 'Tom The Photographer', profil: 'https://unsplash.com/@tomthephotographer' },
+  { nom: 'David Goldman', profil: 'https://unsplash.com/@davidjessephoto' },
+  { nom: 'Sergio Butko', profil: 'https://unsplash.com/@sbutko' },
+  { nom: 'Anita Austvika', profil: 'https://unsplash.com/@anitaaustvika' },
+  { nom: 'Ilse Orsel', profil: 'https://unsplash.com/@beertje60' },
+  { nom: 'Nataliya Melnychuk', profil: 'https://unsplash.com/@natinati' },
+  { nom: 'Viktoriia Yatsentiuk', profil: 'https://unsplash.com/@gloriaviktoriia' },
+];
+---
+
+<Base title={title} description={description}>
+  <article class="legal conteneur">
+    <header class="legal__intro">
+      <h1>Mentions légales et confidentialité</h1>
+      <p class="legal__chapeau">
+        Ce site est une démonstration. Pistil &amp; Ronce est une boutique fictive&nbsp;: on ne peut ni y
+        commander, ni s'y rendre.
+      </p>
+    </header>
+
+    <section id="mentions-legales" class="legal__section" aria-labelledby="mentions-legales-titre">
+      <h2 id="mentions-legales-titre">Mentions légales</h2>
+
+      <h3>Éditeur</h3>
+      <p>
+        Simon Dabin, développeur web freelance (entrepreneur individuel), Beaupréau-en-Mauges
+        (Maine-et-Loire). Directeur de la publication&nbsp;: Simon Dabin.
+      </p>
+      <p>Contact&nbsp;: <LienSortant href="https://github.com/FrenchSimon" texte="github.com/FrenchSimon" /></p>
+
+      <h3>Hébergeur</h3>
+      <address>
+        Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis ·
+        <LienSortant href="https://vercel.com" texte="vercel.com" />
+      </address>
+
+      <h3>Une boutique fictive</h3>
+      <p>
+        Le nom, l'adresse, le téléphone, l'e-mail, le compte Instagram et les avis de Pistil &amp; Ronce
+        sont inventés. La rue des Glaneuses n'existe pas à Nantes, et le numéro 02&nbsp;61&nbsp;91&nbsp;24&nbsp;07
+        appartient à une plage réservée par l'ARCEP aux œuvres de fiction. Toute ressemblance avec une
+        boutique existante serait fortuite.
+      </p>
+
+      <h3>Crédits</h3>
+      <ul class="legal__liste">
+        <li>
+          Conception, textes, logo, illustrations et code&nbsp;: Simon Dabin. Le code est consultable sur
+          <LienSortant href="https://github.com/FrenchSimon/pistil-et-ronce" texte="GitHub" />.
+        </li>
+        <li>
+          Photos&nbsp;: Unsplash, sous licence Unsplash, de
+          {photographes.map(({ nom, profil }, index) => (
+            <Fragment>{index > 0 && (index === photographes.length - 1 ? ' et ' : ', ')}<LienSortant href={profil} texte={nom} /></Fragment>
+          ))}. Couleurs légèrement retouchées pour harmoniser la série.
+        </li>
+        <li>Polices&nbsp;: Cormorant Garamond et Karla, sous licence SIL Open Font License.</li>
+        <li>
+          Plan&nbsp;: données
+          <LienSortant href="https://www.openstreetmap.org/copyright" texte="© contributeurs OpenStreetMap" />,
+          sous licence ODbL.
+        </li>
+      </ul>
+    </section>
+
+    <section id="confidentialite" class="legal__section" aria-labelledby="confidentialite-titre">
+      <h2 id="confidentialite-titre">Confidentialité</h2>
+
+      <h3>Aucune donnée collectée</h3>
+      <p>
+        Le formulaire de contact n'envoie rien. Ce que vous y écrivez reste dans votre navigateur et
+        s'efface quand vous cliquez sur «&nbsp;Envoyer&nbsp;».
+      </p>
+
+      <h3>Aucun cookie, aucun traceur</h3>
+      <p>
+        Pas de mesure d'audience, pas de publicité, pas de bouton de réseau social. C'est pourquoi aucun
+        bandeau ne vous demande votre accord.
+      </p>
+
+      <h3>Aucun service tiers</h3>
+      <p>
+        Les polices, les photos et le plan sont hébergés avec le site. Votre navigateur ne contacte aucun
+        autre serveur.
+      </p>
+
+      <h3>Journaux de l'hébergeur</h3>
+      <p>
+        Comme tout hébergeur, Vercel enregistre des données techniques de connexion (adresse IP, pages
+        demandées, date) pour faire fonctionner et protéger le service. Ces journaux peuvent être traités
+        aux États-Unis&nbsp;; Simon Dabin ne s'en sert pas. Voir la
+        <LienSortant href="https://vercel.com/legal/privacy-policy" texte="politique de confidentialité de Vercel" />.
+      </p>
+
+      <h3>Vos droits</h3>
+      <p>
+        Pour toute question sur vos données, écrivez à Simon Dabin via
+        <LienSortant href="https://github.com/FrenchSimon" texte="GitHub" />. Vous pouvez aussi adresser
+        une réclamation à la <LienSortant href="https://www.cnil.fr" texte="CNIL" />.
+      </p>
+    </section>
+
+    <footer class="legal__fin">
+      <a class="lien-action" href="/"><span aria-hidden="true">←&nbsp;</span>Retour à l'accueil</a>
+      <p class="legal__maj">Mise à jour&nbsp;: <time datetime="2026-11-24">24 novembre 2026</time>.</p>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .legal {
+    max-width: calc(720px + 2 * var(--marge-laterale));
+    padding-block: var(--espace-section);
+  }
+
+  .legal h1 {
+    font-size: clamp(40px, 6vw, 56px);
+    line-height: 1.05;
+  }
+
+  .legal__chapeau {
+    margin-top: var(--pas-3);
+    font-size: 18px;
+  }
+
+  .legal__section {
+    margin-top: var(--pas-5);
+    padding-top: var(--pas-4);
+    border-top: 1px solid var(--lin);
+    scroll-margin-top: var(--pas-3);
+  }
+
+  .legal h2 {
+    font-size: clamp(32px, 4vw, 40px);
+    line-height: 1.1;
+  }
+
+  .legal h3 {
+    margin-top: var(--pas-4);
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  .legal h3 + *,
+  .legal p + p {
+    margin-top: var(--pas-1);
+  }
+
+  .legal address {
+    font-style: normal;
+  }
+
+  .legal__liste {
+    display: grid;
+    gap: var(--pas-1);
+    padding-left: 1.2em;
+  }
+
+  .legal__liste li::marker {
+    color: var(--pivoine);
+  }
+
+  /* Liens dans les phrases : restent en ligne (exception « en ligne » de WCAG 2.5.8),
+     pour qu'une virgule ne passe jamais seule à la ligne */
+  .legal__section a {
+    text-underline-offset: 3px;
+  }
+
+  .legal__section a:hover {
+    color: var(--pivoine);
+    text-decoration-thickness: 2px;
+  }
+
+  .legal__fin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pas-2) var(--pas-4);
+    margin-top: var(--pas-5);
+    padding-top: var(--pas-3);
+    border-top: 1px solid var(--lin);
+  }
+
+  .legal__maj {
+    color: var(--sapin-doux);
+    font-size: 15px;
+  }
+</style>

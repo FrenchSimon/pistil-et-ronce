@@ -3,17 +3,17 @@ import Logo from '../../contenu/logo/logo.svg';
 import BandeauDemo from './BandeauDemo.astro';
 
 const liens = [
-  { href: '#prestations', texte: 'Prestations' },
-  { href: '#realisations', texte: 'Réalisations' },
-  { href: '#avis', texte: 'Avis' },
-  { href: '#nous-trouver', texte: 'Nous trouver' },
+  { href: '/#prestations', texte: 'Prestations' },
+  { href: '/#realisations', texte: 'Réalisations' },
+  { href: '/#avis', texte: 'Avis' },
+  { href: '/#nous-trouver', texte: 'Nous trouver' },
 ];
 ---
 
 <header class="en-tete">
   <BandeauDemo />
   <div class="en-tete__barre conteneur">
-    <a class="en-tete__logo" href="#accroche">
+    <a class="en-tete__logo" href="/#accroche">
       <Logo aria-label="Pistil & Ronce, fleuriste à Nantes" />
     </a>
 
@@ -36,7 +36,7 @@ const liens = [
             <li><a class="nav__lien" href={href}>{texte}</a></li>
           ))}
         </ul>
-        <a class="bouton-secondaire nav__commander" href="#contact">Commander</a>
+        <a class="bouton-secondaire nav__commander" href="/#contact">Commander</a>
       </div>
     </nav>
   </div>

@@ -1,0 +1,23 @@
+---
+import FlecheSortante from './FlecheSortante.astro';
+
+/* Lien vers un autre site : nouvel onglet annoncé, flèche sortante, sans transmission de l'origine.
+   Le dernier mot reste collé à la flèche : ni elle, ni la ponctuation qui suit ne passent seules à la ligne. */
+interface Props {
+  href: string;
+  texte: string;
+}
+
+const { href, texte } = Astro.props;
+const coupure = texte.lastIndexOf(' ') + 1;
+const debut = texte.slice(0, coupure);
+const dernierMot = texte.slice(coupure);
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer">{debut}<span class="lien-sortant__fin">{dernierMot}<FlecheSortante /></span><span class="visuellement-masque"> (nouvel onglet)</span></a>
+
+<style>
+  .lien-sortant__fin {
+    white-space: nowrap;
+  }
+</style>
