@@ -87,6 +87,16 @@ const prestations: Prestation[] = [
     background: var(--papier);
   }
 
+  /* Fondu dans la marge basse de l'accroche (zone sans texte) : la ronce s'efface au lieu d'être coupée net */
+  .prestations::before {
+    content: '';
+    position: absolute;
+    inset: auto 0 100%;
+    height: calc(var(--espace-section) - 8px);
+    background: linear-gradient(to bottom, transparent, var(--papier));
+    pointer-events: none;
+  }
+
   h2 {
     font-size: clamp(32px, 3vw, 40px);
     line-height: 1.1;
