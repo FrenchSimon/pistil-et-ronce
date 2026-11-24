@@ -9,7 +9,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
-| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire validés le 24/11) |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations validés le 24/11 ; avis en revue) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
@@ -43,7 +43,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 3. [x] **Prestations.**
 4. [x] **Notre façon de faire.**
 5. [x] **Réalisations :** galerie responsive, images différées.
-6. [ ] **Avis**, avec la mention « Avis fictifs (démo) ».
+6. [x] **Avis**, avec la mention « Avis fictifs (démo) ».
 7. [ ] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
 8. [ ] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
 9. [ ] **Mentions légales et confidentialité.**

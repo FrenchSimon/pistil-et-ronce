@@ -14,7 +14,7 @@
 
 ## 0. Bandeau (en haut, toujours visible)
 
-Démo de portfolio · boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://github.com/…)
+Boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://github.com/…)
 
 ## 1. Référencement (invisible)
 
@@ -97,6 +97,8 @@ Légendes et textes alternatifs (adaptés aux photos le 24/11, voir `photos.md`)
 > « Nos clients nous parlent des fleurs de l'accueil chaque semaine. » — Cabinet d'architectes, abonnement entreprise
 
 Mention sous les avis : *Avis fictifs (démo).*
+
+Lien sous la mention : Lire tous nos avis sur Google ↗ *(fictif, lien désactivé ; ajouté le 24/11)*
 
 ## 8. Horaires et plan
 
