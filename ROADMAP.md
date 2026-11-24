@@ -1,7 +1,7 @@
 # Roadmap — Pistil & Ronce
 
 Objectif : un site vitrine one page en ligne en **~1 semaine** (≈ 5 jours de travail), au niveau d'un vrai client.
-Règle : chaque étape se termine par un livrable que je valide avant de passer à la suivante. Le temps est noté dans le `README.md`.
+Règle : chaque étape se termine par un livrable que je valide avant de passer à la suivante. Le temps est noté dans `TEMPS-PASSE.md` (local, hors du dépôt).
 
 | # | Étape | Livrable à valider | Estimation | Statut |
 |---|---|---|---|---|
@@ -69,7 +69,7 @@ Une PR par lot cohérent (socle, sections, finitions), avec captures.
 
 ## 8. Étude de cas
 
-- Temps total par étape (tableau du `README.md`) comparé à la promesse d'~1 semaine.
+- Temps total par étape (`TEMPS-PASSE.md`) comparé à la promesse d'~1 semaine.
 - Captures avant/après, scores Lighthouse, bilan du design obtenu avec l'IA (ce qui a marché, ce qu'il a fallu reprendre).
 - Mettre à jour `demo-fleuriste.md` et le journal de `ROADMAP.md` du portfolio.
 

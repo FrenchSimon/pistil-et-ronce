@@ -27,7 +27,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 - Avancer **étape par étape**, dans l'ordre de la fiche : textes → photos → direction artistique → réalisation → mise en ligne.
 - **Ne jamais commencer une étape avant que j'aie validé la précédente.** Présenter chaque livrable, puis attendre ma validation.
-- **Chronométrer :** noter le temps de chaque session dans le tableau « Temps passé » du `README.md` (pour confirmer le délai d'environ 1 semaine de l'offre).
+- **Chronométrer :** noter le temps de chaque session dans `TEMPS-PASSE.md`, fichier local ignoré par Git : le temps passé ne doit pas être public (pour confirmer le délai d'environ 1 semaine de l'offre).
 - Me rappeler brièvement l'étape en cours, la prochaine action à valider et les blocages éventuels.
 
 ## Stack
