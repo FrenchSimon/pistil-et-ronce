@@ -98,6 +98,28 @@ Ce que la stack apporte pour chaque exigence d'`AGENTS.md`, et les pièges repé
 - **Dépend d'une décision ouverte :** les URL d'Open Graph et de JSON-LD doivent être absolues, donc l'option `site` d'Astro attend l'adresse définitive du site (sous-domaine Vercel ou du portfolio).
 - Page 404 (`src/pages/404.astro`) avec le bandeau démo.
 
+## Maintenabilité et évolution
+
+### Maintenance
+
+- **Peu de pièces :** un seul paquet servi au build (`astro`), pas de framework UI, CSS natif. Moins de dépendances, moins de mises à jour et de failles à suivre.
+- **Peu de verrouillage :** un fichier `.astro` est du HTML avec un en-tête de données. Le CSS et le JS sont standard. Changer d'outil plus tard reste peu coûteux.
+- **Rythme des versions majeures (npm) :** 5.0 en décembre 2024, 6.0 en mars 2026, 7.0 en juin 2026. C'est soutenu : chaque montée demande de lire le guide de migration et peut prendre une à deux heures sur un site de cette taille. Moins on utilise de fonctions avancées, moins il y a à migrer.
+- **Mises à jour :** Dependabot sur le dépôt (correctifs de sécurité), versions figées et Node fixé dans `package.json`. Le forfait de 49 €/mois couvre ce suivi.
+- **Lisibilité :** un composant par section, les variables de la DA dans un seul fichier, les textes dans les composants (pas de fichier de contenu séparé tant que le site tient sur une page).
+
+### Si le site grandit
+
+| Évolution | Ce que permet Astro | Effort |
+|---|---|---|
+| Plusieurs pages (une page par prestation, blog, actualités) | Un fichier par page dans `src/pages/`, et des collections de contenu (Markdown typé) pour les articles | Faible, sans changer de stack |
+| Textes modifiables par le client | Un CMS « headless » branché sur les collections (par exemple Decap, qui stocke dans Git, ou un CMS hébergé) | Moyen. Sort du cadre « sans CMS » de l'offre one page : ce serait une autre offre |
+| Vrai formulaire de contact | Passage en rendu hybride : les pages restent statiques, une seule route s'exécute côté serveur (adaptateur `@astrojs/vercel`, actions d'Astro), avec envoi par un service d'e-mail | Faible à moyen |
+| Paiement de quelques produits (bouquets, abonnements) | Stripe Checkout : une route serveur crée la session de paiement, le client paie sur la page hébergée par Stripe. Aucune donnée bancaire ne passe par le site, la CSP reste stricte, la clé secrète vit dans les variables d'environnement de Vercel | Moyen |
+| Vraie boutique (stock, livraisons, comptes clients, factures) | Astro peut servir de vitrine devant une solution e-commerce (Shopify en mode headless, par exemple), mais il ne doit pas la remplacer | Élevé. Pour une petite boutique, une solution e-commerce clé en main est souvent plus raisonnable qu'un développement sur mesure |
+
+Le point fort : on passe du statique au rendu hybride page par page, sans réécrire le site. Eleventy, lui, n'a pas de rendu serveur intégré et demanderait de bâtir l'API à côté. Avec HTML + Vite, tout serait à construire.
+
 ## Hébergement
 
 - Vercel, sortie statique (`dist/`), sans adaptateur ni fonction serveur. Version de Node fixée dans `package.json` (`engines`).
