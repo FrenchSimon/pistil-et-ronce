@@ -48,6 +48,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes. C'est une démo
 - Créer des branches et commiter **en local sans me demander la permission**.
 - **Ne jamais pousser vers le dépôt distant sans que je le demande.**
 - Fusion dans `main` uniquement par **pull request**, et **toujours après mon accord**. La description de la PR dit ce qui change, comment le vérifier, et donne des captures pour les changements visuels.
+- **Ne jamais supprimer une branche** (locale ou distante) sans mon accord, même après une fusion : pas de `--delete-branch`. Proposer le nettoyage et attendre ma réponse.
 
 ## Qualité (avant chaque PR qui touche au site)
 
