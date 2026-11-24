@@ -61,6 +61,11 @@ const deuxColonnes = '(min-width: 1440px) 846px, (min-width: 900px) calc((89vw -
         </li>
       ))}
     </ul>
+
+    <div class="realisations__appel">
+      <p>Un mariage, un événement&nbsp;? Imaginons votre décor ensemble.</p>
+      <a class="bouton-secondaire" href="#contact" data-objet="Mariage ou événement">Demander un devis</a>
+    </div>
   </div>
 </section>
 
@@ -91,6 +96,24 @@ const deuxColonnes = '(min-width: 1440px) 846px, (min-width: 900px) calc((89vw -
     .realisation--large {
       grid-column: span 2;
     }
+  }
+
+  /* Appel à l'action sous la galerie, centré */
+  .realisations__appel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pas-2);
+    margin-top: var(--pas-5);
+    text-align: center;
+  }
+
+  .realisations__appel p {
+    font-family: var(--police-titre);
+    font-size: clamp(23px, 2.2vw, 28px);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.25;
   }
 
   /* Cadre commun avec la photo d'accroche : passe-partout papier clair, filet lin, ombre cadre */
