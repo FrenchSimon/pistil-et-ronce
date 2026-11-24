@@ -312,6 +312,53 @@ const objets = ['Bouquet', 'Mariage ou événement', 'Abonnement entreprise', 'A
     position: relative;
   }
 
+  /* Liste personnalisable : dessinée dans la page, sous le champ, aux couleurs de la palette.
+     La liste native de Chrome sur macOS s'ouvre mal placée quand l'affichage est mis à l'échelle.
+     Ailleurs, la liste native reste en place. */
+  @supports (appearance: base-select) {
+    .champ select,
+    .champ select::picker(select) {
+      appearance: base-select;
+    }
+
+    .champ select::picker-icon {
+      display: none;
+    }
+
+    .champ select::picker(select) {
+      /* Écart au champ, que la liste s'ouvre dessous ou dessus */
+      margin-block: 4px;
+      padding: 4px 0;
+      border: 1px solid var(--sapin-doux);
+      background: var(--papier-clair);
+      box-shadow: var(--ombre-cadre);
+      color: var(--sapin);
+    }
+
+    .champ option {
+      min-height: 44px;
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+
+    .champ option::checkmark {
+      color: var(--pivoine);
+    }
+
+    .champ option:hover,
+    .champ option:focus-visible {
+      background: var(--lin);
+    }
+
+    .champ option:focus-visible {
+      outline-offset: -2px;
+    }
+
+    .champ option:checked {
+      font-weight: 600;
+    }
+  }
+
   .champ select {
     padding-right: 44px;
     cursor: pointer;
