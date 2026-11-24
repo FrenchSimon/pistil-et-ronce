@@ -1,0 +1,147 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Separateur from './Separateur.astro';
+import printemps from '../../contenu/photos/galerie-1-printemps.jpg';
+import mariee from '../../contenu/photos/galerie-2-mariee.jpg';
+import centreDeTable from '../../contenu/photos/galerie-3-centre-de-table.jpg';
+import arche from '../../contenu/photos/galerie-4-arche.jpg';
+import automne from '../../contenu/photos/galerie-5-automne.jpg';
+import dinerEntreprise from '../../contenu/photos/galerie-6-diner-entreprise.jpg';
+import couronneAvent from '../../contenu/photos/galerie-7-couronne-avent.jpg';
+import atelier from '../../contenu/photos/galerie-8-atelier.jpg';
+
+interface Realisation {
+  photo: ImageMetadata;
+  legende: string;
+  large?: boolean;
+}
+
+/* Ordre de la direction artistique : 1, 2, 3 / 4, 6 / 5, 7, 8 (la seule photo en paysage occupe deux colonnes) */
+const realisations: Realisation[] = [
+  { photo: printemps, legende: "Bouquet champêtre de printemps\u00a0: tulipes et renoncules, noué d'un ruban blanc" },
+  { photo: mariee, legende: "Bouquet de mariée aux tons pêche et crème\u00a0: roses et gypsophile" },
+  { photo: centreDeTable, legende: "Centre de table pour un mariage en Pays de Retz, posé sur un rondin de bois" },
+  { photo: arche, legende: "Arche de feuillages et de fleurs aux tons d'automne pour une cérémonie laïque en plein air" },
+  { photo: dinerEntreprise, legende: "Composition de roses pour un dîner d'entreprise", large: true },
+  { photo: automne, legende: "Bouquet d'automne\u00a0: dahlias orange et rouges" },
+  { photo: couronneAvent, legende: "Couronne de l'Avent en branches de sapin, avec ses bougies rouges" },
+  { photo: atelier, legende: "L'atelier, un matin d'arrivage" },
+];
+
+/* Largeur d'une colonne : 3 colonnes dès 900 px (gouttière 24 px), 2 en dessous */
+const colonne = '(min-width: 1440px) 411px, (min-width: 900px) calc((89vw - 48px) / 3), calc((100vw - 64px) / 2)';
+const deuxColonnes = '(min-width: 1440px) 846px, (min-width: 900px) calc((89vw - 48px) * 2 / 3 + 24px), calc((100vw - 64px) / 2)';
+---
+
+<section id="realisations" class="realisations" aria-labelledby="realisations-titre">
+  <Separateur />
+
+  <div class="conteneur">
+    <h2 id="realisations-titre">Quelques réalisations</h2>
+
+    <ul class="realisations__grille liste-nue">
+      {realisations.map(({ photo, legende, large }, index) => (
+        <li class:list={['realisation', { 'realisation--large': large }]}>
+          <figure>
+            <Picture
+              src={photo}
+              formats={['avif', 'webp']}
+              widths={large ? [480, 640, 960, 1280, 1700] : [320, 480, 640, 860]}
+              sizes={large ? deuxColonnes : colonne}
+              width={large ? 1700 : 860}
+              alt={legende}
+              class="realisation__photo"
+            />
+            <figcaption class="cartel">
+              <span class="cartel__numero" aria-hidden="true">N° {String(index + 1).padStart(2, '0')}</span>
+              <span class="cartel__legende">{legende}</span>
+            </figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .realisations {
+    padding-block: var(--espace-section);
+  }
+
+  h2 {
+    margin-top: var(--espace-section);
+    font-size: clamp(32px, 3vw, 40px);
+    line-height: 1.1;
+  }
+
+  /* 2 colonnes, 3 dès 900 px ; la photo en paysage s'étale sur deux colonnes */
+  .realisations__grille {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+    margin-top: var(--pas-4);
+  }
+
+  @media (min-width: 900px) {
+    .realisations__grille {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .realisation--large {
+      grid-column: span 2;
+    }
+  }
+
+  .realisation :global(.realisation__photo) {
+    width: 100%;
+    height: 260px;
+    border: 1px solid var(--lin);
+    object-fit: cover;
+  }
+
+  /* Sur une seule colonne, la photo en paysage est recadrée sur le bouquet, à droite du centre */
+  .realisation--large :global(.realisation__photo) {
+    object-position: 66% 50%;
+  }
+
+  @media (min-width: 900px) {
+    .realisation :global(.realisation__photo) {
+      height: 440px;
+    }
+
+    .realisation--large :global(.realisation__photo) {
+      object-position: 50% 50%;
+    }
+  }
+
+  /* Cartel : numéro en petite étiquette, légende en Cormorant italique */
+  .cartel {
+    margin-top: 12px;
+  }
+
+  .cartel__numero {
+    display: block;
+    color: var(--sapin-doux);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .cartel__legende {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--police-titre);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  @media (min-width: 900px) {
+    .cartel__legende {
+      font-size: 19px;
+    }
+  }
+</style>
