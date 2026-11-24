@@ -30,6 +30,8 @@ Boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://gi
 
 Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton → contact)
 
+Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran) : **Revenir en haut de la page**
+
 ## 3. Accroche
 
 **Surtitre :** Fleuriste à Nantes
