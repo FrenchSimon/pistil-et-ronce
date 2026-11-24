@@ -6,7 +6,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | # | Étape | Livrable à valider | Estimation | Statut |
 |---|---|---|---|---|
 | 1 | Textes | `contenu/textes.md` | 0,5 j | ✅ validé le 24/11 |
-| 2 | Photos | Planche de sélection + `contenu/photos.md` | 0,5 j | ✅ validé le 24/11 |
+| 2 | Photos | Planche de sélection + `contenu/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ⏳ prochaine |
 | 4 | Stack | Proposition argumentée | 0,25 j | — |
 | 5 | Réalisation | Site complet en local | 2 j | — |
