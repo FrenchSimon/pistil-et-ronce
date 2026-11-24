@@ -27,14 +27,14 @@
       text-decoration-thickness var(--duree-survol) ease;
   }
 
-  /* La feuille du bouton principal s'incline, la flèche des liens sortants avance */
+  /* La feuille des boutons s'incline, la flèche des liens sortants avance */
 
-  .bouton-principal svg,
+  .feuille-bouton,
   .fleche-sortante {
     transition: transform 240ms var(--courbe-douce);
   }
 
-  .bouton-principal:hover svg {
+  :is(.bouton-principal, .bouton-secondaire):hover .feuille-bouton {
     transform: translateX(3px) rotate(-12deg);
   }
 

@@ -1,6 +1,7 @@
 ---
 import Logo from '../../contenu/logo/logo.svg';
 import BandeauDemo from './BandeauDemo.astro';
+import FeuilleBouton from './FeuilleBouton.astro';
 
 const liens = [
   { href: '/#prestations', texte: 'Prestations' },
@@ -36,7 +37,10 @@ const liens = [
             <li><a class="nav__lien" href={href}>{texte}</a></li>
           ))}
         </ul>
-        <a class="bouton-secondaire nav__commander" href="/#contact">Commander</a>
+        <a class="bouton-secondaire nav__commander" href="/#contact">
+          Commander
+          <FeuilleBouton />
+        </a>
       </div>
     </nav>
   </div>
