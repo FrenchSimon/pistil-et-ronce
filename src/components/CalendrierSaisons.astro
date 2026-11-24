@@ -196,6 +196,65 @@ const fleurs = [
     background: var(--pivoine);
   }
 
+  /* Survol (souris) : la ligne de la fleur et la colonne du mois se teintent, intitulés en évidence.
+     Simple confort de lecture : l'information reste entière dans le tableau, au clavier et au toucher. */
+  @media (hover: hover) {
+    tbody tr:hover > *,
+    table:has(:is(td, th):nth-child(2):hover) :is(td, th):nth-child(2),
+    table:has(:is(td, th):nth-child(3):hover) :is(td, th):nth-child(3),
+    table:has(:is(td, th):nth-child(4):hover) :is(td, th):nth-child(4),
+    table:has(:is(td, th):nth-child(5):hover) :is(td, th):nth-child(5),
+    table:has(:is(td, th):nth-child(6):hover) :is(td, th):nth-child(6),
+    table:has(:is(td, th):nth-child(7):hover) :is(td, th):nth-child(7),
+    table:has(:is(td, th):nth-child(8):hover) :is(td, th):nth-child(8),
+    table:has(:is(td, th):nth-child(9):hover) :is(td, th):nth-child(9),
+    table:has(:is(td, th):nth-child(10):hover) :is(td, th):nth-child(10),
+    table:has(:is(td, th):nth-child(11):hover) :is(td, th):nth-child(11),
+    table:has(:is(td, th):nth-child(12):hover) :is(td, th):nth-child(12),
+    table:has(:is(td, th):nth-child(13):hover) :is(td, th):nth-child(13) {
+      background: var(--lin);
+    }
+
+    tbody tr:hover > th,
+    table:has(:is(td, th):nth-child(2):hover) thead th:nth-child(2),
+    table:has(:is(td, th):nth-child(3):hover) thead th:nth-child(3),
+    table:has(:is(td, th):nth-child(4):hover) thead th:nth-child(4),
+    table:has(:is(td, th):nth-child(5):hover) thead th:nth-child(5),
+    table:has(:is(td, th):nth-child(6):hover) thead th:nth-child(6),
+    table:has(:is(td, th):nth-child(7):hover) thead th:nth-child(7),
+    table:has(:is(td, th):nth-child(8):hover) thead th:nth-child(8),
+    table:has(:is(td, th):nth-child(9):hover) thead th:nth-child(9),
+    table:has(:is(td, th):nth-child(10):hover) thead th:nth-child(10),
+    table:has(:is(td, th):nth-child(11):hover) thead th:nth-child(11),
+    table:has(:is(td, th):nth-child(12):hover) thead th:nth-child(12),
+    table:has(:is(td, th):nth-child(13):hover) thead th:nth-child(13) {
+      color: var(--pivoine);
+    }
+
+    tbody tr:hover .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(2):hover) td:nth-child(2) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(3):hover) td:nth-child(3) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(4):hover) td:nth-child(4) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(5):hover) td:nth-child(5) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(6):hover) td:nth-child(6) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(7):hover) td:nth-child(7) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(8):hover) td:nth-child(8) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(9):hover) td:nth-child(9) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(10):hover) td:nth-child(10) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(11):hover) td:nth-child(11) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(12):hover) td:nth-child(12) .pastille:not(.pastille--saison),
+    table:has(:is(td, th):nth-child(13):hover) td:nth-child(13) .pastille:not(.pastille--saison) {
+      border-color: var(--sauge);
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    th,
+    td {
+      transition: background-color 120ms ease;
+    }
+  }
+
   /* Petits écrans : grille resserrée pour tenir sans défilement dès 320 px */
   @media (max-width: 399.98px) {
     .calendrier {
