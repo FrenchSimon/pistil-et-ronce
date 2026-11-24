@@ -33,11 +33,11 @@ const joursSemaine = [
         <div>
           <dt class="etiquette">E-mail</dt>
           {/* Adresse fictive : texte simple, jamais de lien mailto: */}
-          <dd>bonjour@pistil-et-ronce.fr <span class="etiquette-fictif">fictif</span></dd>
+          <dd><span class="coordonnees__fictif">bonjour@pistil-et-ronce.fr</span> <span class="etiquette-fictif">fictif</span></dd>
         </div>
         <div>
           <dt class="etiquette">Instagram</dt>
-          <dd>@pistiletronce <span class="etiquette-fictif">fictif</span></dd>
+          <dd><span class="coordonnees__fictif">@pistiletronce</span> <span class="etiquette-fictif">fictif</span></dd>
         </div>
       </dl>
     </div>
@@ -296,6 +296,16 @@ const joursSemaine = [
   .coordonnees__lien:hover {
     color: var(--sapin);
     text-decoration-thickness: 2px;
+  }
+
+  /* E-mail et Instagram fictifs : même aspect que le lien du téléphone,
+     pour montrer ce qu'ils seraient sur un vrai site, mais sans lien. */
+  .coordonnees__fictif {
+    color: var(--pivoine);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
   }
 
   .etiquette-fictif {
