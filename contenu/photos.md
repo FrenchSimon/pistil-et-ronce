@@ -2,7 +2,7 @@
 
 > Version 1 — 2026-11-24 · Statut : **validé pour avancer**, validation définitive quand le site sera plus avancé
 > Source : Unsplash uniquement, sous licence Unsplash gratuite. Aucune photo Unsplash+ : toutes viennent de `images.unsplash.com`, pas de `plus.unsplash.com`.
-> Originaux dans `contenu/photos/`, **hors du dépôt Git** (ignorés par `.gitignore`) jusqu'à la validation définitive : 3000 px de large, JPEG qualité 85, téléchargés le 24/11/2026. On les optimise (AVIF/WebP, plusieurs tailles) à l'étape Réalisation.
+> Originaux dans `contenu/photos/`, versionnés depuis le 24/11 : 3000 px de large, JPEG qualité 85, téléchargés le 24/11/2026. On les optimise (AVIF/WebP, plusieurs tailles) à l'étape Réalisation.
 > Planche contact des candidats : `contenu/photos/planche.html`. Liste complète : `contenu/photos/candidats.tsv`.
 
 ## Fil conducteur

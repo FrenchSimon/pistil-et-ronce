@@ -7,6 +7,3 @@ dist/
 
 # Captures des outils de test
 .playwright-mcp/
-
-# Photos originales : hors du dépôt jusqu'à leur validation finale
-contenu/photos/*.jpg

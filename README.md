@@ -11,7 +11,7 @@ Site vitrine one page d'une fleuriste **fictive** à Nantes : démo de portfolio
 - `contenu/photos.md` : sélection des photos, auteurs et sources (validée pour avancer, définitive plus tard).
 - `design/direction-artistique.md` : direction artistique retenue (palette, typographies, logo, composants), avec le lien de la planche de style.
 - `design/pistes.html` : pistes d'ambiance de la direction artistique (à ouvrir via un serveur local, les photos sont hors du dépôt).
-- `contenu/photos/` : planche contact des candidats (`planche.html`). Les originaux (3000 px) y sont aussi, mais hors du dépôt jusqu'à leur validation définitive : pour les retrouver, relancer le téléchargement à partir des liens de `photos.md`.
+- `contenu/photos/` : originaux des 12 photos retenues (3000 px) et planche contact des candidats (`planche.html`).
 
 ## Temps passé
 
