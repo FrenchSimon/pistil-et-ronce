@@ -24,6 +24,9 @@ const liens = [
       </button>
 
       <div class="nav__panneau" id="menu" popover>
+        <div class="nav__bandeau">
+          <BandeauDemo />
+        </div>
         <button class="nav__fermer" type="button" popovertarget="menu" popovertargetaction="hide">
           <span class="nav__croix" aria-hidden="true"></span>
           <span class="visuellement-masque">Fermer le menu</span>
@@ -181,7 +184,7 @@ const liens = [
     max-width: none;
     max-height: none;
     margin: 0;
-    padding: 22px var(--marge-laterale) var(--pas-5);
+    padding: 0 var(--marge-laterale) var(--pas-5);
     border: 0;
     background: var(--papier);
     color: var(--sapin);
@@ -193,6 +196,13 @@ const liens = [
     flex-direction: column;
     align-items: flex-start;
     gap: var(--pas-4);
+  }
+
+  /* Bandeau démo repris en haut du menu mobile ; le bouton de fermeture
+     reste à la place du bouton menu (22 px sous le bandeau). */
+  .nav__bandeau {
+    align-self: stretch;
+    margin: 0 calc(-1 * var(--marge-laterale)) calc(22px - var(--pas-4));
   }
 
   .nav__fermer {
@@ -215,7 +225,8 @@ const liens = [
 
   @media (min-width: 900px) {
     .nav__ouvrir,
-    .nav__fermer {
+    .nav__fermer,
+    .nav__bandeau {
       display: none;
     }
 
