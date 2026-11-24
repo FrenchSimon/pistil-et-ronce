@@ -1,8 +1,12 @@
+---
+import FlecheSortante from './FlecheSortante.astro';
+---
+
 <p class="bandeau-demo">
   <span>Démo de portfolio · boutique fictive</span><span class="bandeau-demo__tiret"> — </span><span>Site réalisé par Simon Dabin · <a
       href="https://github.com/FrenchSimon/pistil-et-ronce"
       target="_blank"
-      rel="noopener noreferrer">Voir le code<svg class="bandeau-demo__fleche" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8 L8 2 M3.5 2 H8 V6.5"></path></svg><span class="visuellement-masque"> (nouvel onglet)</span></a></span>
+      rel="noopener noreferrer">Voir le code<FlecheSortante /><span class="visuellement-masque"> (nouvel onglet)</span></a></span>
 </p>
 
 <style>
@@ -24,13 +28,6 @@
 
   a:hover {
     text-decoration-thickness: 2px;
-  }
-
-  /* Flèche « lien sortant » : en inline-block, elle n'est pas soulignée avec le texte */
-  .bandeau-demo__fleche {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: 0.05em;
   }
 
   @media (max-width: 899.98px) {
