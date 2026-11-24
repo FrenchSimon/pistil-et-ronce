@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.9 — 2026-11-25 · Statut : **validé** (v1.9 : textes de la page 404, § 12)
 > Version 1.8 — 2026-11-25 · Statut : **validé** (v1.8 : textes de la page Mentions légales et confidentialité, § 11)
 > Version 1.7 — 2026-11-25 · Statut : **validé** (v1.7 : appels à l'action sur les cartes de prestation, sous la galerie et dans « Nous trouver »)
 > Version 1.6 — 2026-11-24 · Statut : **validé** (v1.6 : messages d'erreur du formulaire et libellés du calendrier de la date)
@@ -198,3 +199,18 @@ Démo réalisée par Simon Dabin — boutique fictive.
 **Retour :** ← Retour à l'accueil
 
 *Mise à jour : 24 novembre 2026.*
+
+## 12. Page introuvable (page 404)
+
+> Proposé le 25/11/2026 · Statut : **validé le 25/11/2026** (texte repris de la maquette de Simon, avec l'illustration `src/assets/deco/fleur-fanee.svg`).
+
+- **Title :** Page introuvable — Pistil & Ronce (démo)
+- **Meta description :** Cette page n'existe pas sur le site de démonstration Pistil & Ronce, boutique fictive à Nantes.
+
+**Surtitre :** Erreur 404
+
+**Titre :** Cette page a fané
+
+**Texte :** La page que vous cherchez n'existe pas ou a été déplacée.
+
+**Bouton :** Retour à l'accueil
