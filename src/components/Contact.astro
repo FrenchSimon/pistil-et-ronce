@@ -156,6 +156,15 @@ const joursSemaine = [
 
     const statut = formulaire.querySelector<HTMLElement>('[data-statut]');
 
+    // Les appels à l'action de la page (cartes de prestation, galerie) présélectionnent l'« Objet ».
+    const objet = formulaire.querySelector<HTMLSelectElement>('#contact-objet');
+    document.addEventListener('click', (evenement) => {
+      const lien = evenement.target instanceof Element ? evenement.target.closest<HTMLElement>('[data-objet]') : null;
+      if (objet && lien?.dataset.objet) {
+        objet.value = lien.dataset.objet;
+      }
+    });
+
     type Champ = HTMLInputElement | HTMLTextAreaElement;
     const regles: Array<[string, (valeur: string) => string]> = [
       ['contact-nom', (valeur) => (valeur ? '' : 'Indiquez votre nom.')],
