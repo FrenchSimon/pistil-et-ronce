@@ -1,7 +1,8 @@
 <p class="bandeau-demo">
   <span>Démo de portfolio · boutique fictive</span><span class="bandeau-demo__tiret"> — </span><span>Site réalisé par Simon Dabin · <a
       href="https://github.com/FrenchSimon/pistil-et-ronce"
-      rel="noopener noreferrer">Voir le code</a></span>
+      target="_blank"
+      rel="noopener noreferrer">Voir le code<span class="visuellement-masque"> (nouvel onglet)</span></a></span>
 </p>
 
 <style>
@@ -26,7 +27,7 @@
   }
 
   @media (max-width: 899.98px) {
-    span:not(.bandeau-demo__tiret) {
+    .bandeau-demo > span:not(.bandeau-demo__tiret) {
       display: block;
     }
 
