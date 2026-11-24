@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.5 — 2026-11-24 · Statut : **validé** (v1.5 : temps d'accès confirmé par l'emplacement du repère sur le plan)
 > Version 1.4 — 2026-11-24 · Statut : **validé** (v1.4 : calendrier des saisons ajouté à « Notre façon de faire », repris de la piste 07 de la DA)
 > Version 1.3 — 2026-11-24 · Statut : **validé** (v1.3 : texte alternatif de la photo d'accroche ajouté)
 > Version 1.2 — 2026-11-24 · Statut : **validé** (v1.2 : surtitre et légende de la photo d'accroche ajoutés)
@@ -113,9 +114,9 @@ Lien sous la mention : Lire tous nos avis sur Google ↗ *(fictif, lien désacti
 | Samedi | 9 h – 19 h |
 | Dimanche | 9 h – 13 h |
 
-Accès : tram ligne 1, arrêt Commerce, puis 5 min à pied. *(à confirmer selon l'emplacement choisi sur la carte)*
+Accès : tram ligne 1, arrêt Commerce, puis 5 min à pied.
 
-Plan : carte du centre de Nantes avec un repère (sans adresse réelle).
+Plan : carte du centre de Nantes avec un repère (sans adresse réelle), à environ 350 m de l'arrêt Commerce.
 
 ## 9. Contact
 

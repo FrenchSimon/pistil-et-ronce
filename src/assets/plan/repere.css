@@ -1,0 +1,5 @@
+/* Écrit par scripts/plan/dessiner.mjs : position du repère sur le plan */
+.plan__cadre {
+  --repere-x: 64.58%;
+  --repere-y: 33.33%;
+}
