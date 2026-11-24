@@ -14,7 +14,7 @@
 
 ## 0. Bandeau (en haut, toujours visible)
 
-Démo de portfolio · boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://github.com/…)
+Boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://github.com/…)
 
 ## 1. Référencement (invisible)
 

@@ -14,7 +14,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 - Adresse « 2 rue des Glaneuses, 44000 Nantes » (rue inexistante, vérifié le 24/11/2026). Téléphone : bloc 02 61 91 xx xx, réservé par l'ARCEP à la fiction.
 - E-mail, Instagram et avis fictifs : liens externes désactivés, avis marqués « Avis fictifs (démo) ».
-- Bandeau « Démo de portfolio · boutique fictive » sur toutes les pages, avec le lien « Voir le code ».
+- Bandeau « Boutique fictive — Site réalisé par Simon Dabin » sur toutes les pages, avec le lien « Voir le code ».
 - Le formulaire n'envoie rien : il affiche un message de démo.
 - Ne jamais reprendre le nom, le logo ou les photos d'un vrai fleuriste.
 
