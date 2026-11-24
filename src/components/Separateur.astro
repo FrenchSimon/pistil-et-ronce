@@ -1,0 +1,29 @@
+---
+import Branche from '../assets/deco/separateur.svg';
+---
+
+<div class="separateur conteneur" aria-hidden="true">
+  <Branche class="separateur__branche" />
+</div>
+
+<style>
+  /* Branche fleurie D centrée entre deux filets lin qui prennent la largeur restante */
+  .separateur {
+    display: flex;
+    align-items: center;
+    gap: var(--pas-2);
+  }
+
+  .separateur::before,
+  .separateur::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid var(--lin);
+  }
+
+  .separateur :global(.separateur__branche) {
+    flex-shrink: 0;
+    width: 220px;
+    height: 40px;
+  }
+</style>
