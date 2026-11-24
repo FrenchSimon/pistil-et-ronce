@@ -1,4 +1,6 @@
 ---
+import FlecheSortante from './FlecheSortante.astro';
+
 interface Avis {
   citation: string;
   auteur: string;
@@ -46,6 +48,12 @@ const avis: Avis[] = [
     </ul>
 
     <p class="avis__mention">Avis fictifs (démo).</p>
+
+    {/* Sur un vrai site : lien vers la fiche Google, en nouvel onglet. Ici la fiche n'existe pas, donc texte simple. */}
+    <p class="avis__google">
+      <span>Lire tous nos avis sur Google<FlecheSortante /></span>
+      <span class="etiquette-fictif">fictif</span>
+    </p>
   </div>
 </section>
 
@@ -116,6 +124,23 @@ const avis: Avis[] = [
   figcaption strong {
     color: var(--sapin);
     font-weight: 600;
+  }
+
+  .avis__google {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-top: var(--pas-2);
+    font-weight: 600;
+  }
+
+  .etiquette-fictif {
+    color: var(--sapin-doux);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   .avis__mention {
