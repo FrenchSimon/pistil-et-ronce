@@ -47,13 +47,13 @@ CSS natif, un seul petit script pour le formulaire, images optimisées au build,
 **Proposition : un script Node maison, reproductible et versionné** (`scripts/plan/`), lancé une fois à la main, pas à chaque build :
 
 1. Extraction unique des données OpenStreetMap d'un quartier du centre de Nantes (API Overpass), enregistrée dans le dépôt (`scripts/plan/donnees.json`).
-2. Conversion en GeoJSON (`osmtogeojson`), projection et tracé en SVG (`d3-geo`), avec les couleurs exactes de la DA : fond papier, îlots lin, rues papier clair, eau et parcs en gris verdi, quelques noms de rues en Karla sapin doux.
+2. Conversion en GeoJSON par une fonction maison d'une trentaine de lignes (on n'a besoin que des rues, îlots, eau et parcs), projection et tracé en SVG (`d3-geo`), avec les couleurs exactes de la DA : fond papier, îlots lin, rues papier clair, eau et parcs en gris verdi, quelques noms de rues en Karla sapin doux.
 3. Conversion du SVG en image haute définition avec Chromium headless (Playwright, qui sert aussi aux captures des PR et à la recette responsive), pour que les noms de rues utilisent bien la police Karla.
 4. L'image va dans `src/assets/` et passe par le même pipeline AVIF/WebP. Le repère pivoine (SVG G) est posé par-dessus en HTML, la légende « Plan illustratif, adresse fictive. » et « © contributeurs OpenStreetMap » sont en texte.
 
-Ces trois outils sont des dépendances de développement : rien n'arrive dans le site servi.
+`d3-geo` et Playwright sont des dépendances de développement : rien n'arrive dans le site servi.
 
-**Écartés :** QGIS (rendu manuel, non reproductible), MapLibre avec tuiles vectorielles (serveur de tuiles et feuille de style à héberger, démesuré pour une image), prettymaps (Python : un second écosystème pour une seule image).
+**Écartés :** `osmtogeojson` (dernière version : une bêta de 2022, avec des dépendances figées anciennes comme `@xmldom/xmldom` 0.8.3, qui feraient échouer `npm audit`), QGIS (rendu manuel, non reproductible), MapLibre avec tuiles vectorielles (serveur de tuiles et feuille de style à héberger, démesuré pour une image), prettymaps (Python : un second écosystème pour une seule image).
 
 ### 3. Mentions légales et confidentialité
 
@@ -61,12 +61,42 @@ Ces trois outils sont des dépendances de développement : rien n'arrive dans le
 
 Une fenêtre modale demanderait du JS, une gestion du focus et ne serait pas partageable par lien ; une page est plus simple, plus accessible et sans JS.
 
-## Sécurité : comment tenir la CSP sans `unsafe-inline`
+## Vérification de la stack, critère par critère
 
-- En-têtes dans `vercel.json` (la CSP doit être un en-tête HTTP : `frame-ancestors` n'a pas d'effet dans une balise `meta`) : `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'`, plus HSTS, `nosniff`, `Referrer-Policy`, `Permissions-Policy`.
-- Astro met en ligne les petites feuilles de style par défaut (`build.inlineStylesheets: 'auto'`) : on passe l'option à `'never'` pour que tout le CSS soit en fichiers.
-- Le script du formulaire est un fichier externe. Vérification après chaque build qu'aucune balise `<script>` ou `<style>` en ligne ne reste dans `dist/` (hors JSON-LD, qui n'est pas exécuté et n'est pas concerné par la CSP).
-- Astro propose aussi une CSP intégrée (`security.csp`, par hachages), mais elle ne produit qu'une balise `meta` : on garde l'en-tête de `vercel.json`, plus strict.
+Ce que la stack apporte pour chaque exigence d'`AGENTS.md`, et les pièges repérés. Astro ne produit que le HTML qu'on écrit : la qualité finale dépend surtout de la réalisation, mais rien dans la stack ne l'empêche.
+
+### Sécurité
+
+- **Surface d'attaque minimale :** site statique, pas de serveur, pas de base de données, pas de CMS. Les dépendances npm ne servent qu'à construire le site : aucune n'est envoyée au visiteur.
+- **CSP stricte, sans `unsafe-inline`, en en-tête HTTP** dans `vercel.json`. Ce doit être un en-tête, car `frame-ancestors` n'a pas d'effet dans une balise `meta`. Valeur : `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'`. S'y ajoutent HSTS, `nosniff`, `Referrer-Policy: strict-origin-when-cross-origin` et une `Permissions-Policy` qui coupe caméra, micro, géolocalisation, etc.
+- **Piège n° 1 :** Astro met en ligne les petites feuilles de style par défaut (`build.inlineStylesheets: 'auto'`), ce qui serait bloqué par la CSP. On passe l'option à `'never'`.
+- **Piège n° 2 :** le script du formulaire est un fichier externe. Après chaque build, un contrôle vérifie qu'aucune balise `<script>` ou `<style>` en ligne ne reste dans `dist/`, hors JSON-LD (non exécuté, donc non concerné par la CSP).
+- La CSP intégrée d'Astro (`security.csp`, par hachages) est écartée : elle ne produit qu'une balise `meta`.
+- **Formulaire :** les champs n'ont **pas d'attribut `name`**. Même si le JS ne se charge pas, l'envoi du formulaire ne transmet alors aucune donnée, et rien n'arrive dans l'URL ni dans les journaux de Vercel. L'auto-remplissage reste possible grâce à `autocomplete`. Le message de démo est écrit avec `textContent`.
+- **Dépendances :** quatre paquets directs seulement (`astro`, puis en développement `d3-geo`, `playwright` et `@axe-core/playwright`), versions figées dans `package-lock.json`, `npm audit` avant chaque PR.
+
+### Accessibilité
+
+- Astro n'ajoute aucun balisage : landmarks, titres, lien d'évitement, `label` et `aria-live` sont écrits tels quels dans les composants.
+- Le site fonctionne sans JS, sauf la validation du formulaire. Pas de carte interactive, donc pas de piège clavier.
+- **Piège :** en v7, `compressHTML` vaut `'jsx'` par défaut et peut supprimer les espaces entre éléments en ligne (par exemple « Claire M.,bouquet »). Un lecteur d'écran lirait alors des mots collés. On remet `compressHTML: true` ou on le vérifie à la relecture.
+- Outils : panneau d'audit de la barre d'outils de développement d'Astro (à confirmer en v7) pendant le développement, puis axe (`@axe-core/playwright`, dépendance de développement) et VoiceOver à la recette.
+
+### Performance
+
+- **Zéro JS par défaut**, sauf le petit script du formulaire : très bon INP.
+- **Images :** AVIF/WebP en plusieurs tailles, `width`/`height` écrits (CLS nul), image de l'accroche prioritaire (`fetchpriority="high"`), les autres différées.
+- **Polices :** WOFF2 latin, `font-display: swap`, préchargement de la police de l'accroche seulement. À vérifier : le sous-ensemble latin doit contenir « œ » et les guillemets français.
+- **Coût du CSS en fichiers (pour la CSP) :** une requête bloquante de plus, de quelques Ko, sans effet notable avec HTTP/2.
+- **Cache :** les fichiers de `/_astro/` ont une empreinte dans leur nom, donc `Cache-Control: public, max-age=31536000, immutable` dans `vercel.json`.
+
+### SEO (et `noindex`)
+
+- `title` et `meta description` repris de `textes.md`, `lang="fr"`, Open Graph avec image de partage, JSON-LD `Florist` aux infos fictives, favicon SVG et repli PNG pour iOS.
+- **`noindex` en double :** balise `<meta name="robots" content="noindex">` et en-tête `X-Robots-Tag: noindex`.
+- **Piège :** ne pas bloquer le site dans `robots.txt`. Un robot bloqué ne lit pas le `noindex` et peut indexer l'URL sans contenu. Pas de sitemap non plus.
+- **Dépend d'une décision ouverte :** les URL d'Open Graph et de JSON-LD doivent être absolues, donc l'option `site` d'Astro attend l'adresse définitive du site (sous-domaine Vercel ou du portfolio).
+- Page 404 (`src/pages/404.astro`) avec le bandeau démo.
 
 ## Hébergement
 
