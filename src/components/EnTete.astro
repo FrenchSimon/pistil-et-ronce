@@ -101,13 +101,14 @@ const liens = [
     min-height: 44px;
     color: var(--sapin);
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: underline transparent;
     text-underline-offset: 6px;
   }
 
+  /* Soulignement présent mais transparent au repos : il apparaît en fondu au survol */
   .nav__lien:hover {
     color: var(--pivoine);
-    text-decoration: underline;
+    text-decoration-color: currentColor;
   }
 
   /* Boutons d'ouverture et de fermeture du menu mobile : 48 × 48, rayon feuille */
