@@ -8,7 +8,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 - **But :** prouver l'offre « site vitrine one page » (550 € + 49 €/mois) auprès des PME, et mesurer le niveau de design obtenu avec l'IA, et en combien de temps.
 - **Suivi :** fiche du projet dans `~/Local Sites/portfolio/docs/demo-fleuriste.md` (cocher ses cases à la fin de chaque étape) ; décisions importantes dans le journal de `~/Local Sites/portfolio/ROADMAP.md`.
-- **Contenu validé :** `contenu/textes.md`. Ne pas modifier un texte validé sans mon accord.
+- **Contenu validé :** `docs/textes.md`. Ne pas modifier un texte validé sans mon accord.
 
 ### Tout est fictif, et doit le rester
 
@@ -20,14 +20,14 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 ### Photos
 
-- Uniquement Unsplash ou Pexels ; noter auteur, source et URL de chacune dans `contenu/photos.md`.
+- Uniquement Unsplash ou Pexels ; noter auteur, source et URL de chacune dans `docs/photos.md`.
 - Optimiser comme pour un vrai client : AVIF/WebP, plusieurs tailles, dimensions explicites.
 
 ## Workflow de travail
 
 - Avancer **étape par étape**, dans l'ordre de la fiche : textes → photos → direction artistique → réalisation → mise en ligne.
 - **Ne jamais commencer une étape avant que j'aie validé la précédente.** Présenter chaque livrable, puis attendre ma validation.
-- **Chronométrer :** noter le temps de chaque session dans le tableau « Temps passé » du `README.md` (pour confirmer le délai d'environ 1 semaine de l'offre).
+- **Chronométrer :** noter le temps de chaque session dans `TEMPS-PASSE.md`, fichier local ignoré par Git : le temps passé ne doit pas être public (pour confirmer le délai d'environ 1 semaine de l'offre).
 - Me rappeler brièvement l'étape en cours, la prochaine action à valider et les blocages éventuels.
 
 ## Stack
@@ -42,6 +42,12 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 - Créer des branches et commiter **en local sans me demander**. **Ne jamais pousser sans que je le demande.**
 - Fusion dans `main` uniquement par **pull request**, **après mon accord**. La PR dit ce qui change, comment le vérifier, avec des captures pour le visuel.
 - **Ne jamais supprimer une branche** (locale ou distante) sans mon accord, même après une fusion : pas de `--delete-branch`. Proposer le nettoyage et attendre ma réponse.
+- **Le dépôt est public et sert de vitrine pour des clients potentiels :** il doit rester propre et lisible.
+  - Le `README` présente le projet : but, stack, captures, lien vers la démo.
+  - Les messages de commit et les descriptions de PR sont soignés.
+  - Aucun fichier temporaire, brouillon ou capture de test n'est versionné.
+  - Pas de code commenté ni de `TODO` oublié.
+  - Les branches fusionnées sont supprimées, après mon accord.
 
 ## Sécurité
 
@@ -73,7 +79,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 ### SEO, responsive et légal
 
-- `title` et `meta description` repris de `contenu/textes.md` ; Open Graph avec image de partage ; données structurées `Florist` (schema.org) avec les infos fictives.
+- `title` et `meta description` repris de `docs/textes.md` ; Open Graph avec image de partage ; données structurées `Florist` (schema.org) avec les infos fictives.
 - `noindex` : la démo ne doit pas tromper un internaute qui cherche un vrai fleuriste.
 - Mobile d'abord, testé de 320 à 1920 px, sur Chrome, Firefox, Safari (+ iOS et Android).
 - Mentions légales et confidentialité adaptées à une démo : éditeur Simon Dabin, hébergeur, aucune donnée collectée.

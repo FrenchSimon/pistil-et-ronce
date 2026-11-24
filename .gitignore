@@ -7,3 +7,6 @@ dist/
 
 # Captures des outils de test
 .playwright-mcp/
+
+# Suivi interne du temps passé (non public)
+TEMPS-PASSE.md
