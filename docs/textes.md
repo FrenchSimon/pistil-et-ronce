@@ -198,3 +198,18 @@ Démo réalisée par Simon Dabin — boutique fictive.
 **Retour :** ← Retour à l'accueil
 
 *Mise à jour : 24 novembre 2026.*
+
+## 12. Page introuvable (page 404)
+
+> Proposé le 25/11/2026 · Statut : **à valider**.
+
+- **Title :** Page introuvable — Pistil & Ronce (démo)
+- **Meta description :** Cette page n'existe pas sur le site de démonstration Pistil & Ronce, boutique fictive à Nantes.
+
+**Surtitre :** Erreur 404
+
+**Titre :** Cette page s'est fanée.
+
+**Texte :** L'adresse est peut-être mal saisie, ou la page n'existe plus. Le reste de la boutique vous attend.
+
+**Liens :** ← Retour à l'accueil (lien d'action) · Voir nos prestations · Nous trouver
