@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pistes d'ambiance — Pistil & Ronce</title>
+<!-- Planche de travail uniquement : les polices viennent de Google Fonts pour l'aperçu. Le site, lui, les auto-hébergera. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 system-ui,sans-serif;background:#e9e7e3;color:#222}
+  .intro{max-width:1180px;margin:0 auto;padding:32px 20px 8px}
+  .intro h1{margin:0 0 6px;font-size:26px}
+  .intro p{margin:0;color:#555;max-width:70ch}
+  .piste{max-width:1180px;margin:28px auto;padding:0 20px}
+  .piste>header{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+  .piste>header h2{margin:0;font-size:22px}
+  .piste>header span{color:#666}
+  .hero{border-radius:6px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+  .demo{font:12px/1.4 system-ui;padding:6px 16px;text-align:center}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 36px}
+  .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;align-items:center}
+  .grid{display:grid;grid-template-columns:1.05fr 1fr;min-height:470px}
+  .txt{padding:48px 36px 40px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .txt h3{margin:0;text-wrap:balance}
+  .txt p{margin:0;max-width:46ch}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 20px;text-decoration:none}
+  .infos{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;margin-top:6px}
+  .img{background-size:cover;background-position:center}
+  .fiche{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px;background:#fff;padding:22px;border-radius:6px;margin-top:14px}
+  .fiche h4{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+  .fiche ul{margin:0;padding-left:18px}
+  .sw{display:flex;gap:8px;flex-wrap:wrap}
+  .sw div{width:92px;font-size:11px;line-height:1.3}
+  .sw i{display:block;height:44px;border-radius:4px;border:1px solid rgba(0,0,0,.12);margin-bottom:4px}
+  .typo p{margin:0 0 6px}
+  @media (max-width:860px){.grid{grid-template-columns:1fr}.img{min-height:280px}.fiche{grid-template-columns:1fr}.nav ul li:not(:last-child){display:none}}
+
+  /* Piste 1 : Herbier */
+  .p1{--fond:#F4EFE6;--texte:#1F3A2E;--accent:#A4502F;--sauge:#8A9A7B;--surface:#E6DECF}
+  .p1 .hero{background:var(--fond);color:var(--texte);font-family:Karla,sans-serif}
+  .p1 .demo{background:var(--texte);color:var(--fond)}
+  .p1 .logo{font:600 26px "Cormorant Garamond",serif;letter-spacing:.02em}
+  .p1 .logo em{font-style:italic;color:var(--accent)}
+  .p1 .nav{border-bottom:1px solid var(--surface)}
+  .p1 .nav a{color:var(--texte);text-decoration:none;font-size:15px}
+  .p1 .nav .cta{border:1px solid var(--texte);padding:8px 14px}
+  .p1 h3{font:500 52px/1.05 "Cormorant Garamond",serif}
+  .p1 h3 em{color:var(--accent)}
+  .p1 .kicker{font:italic 500 18px "Cormorant Garamond",serif;color:var(--accent)}
+  .p1 .btn{font-weight:600}
+  .p1 .b1{background:var(--texte);color:var(--fond)}
+  .p1 .b2{color:var(--texte);border-bottom:1px solid var(--texte);padding-left:0;padding-right:0}
+  .p1 .img{margin:28px 36px 28px 0;border:10px solid #fff;box-shadow:0 1px 0 var(--surface),0 8px 24px rgba(31,58,46,.12)}
+  .p1 .infos{color:var(--texte);border-top:1px solid var(--surface);padding-top:14px}
+
+  /* Piste 2 : Atelier */
+  .p2{--fond:#EDE5D8;--texte:#2B2622;--accent:#6B2D45;--mousse:#4F5B3A;--kraft:#C9A67A}
+  .p2 .hero{background:var(--fond);color:var(--texte);font-family:"Work Sans",sans-serif}
+  .p2 .demo{background:var(--accent);color:#fff}
+  .p2 .logo{font:700 24px Fraunces,serif;letter-spacing:-.01em}
+  .p2 .logo span{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:30px;height:30px;text-align:center;line-height:30px;font-size:18px;margin:0 4px;vertical-align:2px}
+  .p2 .nav a{color:var(--texte);text-decoration:none;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+  .p2 .nav .cta{background:var(--accent);color:#fff;padding:9px 16px;border-radius:999px}
+  .p2 h3{font:600 50px/1.02 Fraunces,serif;letter-spacing:-.02em}
+  .p2 .kicker{display:inline-block;align-self:flex-start;background:var(--kraft);color:var(--texte);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding:5px 10px;transform:rotate(-2deg)}
+  .p2 .btn{border-radius:999px;font-weight:600}
+  .p2 .b1{background:var(--accent);color:#fff}
+  .p2 .b2{border:2px solid var(--texte);color:var(--texte)}
+  .p2 .img{margin:0;clip-path:polygon(6% 0,100% 0,100% 100%,0 100%)}
+  .p2 .infos span{background:#fff;padding:4px 10px;border-radius:999px}
+
+  /* Piste 3 : Jardin */
+  .p3{--fond:#FBF8F4;--texte:#2E2A26;--accent:#B04A26;--peche:#F3CDB6;--vert:#CBD8BC}
+  .p3 .hero{background:var(--fond);color:var(--texte);font-family:"Instrument Sans",sans-serif}
+  .p3 .demo{background:var(--peche);color:var(--texte)}
+  .p3 .logo{font:400 30px "Instrument Serif",serif}
+  .p3 .logo em{color:var(--accent)}
+  .p3 .nav a{color:var(--texte);text-decoration:none;font-size:15px}
+  .p3 .nav .cta{background:var(--texte);color:var(--fond);padding:9px 16px;border-radius:6px}
+  .p3 .grid{grid-template-columns:1fr 1.1fr}
+  .p3 h3{font:400 60px/1 "Instrument Serif",serif;letter-spacing:-.01em}
+  .p3 h3 em{color:var(--accent)}
+  .p3 .kicker{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+  .p3 .btn{border-radius:6px;font-weight:500}
+  .p3 .b1{background:var(--accent);color:#fff}
+  .p3 .b2{background:var(--vert);color:var(--texte)}
+  .p3 .img{margin:0 36px 36px 0;border-radius:200px 200px 8px 8px}
+  .p3 .infos span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--peche);margin-right:7px}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Pistil &amp; Ronce — 3 pistes d'ambiance</h1>
+  <p>Chaque piste est appliquée à l'accroche, avec les vrais textes et une photo de la sélection. C'est une esquisse, pas encore la maquette : on choisit une piste (ou un mélange), puis on détaille palette, typographies, logo et composants. Les polices sont chargées depuis Google Fonts pour l'aperçu ; le site les auto-hébergera.</p>
+</div>
+
+<!-- ============ PISTE 1 ============ -->
+<section class="piste p1">
+  <header><h2>1. Herbier</h2><span>botanique, papier ancien, élégant et calme</span></header>
+  <div class="hero">
+    <div class="demo">Démo de portfolio · boutique fictive — Site réalisé par Simon Dabin · Voir le code</div>
+    <nav class="nav"><div class="logo">Pistil <em>&amp;</em> Ronce</div>
+      <ul><li><a href="#">Prestations</a></li><li><a href="#">Réalisations</a></li><li><a href="#">Avis</a></li><li><a href="#">Nous trouver</a></li><li><a class="cta" href="#">Commander</a></li></ul></nav>
+    <div class="grid">
+      <div class="txt">
+        <div class="kicker">Fleuriste à Nantes</div>
+        <h3>Des fleurs de saison, <em>cueillies près de chez vous</em></h3>
+        <p>Pistil &amp; Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.</p>
+        <div class="btns"><a class="btn b1" href="#">Commander un bouquet</a><a class="btn b2" href="#">Voir nos réalisations</a></div>
+        <div class="infos"><span>Ouvert du mardi au dimanche matin</span><span>Livraison dans Nantes et alentours</span><span>2 rue des Glaneuses</span></div>
+      </div>
+      <div class="img" style="background-image:url(../contenu/photos/accroche-bouquet-kraft.jpg)"></div>
+    </div>
+  </div>
+  <div class="fiche">
+    <div>
+      <h4>Mots-clés et références</h4>
+      <ul>
+        <li>Planches botaniques du XIX<sup>e</sup>, étiquettes d'herbier, papier vergé</li>
+        <li>Serif classique, italiques, beaucoup de blanc</li>
+        <li>Photo encadrée comme un tirage posé sur la page</li>
+      </ul>
+      <h4 style="margin-top:14px">Forces / risques</h4>
+      <ul><li>+ Haut de gamme, rassurant pour les mariages</li><li>− Peut paraître sage, moins « jeune boutique »</li></ul>
+    </div>
+    <div>
+      <h4>Palette (contraste sur le fond)</h4>
+      <div class="sw">
+        <div><i style="background:#F4EFE6"></i>Papier #F4EFE6<br>fond</div>
+        <div><i style="background:#1F3A2E"></i>Encre sapin #1F3A2E<br>10,8:1 ✔</div>
+        <div><i style="background:#A4502F"></i>Rouille #A4502F<br>4,9:1 ✔</div>
+        <div><i style="background:#8A9A7B"></i>Sauge #8A9A7B<br>déco seulement</div>
+      </div>
+    </div>
+    <div class="typo">
+      <h4>Typographies (libres, OFL)</h4>
+      <p style="font:500 30px 'Cormorant Garamond',serif">Cormorant Garamond</p>
+      <p style="font:400 15px Karla,sans-serif">Karla pour le texte : simple, lisible, un peu de caractère.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PISTE 2 ============ -->
+<section class="piste p2">
+  <header><h2>2. Atelier</h2><span>kraft, tampons, artisan, chaleureux et vivant</span></header>
+  <div class="hero">
+    <div class="demo">Démo de portfolio · boutique fictive — Site réalisé par Simon Dabin · Voir le code</div>
+    <nav class="nav"><div class="logo">Pistil<span>&amp;</span>Ronce</div>
+      <ul><li><a href="#">Prestations</a></li><li><a href="#">Réalisations</a></li><li><a href="#">Avis</a></li><li><a href="#">Nous trouver</a></li><li><a class="cta" href="#">Commander</a></li></ul></nav>
+    <div class="grid">
+      <div class="txt">
+        <div class="kicker">Fleuriste · Nantes</div>
+        <h3>Des fleurs de saison, cueillies près de chez vous</h3>
+        <p>Pistil &amp; Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.</p>
+        <div class="btns"><a class="btn b1" href="#">Commander un bouquet</a><a class="btn b2" href="#">Voir nos réalisations</a></div>
+        <div class="infos"><span>Mar → dim matin</span><span>Livraison Nantes et alentours</span><span>2 rue des Glaneuses</span></div>
+      </div>
+      <div class="img" style="background-image:url(../contenu/photos/galerie-8-atelier.jpg)"></div>
+    </div>
+  </div>
+  <div class="fiche">
+    <div>
+      <h4>Mots-clés et références</h4>
+      <ul>
+        <li>Atelier de céramiste, papier kraft, étiquettes tamponnées</li>
+        <li>Serif généreuse et ronde, boutons en pilule</li>
+        <li>Couleur « ronce » (violet mûre) comme signature</li>
+      </ul>
+      <h4 style="margin-top:14px">Forces / risques</h4>
+      <ul><li>+ Le plus « boutique de quartier », mémorable</li><li>− Plus chargé, demande de la retenue pour rester élégant</li></ul>
+    </div>
+    <div>
+      <h4>Palette (contraste sur le fond)</h4>
+      <div class="sw">
+        <div><i style="background:#EDE5D8"></i>Lin #EDE5D8<br>fond</div>
+        <div><i style="background:#2B2622"></i>Charbon #2B2622<br>12,0:1 ✔</div>
+        <div><i style="background:#6B2D45"></i>Ronce #6B2D45<br>8,1:1 ✔</div>
+        <div><i style="background:#4F5B3A"></i>Mousse #4F5B3A<br>5,8:1 ✔</div>
+        <div><i style="background:#C9A67A"></i>Kraft #C9A67A<br>fond d'étiquette</div>
+      </div>
+    </div>
+    <div class="typo">
+      <h4>Typographies (libres, OFL)</h4>
+      <p style="font:600 30px Fraunces,serif">Fraunces</p>
+      <p style="font:400 15px 'Work Sans',sans-serif">Work Sans pour le texte : franche, un peu artisanale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PISTE 3 ============ -->
+<section class="piste p3">
+  <header><h2>3. Jardin</h2><span>lumineux, aéré, pêche et vert tendre, contemporain</span></header>
+  <div class="hero">
+    <div class="demo">Démo de portfolio · boutique fictive — Site réalisé par Simon Dabin · Voir le code</div>
+    <nav class="nav"><div class="logo">Pistil <em>&amp;</em> Ronce</div>
+      <ul><li><a href="#">Prestations</a></li><li><a href="#">Réalisations</a></li><li><a href="#">Avis</a></li><li><a href="#">Nous trouver</a></li><li><a class="cta" href="#">Commander</a></li></ul></nav>
+    <div class="grid">
+      <div class="txt">
+        <div class="kicker">Fleuriste à Nantes</div>
+        <h3>Des fleurs de saison, <em>cueillies</em> près de chez vous</h3>
+        <p>Pistil &amp; Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.</p>
+        <div class="btns"><a class="btn b1" href="#">Commander un bouquet</a><a class="btn b2" href="#">Voir nos réalisations</a></div>
+        <div class="infos"><span>Ouvert du mardi au dimanche matin</span><span>Livraison dans Nantes et alentours</span><span>2 rue des Glaneuses</span></div>
+      </div>
+      <div class="img" style="background-image:url(../contenu/photos/galerie-1-printemps.jpg)"></div>
+    </div>
+  </div>
+  <div class="fiche">
+    <div>
+      <h4>Mots-clés et références</h4>
+      <ul>
+        <li>Magazines de jardin contemporains, édition scandinave</li>
+        <li>Grande serif fine, sans-serif neutre, formes en arche</li>
+        <li>Pastels doux, beaucoup d'air, photos très présentes</li>
+      </ul>
+      <h4 style="margin-top:14px">Forces / risques</h4>
+      <ul><li>+ Frais, moderne, met les photos en avant</li><li>− Plus « tendance », vieillit plus vite ; pastels à manier avec soin pour l'accessibilité</li></ul>
+    </div>
+    <div>
+      <h4>Palette (contraste sur le fond)</h4>
+      <div class="sw">
+        <div><i style="background:#FBF8F4"></i>Blanc chaud #FBF8F4<br>fond</div>
+        <div><i style="background:#2E2A26"></i>Terre #2E2A26<br>13,4:1 ✔</div>
+        <div><i style="background:#B04A26"></i>Corail brûlé #B04A26<br>5,2:1 ✔</div>
+        <div><i style="background:#F3CDB6"></i>Pêche #F3CDB6<br>surfaces</div>
+        <div><i style="background:#CBD8BC"></i>Vert tendre #CBD8BC<br>surfaces</div>
+      </div>
+    </div>
+    <div class="typo">
+      <h4>Typographies (libres, OFL)</h4>
+      <p style="font:400 34px 'Instrument Serif',serif">Instrument Serif</p>
+      <p style="font:400 15px 'Instrument Sans',sans-serif">Instrument Sans pour le texte : nette et contemporaine.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
