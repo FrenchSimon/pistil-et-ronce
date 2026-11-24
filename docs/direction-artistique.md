@@ -1,7 +1,7 @@
 # Direction artistique — Pistil & Ronce
 
 > Version 0 — 2026-11-24 · Statut : **à valider**
-> Piste choisie le 24/11 : **1. Herbier**. Les pistes 2 (Atelier) et 3 (Jardin) sont écartées. Elles restent visibles dans `design/pistes.html`.
+> Piste choisie le 24/11 : **1. Herbier**. Les pistes 2 (Atelier) et 3 (Jardin) sont écartées. Elles restent visibles dans `docs/pistes.html`.
 > Planche de style et maquettes de l'accroche dans un artifact Claude, privé jusqu'à ce que Simon le partage : https://claude.ai/artifact/9ybepd4uuKPYbJowbBgDTx
 
 ## Ambiance

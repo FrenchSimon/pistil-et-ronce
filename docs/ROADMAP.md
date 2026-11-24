@@ -5,8 +5,8 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 
 | # | Étape | Livrable à valider | Estimation | Statut |
 |---|---|---|---|---|
-| 1 | Textes | `contenu/textes.md` | 0,5 j | ✅ validé le 24/11 |
-| 2 | Photos | Planche de sélection + `contenu/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
+| 1 | Textes | `docs/textes.md` | 0,5 j | ✅ validé le 24/11 |
+| 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ⏳ prochaine |
 | 4 | Stack | Proposition argumentée | 0,25 j | — |
 | 5 | Réalisation | Site complet en local | 2 j | — |
@@ -19,7 +19,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 - Lister les besoins : accroche (1, format large), prestations (4), galerie (6 à 8), image de partage Open Graph (1).
 - Chercher sur Unsplash / Pexels une série cohérente (lumière, tons, style) : 2 ou 3 candidates par emplacement.
 - Vérifier qu'aucune photo ne montre l'enseigne ou le logo d'un vrai fleuriste.
-- Noter auteur, source et URL dans `contenu/photos.md`. Adapter les textes alternatifs de la galerie (accord requis, texte validé).
+- Noter auteur, source et URL dans `docs/photos.md`. Adapter les textes alternatifs de la galerie (accord requis, texte validé).
 - **Livrable :** planche contact des choix, puis originaux dans `contenu/photos/` après validation.
 
 ## 3. Direction artistique — `docs/direction-artistique`

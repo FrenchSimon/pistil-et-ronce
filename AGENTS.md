@@ -8,7 +8,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 - **But :** prouver l'offre « site vitrine one page » (550 € + 49 €/mois) auprès des PME, et mesurer le niveau de design obtenu avec l'IA, et en combien de temps.
 - **Suivi :** fiche du projet dans `~/Local Sites/portfolio/docs/demo-fleuriste.md` (cocher ses cases à la fin de chaque étape) ; décisions importantes dans le journal de `~/Local Sites/portfolio/ROADMAP.md`.
-- **Contenu validé :** `contenu/textes.md`. Ne pas modifier un texte validé sans mon accord.
+- **Contenu validé :** `docs/textes.md`. Ne pas modifier un texte validé sans mon accord.
 
 ### Tout est fictif, et doit le rester
 
@@ -20,7 +20,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 ### Photos
 
-- Uniquement Unsplash ou Pexels ; noter auteur, source et URL de chacune dans `contenu/photos.md`.
+- Uniquement Unsplash ou Pexels ; noter auteur, source et URL de chacune dans `docs/photos.md`.
 - Optimiser comme pour un vrai client : AVIF/WebP, plusieurs tailles, dimensions explicites.
 
 ## Workflow de travail
@@ -79,7 +79,7 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 
 ### SEO, responsive et légal
 
-- `title` et `meta description` repris de `contenu/textes.md` ; Open Graph avec image de partage ; données structurées `Florist` (schema.org) avec les infos fictives.
+- `title` et `meta description` repris de `docs/textes.md` ; Open Graph avec image de partage ; données structurées `Florist` (schema.org) avec les infos fictives.
 - `noindex` : la démo ne doit pas tromper un internaute qui cherche un vrai fleuriste.
 - Mobile d'abord, testé de 320 à 1920 px, sur Chrome, Firefox, Safari (+ iOS et Android).
 - Mentions légales et confidentialité adaptées à une démo : éditeur Simon Dabin, hébergeur, aucune donnée collectée.
