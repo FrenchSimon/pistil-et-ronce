@@ -1,0 +1,631 @@
+---
+/* Textes de docs/textes.md § 9. Le formulaire n'envoie rien : voir le script en bas de page. */
+const objets = ['Bouquet', 'Mariage ou événement', 'Abonnement entreprise', 'Autre'];
+
+/* En-têtes du calendrier : abréviation affichée, nom complet lu par les lecteurs d'écran */
+const joursSemaine = [
+  ['lu', 'lundi'],
+  ['ma', 'mardi'],
+  ['me', 'mercredi'],
+  ['je', 'jeudi'],
+  ['ve', 'vendredi'],
+  ['sa', 'samedi'],
+  ['di', 'dimanche'],
+];
+---
+
+<section id="contact" class="contact" aria-labelledby="contact-titre">
+  <div class="conteneur contact__colonnes">
+    <div class="contact__infos">
+      <h2 id="contact-titre">Une envie de fleurs&nbsp;?</h2>
+      <p class="contact__texte">
+        Pour une commande, un mariage ou un abonnement, écrivez-nous ou appelez la boutique. Nous
+        répondons sous 24&nbsp;h.
+      </p>
+
+      <dl class="coordonnees">
+        <div>
+          <dt class="etiquette">Téléphone</dt>
+          <dd><a class="coordonnees__lien" href="tel:+33261912407">02&nbsp;61&nbsp;91&nbsp;24&nbsp;07</a></dd>
+        </div>
+        <div>
+          <dt class="etiquette">E-mail</dt>
+          {/* Adresse fictive : texte simple, jamais de lien mailto: */}
+          <dd>bonjour@pistil-et-ronce.fr <span class="etiquette-fictif">fictif</span></dd>
+        </div>
+        <div>
+          <dt class="etiquette">Instagram</dt>
+          <dd>@pistiletronce <span class="etiquette-fictif">fictif</span></dd>
+        </div>
+      </dl>
+    </div>
+
+    {/* method="dialog" hors d'une fenêtre : même sans script, le navigateur n'envoie rien. */}
+    <form class="formulaire" method="dialog" aria-labelledby="contact-titre" data-formulaire-demo>
+      <div class="champ">
+        <label for="contact-nom">Nom</label>
+        <input id="contact-nom" name="nom" type="text" autocomplete="name" required />
+        <p class="champ__erreur" id="contact-nom-erreur" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 4.2v4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><circle cx="8" cy="11.4" r="1" fill="currentColor"></circle></svg>
+          <span data-message></span>
+        </p>
+      </div>
+
+      <div class="champ">
+        <label for="contact-joindre">E-mail ou téléphone</label>
+        <input id="contact-joindre" name="joindre" type="text" autocomplete="email" required />
+        <p class="champ__erreur" id="contact-joindre-erreur" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 4.2v4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><circle cx="8" cy="11.4" r="1" fill="currentColor"></circle></svg>
+          <span data-message></span>
+        </p>
+      </div>
+
+      <div class="champ">
+        <label for="contact-objet">Objet</label>
+        <div class="champ__liste">
+          <select id="contact-objet" name="objet">
+            {objets.map((objet) => <option>{objet}</option>)}
+          </select>
+          <svg class="champ__chevron" width="14" height="9" viewBox="0 0 14 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1.5 7 7.5l6-6"></path></svg>
+        </div>
+      </div>
+
+      <div class="champ">
+        <label for="contact-date">Date souhaitée <span class="champ__facultatif">(facultatif)</span></label>
+        {/* Sans script : champ date natif. Avec script : saisie jj/mm/aaaa et calendrier sur mesure. */}
+        <div class="champ__date">
+          <input id="contact-date" name="date" type="date" data-aide="contact-date-format" aria-describedby="contact-date-format" />
+          <button class="champ__ouvrir-calendrier" type="button" popovertarget="contact-calendrier" aria-label="Choisir une date" hidden>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2.75" y="4.25" width="14.5" height="13" rx="1"></rect><path d="M2.75 8.25h14.5M6.5 2.5v3.5M13.5 2.5v3.5"></path></svg>
+          </button>
+        </div>
+        <p class="visuellement-masque" id="contact-date-format">Format : jj/mm/aaaa</p>
+        <p class="champ__erreur" id="contact-date-erreur" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 4.2v4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><circle cx="8" cy="11.4" r="1" fill="currentColor"></circle></svg>
+          <span data-message></span>
+        </p>
+
+        <div class="calendrier" id="contact-calendrier" popover role="dialog" aria-label="Choisir une date" data-calendrier>
+          <div class="calendrier__entete">
+            <button class="calendrier__nav" type="button" data-mois="-1" aria-label="Mois précédent">
+              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 1 1.5 7l6 6"></path></svg>
+            </button>
+            <p class="calendrier__titre" id="contact-calendrier-titre" aria-live="polite" data-titre></p>
+            <button class="calendrier__nav" type="button" data-mois="1" aria-label="Mois suivant">
+              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1 6 6-6 6"></path></svg>
+            </button>
+          </div>
+          <table class="calendrier__grille" aria-labelledby="contact-calendrier-titre">
+            <thead>
+              <tr>
+                {joursSemaine.map(([court, long]) => (
+                  <th scope="col" abbr={long}><span aria-hidden="true">{court}</span><span class="visuellement-masque">{long}</span></th>
+                ))}
+              </tr>
+            </thead>
+            <tbody data-jours></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="champ champ--large">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="6" required></textarea>
+        <p class="champ__erreur" id="contact-message-erreur" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 4.2v4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><circle cx="8" cy="11.4" r="1" fill="currentColor"></circle></svg>
+          <span data-message></span>
+        </p>
+      </div>
+
+      <div class="formulaire__envoi champ--large">
+        <button class="bouton-principal" type="submit">
+          Envoyer
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M1 6 Q9 -1 17 6 Q9 13 1 6 Z M3 6 H14"></path></svg>
+        </button>
+      </div>
+
+      {/* Zone toujours présente (vide au départ) pour que l'annonce soit lue */}
+      <p class="formulaire__statut champ--large" role="status" aria-live="polite" data-statut></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  import { initialiserCalendrier } from '../scripts/calendrier';
+  import { aujourdhui, lireDate } from '../scripts/dates';
+
+  const formulaire = document.querySelector<HTMLFormElement>('[data-formulaire-demo]');
+
+  const MESSAGE_DEMO =
+    "Démo : ce message n'a pas été envoyé. Sur un vrai site, la boutique le recevrait par e-mail.";
+
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  // Numéro français : 10 chiffres commençant par 0, ou +33 suivi de 9 chiffres (espaces, points et tirets permis)
+  const TELEPHONE = /^(?:0\d{9}|\+33\d{9})$/;
+
+  if (formulaire) {
+    // Le script prend la main : messages d'erreur sur mesure à la place des bulles du navigateur.
+    formulaire.noValidate = true;
+
+    const champDate = formulaire.querySelector<HTMLInputElement>('#contact-date');
+    const boutonCalendrier = formulaire.querySelector<HTMLButtonElement>('[popovertarget="contact-calendrier"]');
+    const calendrier = formulaire.querySelector<HTMLElement>('[data-calendrier]');
+    if (champDate && boutonCalendrier && calendrier) {
+      initialiserCalendrier(champDate, boutonCalendrier, calendrier);
+    }
+
+    const statut = formulaire.querySelector<HTMLElement>('[data-statut]');
+
+    type Champ = HTMLInputElement | HTMLTextAreaElement;
+    const regles: Array<[string, (valeur: string) => string]> = [
+      ['contact-nom', (valeur) => (valeur ? '' : 'Indiquez votre nom.')],
+      [
+        'contact-joindre',
+        (valeur) => {
+          if (!valeur) return 'Indiquez un e-mail ou un numéro de téléphone.';
+          const numero = valeur.replace(/[\s.-]/g, '');
+          return EMAIL.test(valeur) || TELEPHONE.test(numero)
+            ? ''
+            : 'Vérifiez l’e-mail (nom@exemple.fr) ou le numéro (10 chiffres).';
+        },
+      ],
+      [
+        'contact-date',
+        (valeur) => {
+          if (!valeur) return '';
+          const date = lireDate(valeur);
+          if (!date) return 'Indiquez la date au format jj/mm/aaaa.';
+          return date < aujourdhui() ? 'Choisissez une date à partir d’aujourd’hui.' : '';
+        },
+      ],
+      ['contact-message', (valeur) => (valeur ? '' : 'Écrivez votre message.')],
+    ];
+
+    // Une erreur affichée se met à jour pendant la saisie ; elle n'apparaît qu'après un premier envoi.
+    function verifier(id: string, regle: (valeur: string) => string): boolean {
+      const champ = document.getElementById(id) as Champ | null;
+      const erreur = document.getElementById(`${id}-erreur`);
+      const texte = erreur?.querySelector('[data-message]');
+      if (!champ || !erreur || !texte) return true;
+
+      const message = regle(champ.value.trim());
+      texte.textContent = message;
+      erreur.hidden = !message;
+      // L'aide éventuelle (format de la date) reste décrite, suivie de l'erreur
+      const descriptions = [champ.dataset.aide, message ? erreur.id : ''].filter(Boolean).join(' ');
+      if (descriptions) champ.setAttribute('aria-describedby', descriptions);
+      else champ.removeAttribute('aria-describedby');
+      if (message) champ.setAttribute('aria-invalid', 'true');
+      else champ.removeAttribute('aria-invalid');
+      return !message;
+    }
+
+    for (const [id, regle] of regles) {
+      document.getElementById(id)?.addEventListener('input', (evenement) => {
+        if ((evenement.target as Champ).hasAttribute('aria-invalid')) verifier(id, regle);
+      });
+    }
+
+    formulaire.addEventListener('submit', (evenement) => {
+      evenement.preventDefault();
+      if (statut) statut.textContent = '';
+
+      const invalides = regles.filter(([id, regle]) => !verifier(id, regle));
+      if (invalides.length > 0) {
+        document.getElementById(invalides[0][0])?.focus();
+        return;
+      }
+
+      // Aucun envoi ni stockage : le formulaire est vidé et le message de démo annoncé.
+      formulaire.reset();
+      if (statut) statut.textContent = MESSAGE_DEMO;
+    });
+  }
+</script>
+
+<style>
+  .contact {
+    padding-block: var(--espace-section);
+  }
+
+  .contact__colonnes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pas-5) clamp(32px, 6vw, 96px);
+  }
+
+  .contact__infos {
+    flex: 1 1 320px;
+    max-width: 460px;
+  }
+
+  h2 {
+    font-size: clamp(32px, 3vw, 40px);
+    line-height: 1.1;
+  }
+
+  .contact__texte {
+    margin-top: var(--pas-3);
+  }
+
+  /* Coordonnées sous un filet lin : étiquette puis valeur */
+  .coordonnees {
+    display: grid;
+    gap: var(--pas-3);
+    margin: var(--pas-4) 0 0;
+    padding-top: var(--pas-4);
+    border-top: 1px solid var(--lin);
+  }
+
+  .coordonnees dt {
+    margin-bottom: 4px;
+    color: var(--sapin-doux);
+  }
+
+  .coordonnees dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .coordonnees__lien {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-block: -10px;
+    color: var(--pivoine);
+    font-weight: 600;
+    text-underline-offset: 6px;
+  }
+
+  .coordonnees__lien:hover {
+    color: var(--sapin);
+    text-decoration-thickness: 2px;
+  }
+
+  .etiquette-fictif {
+    color: var(--sapin-doux);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Formulaire */
+  .formulaire {
+    flex: 1.4 1 420px;
+    min-width: 0;
+    display: grid;
+    /* 2 colonnes au plus (Nom / contact, Objet / date) : en 3, la date restait seule sur sa ligne */
+    grid-template-columns: repeat(auto-fit, minmax(max(220px, calc(50% - var(--pas-3))), 1fr));
+    gap: var(--pas-3);
+  }
+
+  .champ--large {
+    grid-column: 1 / -1;
+  }
+
+  .champ label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .champ__facultatif {
+    color: var(--sapin-doux);
+    font-weight: 400;
+  }
+
+  .champ input,
+  .champ select,
+  .champ textarea {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px solid var(--sapin-doux);
+    border-radius: 0;
+    background: var(--papier-clair);
+    font-size: 16px;
+    line-height: 1.4;
+    appearance: none;
+  }
+
+  /* Bord de 2 px sans décaler le texte : le second pixel est une ombre intérieure */
+  .champ input:focus,
+  .champ select:focus,
+  .champ textarea:focus {
+    border-color: var(--sapin);
+    box-shadow: inset 0 0 0 1px var(--sapin);
+  }
+
+  .champ textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+
+  /* Champ date : bouton calendrier de 44 × 44 dans le champ, à droite */
+  .champ__date {
+    position: relative;
+  }
+
+  .champ__date input {
+    padding-right: 52px;
+  }
+
+  .champ__ouvrir-calendrier {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--sapin);
+    cursor: pointer;
+  }
+
+  .champ__ouvrir-calendrier[hidden] {
+    display: none;
+  }
+
+  .champ__ouvrir-calendrier:hover {
+    background: var(--lin);
+  }
+
+  .champ__ouvrir-calendrier:focus-visible {
+    outline-offset: -2px;
+  }
+
+  /* Calendrier : fenêtre papier clair sous le champ, jours de 44 px (36 px sous 390 px de large).
+     Largeur max à garder égale à LARGEUR_MAX dans src/scripts/calendrier.ts. */
+  .calendrier {
+    position: absolute;
+    inset: auto;
+    width: min(356px, calc(100vw - 32px));
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--sapin-doux);
+    background: var(--papier-clair);
+    box-shadow: var(--ombre-cadre);
+    color: var(--sapin);
+  }
+
+  .calendrier__entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pas-1);
+    margin-bottom: var(--pas-1);
+  }
+
+  .calendrier__titre {
+    font-family: var(--police-titre);
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .calendrier__titre::first-letter {
+    text-transform: uppercase;
+  }
+
+  .calendrier__nav {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--lin);
+    border-radius: var(--rayon-feuille-petit);
+    background: transparent;
+    color: var(--sapin);
+    cursor: pointer;
+  }
+
+  .calendrier__nav:hover {
+    border-color: var(--sapin-doux);
+    background: var(--lin);
+  }
+
+  .calendrier__nav[aria-disabled='true'] {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .calendrier__nav[aria-disabled='true']:hover {
+    border-color: var(--lin);
+    background: transparent;
+  }
+
+  .calendrier__grille {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .calendrier__grille th {
+    padding-block: 6px;
+    color: var(--sapin-doux);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .calendrier__grille td {
+    padding: 1px;
+    text-align: center;
+  }
+
+  /* Jours générés par le script : hors de la portée des styles du composant */
+  .calendrier :global(.calendrier__jour) {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    max-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--sapin);
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .calendrier :global(.calendrier__jour:hover) {
+    background: var(--lin);
+  }
+
+  .calendrier :global(.calendrier__jour:focus-visible) {
+    outline-offset: -2px;
+  }
+
+  /* Aujourd'hui : filet pivoine ; jour choisi : aplat sapin en forme de feuille */
+  .calendrier :global(.calendrier__jour[aria-current='date']) {
+    box-shadow: inset 0 0 0 1px var(--pivoine);
+    font-weight: 600;
+  }
+
+  .calendrier :global(.calendrier__jour[aria-pressed='true']) {
+    border-radius: 0 14px 0 14px;
+    background: var(--sapin);
+    color: var(--papier);
+    font-weight: 600;
+  }
+
+  .calendrier :global(.calendrier__jour[aria-pressed='true']:focus-visible) {
+    outline-offset: 2px;
+  }
+
+  .calendrier :global(.calendrier__jour[aria-disabled='true']) {
+    /* Chiffre estompé seulement : le contour de focus reste net */
+    color: color-mix(in srgb, var(--sapin-doux) 45%, transparent);
+    cursor: default;
+  }
+
+  .calendrier :global(.calendrier__jour[aria-disabled='true']:hover) {
+    background: transparent;
+  }
+
+  /* Safari aligne mal la valeur d'un champ date sans apparence native */
+  .champ input[type='date']::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
+  .champ__liste {
+    position: relative;
+  }
+
+  /* Liste personnalisable : dessinée dans la page, sous le champ, aux couleurs de la palette.
+     La liste native de Chrome sur macOS s'ouvre mal placée quand l'affichage est mis à l'échelle.
+     Ailleurs, la liste native reste en place. */
+  @supports (appearance: base-select) {
+    .champ select,
+    .champ select::picker(select) {
+      appearance: base-select;
+    }
+
+    .champ select::picker-icon {
+      display: none;
+    }
+
+    .champ select::picker(select) {
+      /* Écart au champ, que la liste s'ouvre dessous ou dessus */
+      margin-block: 4px;
+      padding: 4px 0;
+      border: 1px solid var(--sapin-doux);
+      background: var(--papier-clair);
+      box-shadow: var(--ombre-cadre);
+      color: var(--sapin);
+    }
+
+    .champ option {
+      min-height: 44px;
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+
+    .champ option::checkmark {
+      color: var(--pivoine);
+    }
+
+    .champ option:hover,
+    .champ option:focus-visible {
+      background: var(--lin);
+    }
+
+    .champ option:focus-visible {
+      outline-offset: -2px;
+    }
+
+    .champ option:checked {
+      font-weight: 600;
+    }
+  }
+
+  .champ select {
+    padding-right: 44px;
+    cursor: pointer;
+  }
+
+  .champ__chevron {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    color: var(--sapin);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* Erreurs : brique, avec icône et message relié au champ ; bord brique 2 px */
+  .champ [aria-invalid='true'],
+  .champ [aria-invalid='true']:focus {
+    border-color: var(--brique);
+    box-shadow: inset 0 0 0 1px var(--brique);
+  }
+
+  .champ__erreur {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+    color: var(--brique);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .champ__erreur[hidden] {
+    display: none;
+  }
+
+  .champ__erreur svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .formulaire__envoi {
+    margin-top: var(--pas-1);
+  }
+
+  /* Message de démo : papier clair, bord sapin doux, visible seulement quand il est rempli */
+  .formulaire__statut:empty {
+    display: none;
+  }
+
+  .formulaire__statut {
+    padding: var(--pas-2) 20px;
+    border: 1px solid var(--sapin-doux);
+    background: var(--papier-clair);
+  }
+</style>
