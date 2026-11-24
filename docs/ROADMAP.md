@@ -27,21 +27,21 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 - [ ] Ambiance : 2 ou 3 pistes courtes (mots-clés, références de style, pas de copie d'un vrai fleuriste).
 - [ ] Palette avec contrastes AA vérifiés pour chaque paire texte/fond.
 - [ ] Typographies libres et auto-hébergeables (titre + texte), avec sous-ensembles latins.
-- [ ] Logo typographique « Pistil & Ronce » et favicon.
+- [x] Logo typographique « Pistil & Ronce » et favicon (vectorisés dans `contenu/logo/`).
 - [ ] Composants : boutons, liens, champs, cartes de prestation, bandeau démo, états de focus.
 - [ ] **Livrable :** planche de style + maquette de l'accroche en mobile et en bureau.
 
 ## 4. Stack
 
 - [ ] Proposition argumentée selon les critères d'`AGENTS.md` : statique, rapide, sans CMS, Vercel. Pistes à comparer : Astro, Eleventy, HTML + Vite.
-- [ ] Points à trancher en même temps : pipeline d'images (AVIF/WebP, `srcset`), choix de la carte (image statique ou OpenStreetMap chargée au clic), format des mentions légales (page dédiée ou fenêtre).
+- [ ] Points à trancher en même temps : pipeline d'images (AVIF/WebP, `srcset`), outil de rendu du plan statique (données OpenStreetMap, style en niveaux de gris), format des mentions légales (page dédiée ou fenêtre).
 
 ## 5. Réalisation — `feat/<section>`, un commit par section
 
 1. [ ] **Socle :** projet, polices, variables de style, mise en page, lien d'évitement, bandeau démo, en-tête et navigation, pied de page.
 2. [ ] **Accroche** (image LCP prioritaire, non différée).
 3. [ ] **Prestations.**
-4. [ ] **Notre façon de faire** (si conservée).
+4. [ ] **Notre façon de faire.**
 5. [ ] **Réalisations :** galerie responsive, images différées.
 6. [ ] **Avis**, avec la mention « Avis fictifs (démo) ».
 7. [ ] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
@@ -76,5 +76,5 @@ Une PR par lot cohérent (socle, sections, finitions), avec captures.
 ## Décisions ouvertes
 
 - [ ] Adresse du site : sous-domaine Vercel ou sous-domaine du portfolio ?
-- [ ] Carte : image statique (plus simple, plus rapide) ou carte interactive au clic ?
-- [ ] Section « Notre façon de faire » : gardée ou retirée ?
+- [x] Carte : image statique, style sur mesure en niveaux de gris (décidé le 24/11).
+- [x] Section « Notre façon de faire » : gardée (décidé le 24/11).
