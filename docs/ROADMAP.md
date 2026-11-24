@@ -9,7 +9,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
-| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations, avis, horaires et plan, contact validés le 24/11) |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations, avis, horaires et plan, contact validés le 24/11 ; mentions légales et appels à l'action le 25/11) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
@@ -46,7 +46,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 6. [x] **Avis**, avec la mention « Avis fictifs (démo) ».
 7. [x] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
 8. [x] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
-9. [ ] **Mentions légales et confidentialité.**
+9. [x] **Mentions légales et confidentialité.**
 10. [ ] **Page 404 :** `src/pages/404.astro`, servie par Vercel pour toute adresse inconnue ; bandeau démo, en-tête, pied de page et `noindex` comme les autres pages ; message court et lien de retour à l'accueil (texte à ajouter dans `textes.md` et à valider).
 11. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
 12. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).

@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.8 — 2026-11-25 · Statut : **validé** (v1.8 : textes de la page Mentions légales et confidentialité, § 11)
 > Version 1.7 — 2026-11-25 · Statut : **validé** (v1.7 : appels à l'action sur les cartes de prestation, sous la galerie et dans « Nous trouver »)
 > Version 1.6 — 2026-11-24 · Statut : **validé** (v1.6 : messages d'erreur du formulaire et libellés du calendrier de la date)
 > Version 1.5 — 2026-11-24 · Statut : **validé** (v1.5 : temps d'accès confirmé par l'emplacement du repère sur le plan)
@@ -158,7 +159,7 @@ Démo réalisée par Simon Dabin — boutique fictive.
 
 ## 11. Mentions légales et confidentialité (page `/mentions-legales/`)
 
-> Proposé le 24/11/2026 · Statut : **à valider**. Éditeur : vrai nom de Simon Dabin, commune seule (pas d'adresse personnelle), contact par GitHub. Adresse de Vercel relevée dans ses documents légaux le 24/11/2026.
+> Proposé le 24/11/2026 · Statut : **validé le 25/11/2026**. Éditeur : vrai nom de Simon Dabin, commune seule (pas d'adresse personnelle), contact par GitHub. Adresse de Vercel relevée dans ses documents légaux le 24/11/2026.
 
 - **Title :** Mentions légales et confidentialité — Pistil & Ronce (démo)
 - **Meta description :** Éditeur, hébergeur et crédits du site de démonstration Pistil & Ronce, boutique fictive. Aucune donnée collectée, aucun cookie.
