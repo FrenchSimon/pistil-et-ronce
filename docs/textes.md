@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.6 — 2026-11-24 · Statut : **validé** (v1.6 : messages d'erreur du formulaire et libellés du calendrier de la date)
 > Version 1.5 — 2026-11-24 · Statut : **validé** (v1.5 : temps d'accès confirmé par l'emplacement du repère sur le plan)
 > Version 1.4 — 2026-11-24 · Statut : **validé** (v1.4 : calendrier des saisons ajouté à « Notre façon de faire », repris de la piste 07 de la DA)
 > Version 1.3 — 2026-11-24 · Statut : **validé** (v1.3 : texte alternatif de la photo d'accroche ajouté)
@@ -131,6 +132,17 @@ Plan : carte du centre de Nantes avec un repère (sans adresse réelle), à envi
 **Formulaire :** Nom · E-mail ou téléphone · Objet (Bouquet / Mariage ou événement / Abonnement entreprise / Autre) · Date souhaitée (facultatif) · Message · **Envoyer**
 
 Message après envoi : *Démo : ce message n'a pas été envoyé. Sur un vrai site, la boutique le recevrait par e-mail.*
+
+**Messages d'erreur** (sous le champ concerné, à l'envoi) :
+
+- Nom vide : Indiquez votre nom.
+- E-mail ou téléphone vide : Indiquez un e-mail ou un numéro de téléphone.
+- E-mail ou téléphone invalide : Vérifiez l'e-mail (nom@exemple.fr) ou le numéro (10 chiffres).
+- Date mal écrite : Indiquez la date au format jj/mm/aaaa.
+- Date passée : Choisissez une date à partir d'aujourd'hui.
+- Message vide : Écrivez votre message.
+
+**Calendrier de la date** (lus par les lecteurs d'écran) : Choisir une date · Mois précédent · Mois suivant · Format : jj/mm/aaaa
 
 ## 10. Pied de page
 
