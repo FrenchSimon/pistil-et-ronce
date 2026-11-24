@@ -3,6 +3,7 @@ import '../styles/global.css';
 import favicon from '../../contenu/logo/favicon.svg?url';
 import LienEvitement from '../components/LienEvitement.astro';
 import EnTete from '../components/EnTete.astro';
+import PiedDePage from '../components/PiedDePage.astro';
 
 interface Props {
   title: string;
@@ -29,5 +30,6 @@ const { title, description } = Astro.props;
     <main id="contenu">
       <slot />
     </main>
+    <PiedDePage />
   </body>
 </html>
