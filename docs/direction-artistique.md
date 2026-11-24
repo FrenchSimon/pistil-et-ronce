@@ -44,7 +44,8 @@ Règles :
 1. **Jamais pivoine et sapin superposés.** Sur fond sapin, l'esperluette du logo passe en papier.
 2. **Un seul aplat pivoine visible par écran** : le bouton principal de la section (accroche : « Commander un bouquet » ; contact : « Envoyer »).
 3. **Erreurs de formulaire** : en brique, jamais en pivoine (la pivoine reste la couleur de l'action), toujours avec icône et message relié au champ (`aria-describedby`) : la couleur n'est jamais le seul indice. Champ en erreur : bord brique 2 px.
-4. Ombre unique (`--ombre-cadre`) : `0 18px 40px -24px rgba(31, 58, 46, .35)`, sous le passe-partout de la photo d'accroche.
+4. Ombre unique (`--ombre-cadre`) : `0 18px 40px -24px rgba(31, 58, 46, .35)`, sous le passe-partout de la photo d'accroche et des photos de la galerie.
+5. **Photos étalonnées** : les 12 photos reçoivent le même étalonnage léger (saturation 92 %, bleus atténués, noirs levés ; `scripts/etalonner-photos.mjs`) et les photos encadrées partagent le même passe-partout papier clair (14 px pour l'accroche, 12 px pour la galerie, 8 px sous 900 px). Les cartes de prestation gardent leur cadre de carte.
 
 ## Typographies (OFL, WOFF2 auto-hébergées, sous-ensemble latin, `font-display: swap`)
 

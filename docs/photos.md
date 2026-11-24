@@ -32,7 +32,8 @@ Les textes alternatifs de la galerie sont dans `textes.md` (section 6, v1.1).
 ## Décisions du 24/11
 
 - Galerie 6 : la légende devient « Composition de roses pour un dîner d'entreprise », car aucune photo d'accueil de bureau ne collait à notre style.
-- Livraison : pas de photo, les trois autres cartes de prestation suffisent.
+- Livraison : pas de photo, les trois autres cartes de prestation suffisent (remplacée ensuite par l'illustration du vélo fleuri).
+- Étalonnage commun : pour harmoniser la lumière et les fonds (blanc froid, bois orangé, mur vert), les 12 photos reçoivent le même traitement léger (saturation 92 %, bleus atténués, noirs levés), choisi sur une planche de comparaison de 4 pistes. Les originaux restent dans `contenu/photos/` ; `npm run photos` écrit les versions étalonnées dans `src/assets/photos/`, que le site utilise. La licence Unsplash autorise ces modifications.
 - Textes alternatifs de la galerie : adaptés à ce que montrent les photos, puis validés.
 
 ## Écartées (visuellement)
