@@ -21,12 +21,12 @@ const DENSITE = 2;
 const REPERE = [-1.5538, 47.2161];
 const ARRET = { nom: 'Commerce', position: [-1.55577, 47.21412] };
 
-/* Couleurs de la DA ; les gris verdis sont la sauge fondue dans le papier */
+/* Couleurs de la DA ; parcs en sauge fondue dans le papier, eau en bleu-gris pâle (couleur réservée au plan) */
 const COULEURS = {
   fond: '#F4EFE6',
   ilot: '#E6DECF',
   rue: '#FBF8F2',
-  eau: '#CDD2C3',
+  eau: '#BFD3DA',
   parc: '#DADCCD',
   tram: '#8A9A7B',
   texte: '#4A5F53',
@@ -40,7 +40,7 @@ const LARGEUR_RUE = {
 
 /* Rues étiquetées, par ordre de priorité */
 const RUES_ETIQUETEES = ['primary', 'secondary', 'tertiary', 'pedestrian', 'residential', 'living_street', 'unclassified'];
-const TAILLE_TEXTE = 17;
+const TAILLE_TEXTE = 21;
 
 /* Cadre du plan (sud, ouest, nord, est), plus serré que l'emprise extraite */
 const CADRE = [47.2117, -1.5612, 47.2183, -1.5498];
@@ -173,10 +173,10 @@ for (const { nom, classe, geometrie } of nommees) {
 
 const REPERE_PROJETE = projection(REPERE);
 const ARRET_PROJETE = projection(ARRET.position);
-/* Zones réservées : le repère, puis l'arrêt et son nom (environ 150 px de long) */
+/* Zones réservées : le repère, puis l'arrêt et son nom (environ 180 px de long) */
 const zonesOccupees = [
   [REPERE_PROJETE[0], REPERE_PROJETE[1] - 26, 34],
-  ...Array.from({ length: 17 }, (_, i) => [ARRET_PROJETE[0] + i * 10, ARRET_PROJETE[1], 24]),
+  ...Array.from({ length: 20 }, (_, i) => [ARRET_PROJETE[0] + i * 10, ARRET_PROJETE[1], 28]),
 ];
 const libre = (points) => points.every(([x, y]) => zonesOccupees.every(([zx, zy, r]) => Math.hypot(x - zx, y - zy) > r));
 
@@ -210,7 +210,7 @@ const triees = [...rues.values()].sort(
 for (const rue of triees) {
   const points = placer(rue);
   if (!points) continue;
-  echantillonner(points, 8).forEach(([x, y]) => zonesOccupees.push([x, y, 22]));
+  echantillonner(points, 8).forEach(([x, y]) => zonesOccupees.push([x, y, 26]));
   etiquettes.push({ nom: rue.nom, points });
   if (etiquettes.length >= 14) break;
 }
@@ -237,7 +237,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${LARGEUR}" height="
     .join('')}</g>
   <g>
     <circle cx="${ARRET_PROJETE[0]}" cy="${ARRET_PROJETE[1]}" r="6" fill="${COULEURS.fond}" stroke="${COULEURS.arret}" stroke-width="2.5"/>
-    <text x="${ARRET_PROJETE[0] + 12}" y="${ARRET_PROJETE[1]}" dominant-baseline="central" font-family="Karla" font-weight="600" font-size="18"
+    <text x="${ARRET_PROJETE[0] + 16}" y="${ARRET_PROJETE[1]}" dominant-baseline="central" font-family="Karla" font-weight="600" font-size="21"
       fill="${COULEURS.arret}" stroke="${COULEURS.fond}" stroke-width="3" paint-order="stroke">Tram ${ARRET.nom}</text>
   </g>
 </svg>`;
