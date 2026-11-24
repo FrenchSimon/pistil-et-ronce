@@ -103,7 +103,7 @@ Deux coins arrondis en diagonale (haut-droit et bas-gauche), les deux autres dro
 48 px de haut, fond papier clair, bord sapin doux 1 px, angles droits ; au focus bord sapin 2 px + contour de focus ; libellé Karla 600 15 px au-dessus. Textarea : 160 px de haut au moins, redimensionnable en hauteur.
 
 ### Carte de prestation
-Fond papier clair, filet lin, angles droits ; photo 240 px de haut en `object-fit: cover`, `alt=""` (le titre suit) ; corps padding 22 / 24 / 26 px : h3, texte, puis l'indication de prix en étiquette sapin sous un filet lin. La carte « Livraison locale » n'a pas de photo : à la place, un bloc papier de 240 px avec la branche C.
+Fond papier clair, filet lin, angles droits ; photo 240 px de haut en `object-fit: cover`, `alt=""` (le titre suit) ; corps padding 22 / 24 / 26 px : h3, texte, puis l'indication de prix en étiquette sapin sous un filet lin. La carte « Livraison locale » n'a pas de photo : à la place, un bloc papier de 240 px avec la branche C agrandie (338 px de large), calée en haut à droite : la fleur reste entière, la tige entre par le bord gauche.
 
 ### Éléments de décor (tous `aria-hidden="true"`)
 - **Séparateur** : branche fleurie D (220 × 40) centrée entre deux filets lin qui prennent la largeur restante. Deux sur la page : avant « Quelques réalisations » et avant « Une envie de fleurs ? ».
