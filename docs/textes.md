@@ -148,3 +148,45 @@ Message après envoi : *Démo : ce message n'a pas été envoyé. Sur un vrai si
 
 Pistil & Ronce · Fleuriste à Nantes · Mentions légales · Confidentialité
 Démo réalisée par Simon Dabin — boutique fictive.
+
+## 11. Mentions légales et confidentialité (page `/mentions-legales/`)
+
+> Proposé le 24/11/2026 · Statut : **à valider**. Éditeur : vrai nom de Simon Dabin, commune seule (pas d'adresse personnelle), contact par GitHub. Adresse de Vercel relevée dans ses documents légaux le 24/11/2026.
+
+- **Title :** Mentions légales et confidentialité — Pistil & Ronce (démo)
+- **Meta description :** Éditeur, hébergeur et crédits du site de démonstration Pistil & Ronce, boutique fictive. Aucune donnée collectée, aucun cookie.
+
+**Titre :** Mentions légales et confidentialité
+
+**Chapeau :** Ce site est une démonstration. Pistil & Ronce est une boutique fictive : on ne peut ni y commander, ni s'y rendre.
+
+### Mentions légales
+
+**Éditeur :** Simon Dabin, développeur web freelance (entrepreneur individuel), Beaupréau-en-Mauges (Maine-et-Loire). Directeur de la publication : Simon Dabin. Contact : [github.com/FrenchSimon](https://github.com/FrenchSimon).
+
+**Hébergeur :** Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis · [vercel.com](https://vercel.com).
+
+**Une boutique fictive :** Le nom, l'adresse, le téléphone, l'e-mail, le compte Instagram et les avis de Pistil & Ronce sont inventés. La rue des Glaneuses n'existe pas à Nantes, et le numéro 02 61 91 24 07 appartient à une plage réservée par l'ARCEP aux œuvres de fiction. Toute ressemblance avec une boutique existante serait fortuite.
+
+**Crédits :**
+
+- Conception, textes, logo, illustrations et code : Simon Dabin. Le code est consultable sur [GitHub](https://github.com/FrenchSimon/pistil-et-ronce).
+- Photos : Unsplash, sous licence Unsplash, de William Warby, Matthew Nevins Bell, Céline Druguet, Aleksandra Dementeva, laura novara, Tom The Photographer, David Goldman, Sergio Butko, Anita Austvika, Ilse Orsel, Nataliya Melnychuk et Viktoriia Yatsentiuk (liens vers leurs profils). Couleurs légèrement retouchées pour harmoniser la série.
+- Polices : Cormorant Garamond et Karla, sous licence SIL Open Font License.
+- Plan : données © contributeurs OpenStreetMap, sous licence ODbL.
+
+### Confidentialité
+
+**Aucune donnée collectée :** Le formulaire de contact n'envoie rien. Ce que vous y écrivez reste dans votre navigateur et s'efface quand vous cliquez sur « Envoyer ».
+
+**Aucun cookie, aucun traceur :** Pas de mesure d'audience, pas de publicité, pas de bouton de réseau social. C'est pourquoi aucun bandeau ne vous demande votre accord.
+
+**Aucun service tiers :** Les polices, les photos et le plan sont hébergés avec le site. Votre navigateur ne contacte aucun autre serveur.
+
+**Journaux de l'hébergeur :** Comme tout hébergeur, Vercel enregistre des données techniques de connexion (adresse IP, pages demandées, date) pour faire fonctionner et protéger le service. Ces journaux peuvent être traités aux États-Unis ; Simon Dabin ne s'en sert pas. Voir la [politique de confidentialité de Vercel](https://vercel.com/legal/privacy-policy).
+
+**Vos droits :** Pour toute question sur vos données, écrivez à Simon Dabin via [GitHub](https://github.com/FrenchSimon). Vous pouvez aussi adresser une réclamation à la [CNIL](https://www.cnil.fr).
+
+**Retour :** ← Retour à l'accueil
+
+*Mise à jour : 24 novembre 2026.*
