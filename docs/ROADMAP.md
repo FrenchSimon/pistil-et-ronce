@@ -9,7 +9,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
-| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle validé le 24/11) |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle et accroche validés le 24/11) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
@@ -39,7 +39,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 ## 5. Réalisation — `feat/<section>`, un commit par section
 
 1. [x] **Socle :** projet, polices, variables de style, mise en page, lien d'évitement, bandeau démo, en-tête et navigation, pied de page.
-2. [ ] **Accroche** (image LCP prioritaire, non différée).
+2. [x] **Accroche** (image LCP prioritaire, non différée).
 3. [ ] **Prestations.**
 4. [ ] **Notre façon de faire.**
 5. [ ] **Réalisations :** galerie responsive, images différées.
