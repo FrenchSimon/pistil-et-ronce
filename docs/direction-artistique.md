@@ -1,9 +1,7 @@
 # Direction artistique et maquette — Pistil & Ronce
 
 > Version 1 — 2026-11-24 · Statut : **à valider** (remplace la version 0 : accent rouille → pivoine, boutons « feuille », décor ronce ; décisions ouvertes tranchées le 24/11)
-> Maquettes et planches : canevas Claude privé https://claude.ai/artifact/9ybepd4uuKPYbJowbBgDTx (planches « Site one page · bureau » et « Site one page · mobile 390 »).
-> Design system : https://claude.ai/artifact/2hYzoU2VoRNxWU22gcVPLn (privé, mêmes valeurs que ce fichier).
-> **Ce fichier se suffit à lui-même** : un agent qui n'a pas accès aux liens ci-dessus a ici toutes les valeurs, la structure de la page et les tracés SVG.
+> **Ce fichier est la seule référence** : toutes les valeurs, la structure de la page et les tracés SVG sont ici. Les maquettes de travail ne servent pas de référence ; leurs écarts seront corrigés pendant la réalisation.
 
 ## Pour l'agent qui réalise le site
 
