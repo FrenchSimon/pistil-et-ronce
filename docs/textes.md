@@ -98,6 +98,8 @@ Légendes et textes alternatifs (adaptés aux photos le 24/11, voir `photos.md`)
 
 Mention sous les avis : *Avis fictifs (démo).*
 
+Lien sous la mention : Lire tous nos avis sur Google ↗ *(fictif, lien désactivé ; ajouté le 24/11)*
+
 ## 8. Horaires et plan
 
 **Titre :** Nous trouver
