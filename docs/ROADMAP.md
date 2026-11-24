@@ -8,8 +8,8 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 1 | Textes | `docs/textes.md` | 0,5 j | ✅ validé le 24/11 |
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
-| 4 | Stack | Proposition argumentée | 0,25 j | ⏳ prochaine |
-| 5 | Réalisation | Site complet en local | 2 j | — |
+| 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ prochaine |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
@@ -31,10 +31,10 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 - [x] Composants : boutons, liens, champs, cartes de prestation, bandeau démo, états de focus.
 - [x] **Livrable :** planche de style + maquette de l'accroche en mobile et en bureau.
 
-## 4. Stack
+## 4. Stack — `docs/stack.md`
 
-- [ ] Proposition argumentée selon les critères d'`AGENTS.md` : statique, rapide, sans CMS, Vercel. Pistes à comparer : Astro, Eleventy, HTML + Vite.
-- [ ] Points à trancher en même temps : pipeline d'images (AVIF/WebP, `srcset`), outil de rendu du plan statique (données OpenStreetMap, style en niveaux de gris), format des mentions légales (page dédiée ou fenêtre).
+- [x] Proposition argumentée selon les critères d'`AGENTS.md` : statique, rapide, sans CMS, Vercel. Pistes à comparer : Astro, Eleventy, HTML + Vite.
+- [x] Points à trancher en même temps : pipeline d'images (AVIF/WebP, `srcset`), outil de rendu du plan statique (données OpenStreetMap, style en niveaux de gris), format des mentions légales (page dédiée ou fenêtre).
 
 ## 5. Réalisation — `feat/<section>`, un commit par section
 

@@ -1,6 +1,6 @@
 # Stack — Pistil & Ronce
 
-> Étape 4. Version 1 — 2026-11-24 · Statut : **proposition, à valider**
+> Étape 4. Version 1 — 2026-11-24 · Statut : **validé le 24/11/2026**
 >
 > Critères (`AGENTS.md`) : site statique, rapide, sans CMS, hébergé sur Vercel ; aucun script tiers ; CSP stricte sans `unsafe-inline` ; images AVIF/WebP en plusieurs tailles ; dépendances minimales. Versions relevées sur npm le 24/11/2026.
 
