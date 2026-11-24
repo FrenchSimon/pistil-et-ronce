@@ -100,13 +100,17 @@ Ce que la stack apporte pour chaque exigence d'`AGENTS.md`, et les pièges repé
 
 ## Maintenabilité et évolution
 
-### Maintenance
+### Maintenance : un site figé, autonome
 
-- **Peu de pièces :** un seul paquet servi au build (`astro`), pas de framework UI, CSS natif. Moins de dépendances, moins de mises à jour et de failles à suivre.
-- **Peu de verrouillage :** un fichier `.astro` est du HTML avec un en-tête de données. Le CSS et le JS sont standard. Changer d'outil plus tard reste peu coûteux.
-- **Rythme des versions majeures (npm) :** 5.0 en décembre 2024, 6.0 en mars 2026, 7.0 en juin 2026. C'est soutenu : chaque montée demande de lire le guide de migration et peut prendre une à deux heures sur un site de cette taille. Moins on utilise de fonctions avancées, moins il y a à migrer.
-- **Mises à jour :** Dependabot sur le dépôt (correctifs de sécurité), versions figées et Node fixé dans `package.json`. Le forfait de 49 €/mois couvre ce suivi.
-- **Lisibilité :** un composant par section, les variables de la DA dans un seul fichier, les textes dans les composants (pas de fichier de contenu séparé tant que le site tient sur une page).
+Objectif : **aucune maintenance une fois en ligne**, en dehors de corrections de bugs éventuelles.
+
+- **Ce qui est servi ne vieillit pas.** Le site en ligne n'est que du HTML, du CSS, quelques lignes de JS standard et des images. Il n'exécute ni Astro, ni Node, ni npm, et n'appelle aucun service tiers. Il n'y a donc rien à mettre à jour pour qu'il continue de fonctionner.
+- **Astro et npm ne servent qu'à construire le site.** Une faille dans une dépendance de build ne touche pas le site servi. Aucune montée de version d'Astro n'est prévue, même si de nouvelles versions majeures sortent (5.0 en décembre 2024, 6.0 en mars 2026, 7.0 en juin 2026).
+- **Tout est figé :** versions exactes (`save-exact=true` dans `.npmrc`, `package-lock.json` versionné), version de Node fixée dans `package.json`. Pas de Dependabot ni de mise à jour automatique : un même commit reconstruit toujours le même site.
+- **Node 24 plutôt que 22 :** support jusqu'en avril 2028, contre avril 2027 pour Node 22. Vercel retire les versions de Node arrivées en fin de vie. Après cette date, une nouvelle construction échouerait, mais **le déploiement déjà en ligne continue d'être servi** : le problème ne se pose que si on corrige un bug plus tard.
+- **Plan B pour une correction tardive :** si la construction sur Vercel n'est plus possible, on construit en local et on envoie le dossier `dist/` déjà prêt (`vercel deploy --prebuilt`). La seule chose à changer serait alors la version de Node dans `package.json`.
+- **Ce qui reste hors du code :** le nom de domaine, s'il y en a un (à renouveler), et le compte Vercel.
+- **Lisibilité, pour corriger vite :** un composant par section, les variables de la DA dans un seul fichier, les textes dans les composants.
 
 ### Si le site grandit
 
@@ -127,4 +131,4 @@ Le point fort : on passe du statique au rendu hybride page par page, sans rééc
 
 ## Blocage à lever avant la réalisation
 
-- **Node local en 22.23.3, Astro 7 demande au moins 22.23.4.** Mettre Node à jour (dernière 22 LTS ou 24 LTS) avant de créer le projet. Aucun gestionnaire de versions (nvm, fnm, Volta) n'est installé : mise à jour par l'installeur officiel ou `brew`, à ton choix.
+- **Node local en 22.23.3, Astro 7 demande au moins 22.23.4.** Mettre Node à jour (Node 24 LTS, voir « Maintenance ») avant de créer le projet. Aucun gestionnaire de versions (nvm, fnm, Volta) n'est installé : mise à jour par l'installeur officiel ou `brew`, à ton choix.
