@@ -50,7 +50,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 10. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
 11. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
 
-Une PR par lot cohérent (socle, sections, finitions), avec captures.
+Une PR par lot cohérent (socle, sections, finitions), sans captures : elles restent en local.
 
 ## 6. Recette qualité
 
