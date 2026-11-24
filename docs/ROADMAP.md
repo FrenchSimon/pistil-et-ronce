@@ -42,7 +42,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 2. [x] **Accroche** (image LCP prioritaire, non différée).
 3. [x] **Prestations.**
 4. [x] **Notre façon de faire.**
-5. [ ] **Réalisations :** galerie responsive, images différées.
+5. [x] **Réalisations :** galerie responsive, images différées.
 6. [ ] **Avis**, avec la mention « Avis fictifs (démo) ».
 7. [ ] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
 8. [ ] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
