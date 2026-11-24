@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.2 — 2026-11-24 · Statut : **validé** (v1.2 : surtitre et légende de la photo d'accroche ajoutés)
 > Version 1.1 — 2026-11-24 · Statut : **validé** (v1.1 : légendes de la galerie adaptées aux photos)
 > Version 1 — 2026-11-24 · Statut : **validé** (ton, prix, section « Notre façon de faire », avis fictifs signalés)
 > Ton : chaleureux, simple, vouvoiement. Phrases courtes. Aucune promesse invérifiable.
@@ -24,6 +25,8 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 
 ## 3. Accroche
 
+**Surtitre :** Fleuriste à Nantes
+
 **Titre :** Des fleurs de saison, cueillies près de chez vous
 
 **Sous-titre :** Pistil & Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.
@@ -31,6 +34,8 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 **Boutons :** Commander un bouquet · Voir nos réalisations
 
 **Infos rapides :** Ouvert du mardi au dimanche matin · Livraison dans Nantes et alentours · 2 rue des Glaneuses, Nantes
+
+**Légende de la photo :** Bouquet de saison, papier kraft et raphia
 
 ## 4. Prestations
 
@@ -43,7 +48,7 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 | **Abonnements entreprises** | Des fleurs fraîches à l'accueil ou en salle de réunion, renouvelées chaque semaine ou toutes les deux semaines. | à partir de 25 € / semaine |
 | **Livraison locale** | Livraison du mardi au samedi dans Nantes et les communes voisines, avec un mot écrit à la main. | à partir de 8 € |
 
-## 5. Notre façon de faire (bande courte, optionnelle)
+## 5. Notre façon de faire (bande courte)
 
 - **De saison :** pas de roses en janvier. Ce qui pousse en ce moment, au meilleur de sa forme.
 - **D'ici :** la plupart de nos fleurs viennent de producteurs de Loire-Atlantique et de l'Anjou.
