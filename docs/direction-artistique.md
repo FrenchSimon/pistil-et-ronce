@@ -78,7 +78,7 @@ Règles :
 
 ## Logo et favicon
 
-- **Logo** : « Pistil & Ronce » en Cormorant 600 30 px, esperluette italique pivoine ; dessous la branche de ronce (SVG A, 176 × 23 px, trait sapin) ; dessous « Fleuriste · Nantes » en Karla 600 10 px, capitales, +0,32 em, sapin doux. Sur fond sapin, tout en papier.
+- **Logo** : « Pistil & Ronce » en Cormorant 600 30 px, esperluette italique pivoine ; dessous la branche de ronce (SVG A, 176 × 23 px, trait sapin) ; dessous « Fleuriste · Nantes » en Karla 600 10 px, capitales, +0,32 em, sapin doux, centré sur la largeur du logo. Sur fond sapin, tout en papier.
 - **Favicon** : l'esperluette italique, papier sur un carré sapin aux coins arrondis (12 px à 64 px, 6 px à 32 px, 3 px à 16 px).
 - **Fichiers vectorisés** dans `contenu/logo/` (tracés tirés des polices OFL, aucune police à charger) : `logo.svg` (complet), `logo-papier.svg` (sur fond sapin), `mot-symbole.svg` (le nom seul), `favicon.svg`. Dans le site, le logo est un SVG en ligne avec `role="img"` et `aria-label="Pistil & Ronce, fleuriste à Nantes"`.
 
