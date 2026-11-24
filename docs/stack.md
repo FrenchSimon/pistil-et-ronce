@@ -46,10 +46,10 @@ CSS natif, un seul petit script pour le formulaire, images optimisées au build,
 
 **Proposition : un script Node maison, reproductible et versionné** (`scripts/plan/`), lancé une fois à la main, pas à chaque build :
 
-1. Extraction unique des données OpenStreetMap d'un quartier du centre de Nantes (API Overpass), enregistrée dans le dépôt (`scripts/plan/donnees.json`).
+1. Extraction unique des données OpenStreetMap d'un quartier du centre de Nantes (API Overpass), enregistrée dans le dépôt (`scripts/plan/donnees.json`, `npm run plan:extraire`).
 2. Conversion en GeoJSON par une fonction maison d'une trentaine de lignes (on n'a besoin que des rues, îlots, eau et parcs), projection et tracé en SVG (`d3-geo`), avec les couleurs exactes de la DA : fond papier, îlots lin, rues papier clair, eau et parcs en gris verdi, quelques noms de rues en Karla sapin doux.
-3. Conversion du SVG en image haute définition avec Chromium headless (Playwright, qui sert aussi aux captures des PR et à la recette responsive), pour que les noms de rues utilisent bien la police Karla.
-4. L'image va dans `src/assets/` et passe par le même pipeline AVIF/WebP. Le repère pivoine (SVG G) est posé par-dessus en HTML, la légende « Plan illustratif, adresse fictive. » et « © contributeurs OpenStreetMap » sont en texte.
+3. Conversion du SVG en image haute définition avec Chrome headless (Playwright, qui sert aussi aux captures des PR et à la recette responsive), pour que les noms de rues utilisent bien la police Karla (`npm run plan`). Le Chromium fourni par Playwright n'est plus pris en charge sur macOS 12 : le script utilise le Chrome installé (`channel: 'chrome'`).
+4. L'image va dans `src/assets/plan/` et passe par le même pipeline AVIF/WebP. Le repère pivoine (SVG G) est posé par-dessus en HTML, à une position écrite par le script dans `src/assets/plan/repere.css` (un attribut `style` serait bloqué par la CSP), la légende « Plan illustratif, adresse fictive. » et « © contributeurs OpenStreetMap » sont en texte.
 
 `d3-geo` et Playwright sont des dépendances de développement : rien n'arrive dans le site servi.
 
