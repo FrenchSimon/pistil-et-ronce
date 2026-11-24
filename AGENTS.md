@@ -42,6 +42,12 @@ Site vitrine **one page** d'une fleuriste **fictive** à Nantes, démo du portfo
 - Créer des branches et commiter **en local sans me demander**. **Ne jamais pousser sans que je le demande.**
 - Fusion dans `main` uniquement par **pull request**, **après mon accord**. La PR dit ce qui change, comment le vérifier, avec des captures pour le visuel.
 - **Ne jamais supprimer une branche** (locale ou distante) sans mon accord, même après une fusion : pas de `--delete-branch`. Proposer le nettoyage et attendre ma réponse.
+- **Le dépôt est public et sert de vitrine pour des clients potentiels :** il doit rester propre et lisible.
+  - Le `README` présente le projet : but, stack, captures, lien vers la démo.
+  - Les messages de commit et les descriptions de PR sont soignés.
+  - Aucun fichier temporaire, brouillon ou capture de test n'est versionné.
+  - Pas de code commenté ni de `TODO` oublié.
+  - Les branches fusionnées sont supprimées, après mon accord.
 
 ## Sécurité
 
