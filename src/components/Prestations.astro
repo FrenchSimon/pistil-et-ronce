@@ -145,6 +145,21 @@ const prestations: Prestation[] = [
     background: var(--papier);
   }
 
+  /* Branche agrandie (×1,3) qui entre par le coin bas gauche ; la fleur reste toujours entière en haut à droite */
+  .carte__decor {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carte__decor :global(svg) {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    width: 338px;
+    max-width: none;
+    height: auto;
+  }
+
   .carte__corps {
     display: flex;
     flex: 1;
