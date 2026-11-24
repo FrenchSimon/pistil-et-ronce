@@ -194,13 +194,15 @@ const liens = [
     background: var(--papier);
     color: var(--sapin);
     overflow-y: auto;
+    /* Mise en page portée par le panneau, et non par l'état ouvert : elle
+       reste en place pendant le fondu de fermeture (animations.css). */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--pas-4);
   }
 
   .nav__panneau:popover-open {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--pas-4);
   }
 
   /* Bandeau démo repris en haut du menu mobile ; le bouton de fermeture
