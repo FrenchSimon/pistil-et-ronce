@@ -22,7 +22,10 @@ const requete = `
   way["waterway"="riverbank"];
   way["leisure"~"^(park|garden)$"];
   relation["leisure"="park"];
-  way["landuse"="grass"];
+  way["landuse"~"^(grass|forest|meadow|village_green)$"];
+  relation["landuse"~"^(grass|forest)$"];
+  way["natural"~"^(wood|scrub|grassland)$"];
+  relation["natural"="wood"];
 );
 out geom;
 `;

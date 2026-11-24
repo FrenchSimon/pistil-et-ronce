@@ -21,13 +21,13 @@ const DENSITE = 2;
 const REPERE = [-1.5538, 47.2161];
 const ARRET = { nom: 'Commerce', position: [-1.55577, 47.21412] };
 
-/* Couleurs de la DA ; parcs en sauge fondue dans le papier, eau en bleu-gris pâle (couleur réservée au plan) */
+/* Couleurs de la DA ; pelouses, parcs et bois en vert tendre, eau en bleu-gris pâle (couleurs réservées au plan) */
 const COULEURS = {
   fond: '#F4EFE6',
   ilot: '#E6DECF',
   rue: '#FBF8F2',
   eau: '#BFD3DA',
-  parc: '#DADCCD',
+  parc: '#C8D7B0',
   tram: '#8A9A7B',
   texte: '#4A5F53',
   arret: '#1F3A2E',
@@ -103,7 +103,7 @@ for (const element of elements) {
   const geometrie = element.geometrie;
   if (tags.tunnel && tags.tunnel !== 'no') continue;
   if (tags.natural === 'water' || tags.waterway === 'riverbank') couches.eau.push(tracer(polygone([geometrie])));
-  else if (tags.leisure || tags.landuse === 'grass') couches.parc.push(tracer(polygone([geometrie])));
+  else if (tags.leisure || tags.landuse || ['wood', 'scrub', 'grassland'].includes(tags.natural)) couches.parc.push(tracer(polygone([geometrie])));
   else if (tags.building) couches.ilot.push(tracer(polygone([geometrie])));
   else if (tags.railway === 'tram') couches.tram.push(tracer(ligne(geometrie)));
   else if (tags.highway) {
