@@ -1,0 +1,212 @@
+---
+import { Picture } from 'astro:assets';
+import FlecheSortante from './FlecheSortante.astro';
+import plan from '../assets/plan/plan-nantes.png';
+import '../assets/plan/repere.css';
+
+/* Textes de docs/textes.md § 8 ; une plage horaire ne se coupe jamais en fin de ligne */
+const horaires = [
+  { jour: 'Lundi', plages: ['Fermé'] },
+  { jour: 'Mardi – vendredi', plages: ['9 h 30 – 13 h', '14 h 30 – 19 h'] },
+  { jour: 'Samedi', plages: ['9 h – 19 h'] },
+  { jour: 'Dimanche', plages: ['9 h – 13 h'] },
+];
+---
+
+<section id="nous-trouver" class="nous-trouver" aria-labelledby="nous-trouver-titre">
+  <div class="conteneur nous-trouver__colonnes">
+    <div class="nous-trouver__infos">
+      <h2 id="nous-trouver-titre">Nous trouver</h2>
+
+      <div class="nous-trouver__bloc">
+        <p class="etiquette">Adresse</p>
+        <address>2 rue des Glaneuses, 44000&nbsp;Nantes</address>
+      </div>
+
+      <table class="horaires">
+        <caption class="etiquette">Horaires</caption>
+        <thead class="visuellement-masque">
+          <tr>
+            <th scope="col">Jour</th>
+            <th scope="col">Horaires</th>
+          </tr>
+        </thead>
+        <tbody>
+          {horaires.map(({ jour, plages }) => (
+            <tr>
+              <th scope="row">{jour}</th>
+              <td>
+                {plages.map((plage, index) => (
+                  <Fragment>{index > 0 && ' · '}<span class="plage">{plage}</span></Fragment>
+                ))}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div class="nous-trouver__bloc">
+        <p class="etiquette">Accès</p>
+        <p>Tram ligne 1, arrêt Commerce, puis 5&nbsp;min à pied.</p>
+      </div>
+    </div>
+
+    <figure class="plan">
+      <div class="plan__cadre">
+        <Picture
+          src={plan}
+          formats={['avif', 'webp']}
+          widths={[480, 720, 960, 1280, 1920]}
+          sizes="(min-width: 1440px) 760px, (min-width: 900px) 55vw, calc(100vw - 40px)"
+          width={960}
+          alt="Plan d'accès : 2 rue des Glaneuses, 44000 Nantes"
+          class="plan__image"
+        />
+        <svg class="plan__repere" width="40" height="52" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50 C20 50 4 30 4 19 A16 16 0 0 1 36 19 C36 30 20 50 20 50 Z" fill="currentColor"></path><circle cx="20" cy="19" r="6" fill="var(--papier)"></circle></svg>
+      </div>
+      <figcaption class="plan__legende">
+        <span>Plan illustratif, adresse fictive.</span>
+        <a class="plan__source" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© contributeurs OpenStreetMap<FlecheSortante /><span class="visuellement-masque"> (nouvel onglet)</span></a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .nous-trouver {
+    padding-block: var(--espace-section);
+  }
+
+  .nous-trouver__colonnes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pas-5) clamp(32px, 6vw, 96px);
+  }
+
+  .nous-trouver__infos {
+    flex: 1 1 320px;
+    max-width: 460px;
+  }
+
+  h2 {
+    font-size: clamp(32px, 3vw, 40px);
+    line-height: 1.1;
+  }
+
+  .nous-trouver__bloc {
+    margin-top: var(--pas-4);
+  }
+
+  .etiquette {
+    margin-bottom: 6px;
+    color: var(--sapin-doux);
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  /* Horaires : vrai tableau, jours en en-têtes de ligne, filets lin */
+  .horaires {
+    width: 100%;
+    margin-top: var(--pas-4);
+    border-collapse: collapse;
+  }
+
+  caption {
+    text-align: left;
+  }
+
+  .horaires th,
+  .horaires td {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--lin);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .horaires tbody tr:first-child > * {
+    border-top: 1px solid var(--lin);
+  }
+
+  .horaires th {
+    padding-right: var(--pas-2);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .horaires td {
+    text-align: right;
+  }
+
+  .plage {
+    white-space: nowrap;
+  }
+
+  /* Plan : image statique, 420 px de haut au moins. Le repère et le point de recadrage de l'image
+     coïncident (variables de repere.css) : il reste en place quand le plan est rogné. */
+  .plan {
+    flex: 1.4 1 420px;
+    min-width: 0;
+  }
+
+  .plan__cadre {
+    position: relative;
+    /* Largeur explicite : sinon min-height élargirait le cadre via aspect-ratio */
+    width: 100%;
+    min-height: 420px;
+    aspect-ratio: 6 / 5;
+    overflow: hidden;
+    border: 1px solid var(--lin);
+  }
+
+  .plan__cadre :global(.plan__image) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--repere-x) var(--repere-y);
+  }
+
+  /* La pointe du repère (en bas, au centre) tombe sur le point */
+  .plan__repere {
+    position: absolute;
+    top: var(--repere-y);
+    left: var(--repere-x);
+    color: var(--pivoine);
+    transform: translate(-50%, -96%);
+  }
+
+  .plan__legende {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px var(--pas-2);
+    margin-top: 12px;
+    color: var(--sapin-doux);
+    font-family: var(--police-titre);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .plan__source {
+    display: inline-block;
+    min-height: 24px;
+    font-family: var(--police-texte);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-underline-offset: 3px;
+  }
+
+  .plan__source:hover {
+    color: var(--sapin);
+    text-decoration-thickness: 2px;
+  }
+</style>
