@@ -9,7 +9,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
-| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations et avis validés le 24/11 ; horaires et plan en revue) |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations, avis, horaires et plan validés le 24/11 ; contact en revue) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
