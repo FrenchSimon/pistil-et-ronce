@@ -29,7 +29,7 @@ CSS natif, un seul petit script pour le formulaire, images optimisées au build,
 |---|---|---|
 | Framework | `astro` 7.4 (version figée dans `package-lock.json`) | Aucune intégration UI (pas de React, Vue…). |
 | CSS | CSS natif : variables de la direction artistique dans un fichier global, styles par composant | Pas de Tailwind ni de préprocesseur : une dépendance de moins, et les variables `--papier`, `--sapin`, `--pivoine`… restent celles de la DA. |
-| Polices | Cormorant Garamond et Karla en WOFF2, sous-ensemble latin, auto-hébergées, `font-display: swap` | Via l'API de polices d'Astro si elle est stable en v7 (à vérifier dans la doc à la réalisation), sinon fichiers Fontsource copiés dans le projet. Préchargement de la seule police de l'accroche. |
+| Polices | Cormorant Garamond et Karla en WOFF2, sous-ensemble latin, auto-hébergées, `font-display: swap` | Fichiers Fontsource 5.3.0 copiés dans `src/assets/fonts/` (7 fichiers, licences OFL jointes), `@font-face` écrits dans `src/styles/polices.css`. L'API de polices d'Astro est stable, mais son composant `<Font>` écrit un `<style>` en ligne, bloqué par la CSP (vérifié le 24/11). Préchargement de la seule police de l'accroche. |
 | JavaScript | Un seul petit script pour le formulaire (validation, message de démo en `aria-live`), uniquement `textContent`, jamais `innerHTML` | Le reste du site fonctionne sans JS. |
 | Contrôle | `astro check` et `npm audit` avant chaque PR | Recette (étape 6) avec Lighthouse et axe. |
 
@@ -86,7 +86,7 @@ Ce que la stack apporte pour chaque exigence d'`AGENTS.md`, et les pièges repé
 
 - **Zéro JS par défaut**, sauf le petit script du formulaire : très bon INP.
 - **Images :** AVIF/WebP en plusieurs tailles, `width`/`height` écrits (CLS nul), image de l'accroche prioritaire (`fetchpriority="high"`), les autres différées.
-- **Polices :** WOFF2 latin, `font-display: swap`, préchargement de la police de l'accroche seulement. À vérifier : le sous-ensemble latin doit contenir « œ » et les guillemets français.
+- **Polices :** WOFF2 latin, `font-display: swap`, préchargement de la police de l'accroche seulement. Le sous-ensemble latin contient « œ », les guillemets français et les espaces fines (plage `unicode-range` vérifiée le 24/11).
 - **Coût du CSS en fichiers (pour la CSP) :** une requête bloquante de plus, de quelques Ko, sans effet notable avec HTTP/2.
 - **Cache :** les fichiers de `/_astro/` ont une empreinte dans leur nom, donc `Cache-Control: public, max-age=31536000, immutable` dans `vercel.json`.
 
@@ -129,6 +129,6 @@ Le point fort : on passe du statique au rendu hybride page par page, sans rééc
 - Vercel, sortie statique (`dist/`), sans adaptateur ni fonction serveur. Version de Node fixée dans `package.json` (`engines`).
 - Prévisualisation sur chaque PR, production sur `main` (étape 7).
 
-## Blocage à lever avant la réalisation
+## Blocage levé avant la réalisation
 
-- **Node local en 22.23.3, Astro 7 demande au moins 22.23.4.** Mettre Node à jour (Node 24 LTS, voir « Maintenance ») avant de créer le projet. Aucun gestionnaire de versions (nvm, fnm, Volta) n'est installé : mise à jour par l'installeur officiel ou `brew`, à ton choix.
+- **Node local en 22.23.3, Astro 7 demande au moins 22.23.4.** Levé le 24/11 : Node 24.22.3 était déjà installé avec nvm ; le projet le fixe dans `.nvmrc` et `package.json` (`engines`), sans changer la version par défaut de la machine.

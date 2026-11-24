@@ -1,0 +1,247 @@
+---
+import Logo from '../../contenu/logo/logo.svg';
+import BandeauDemo from './BandeauDemo.astro';
+
+const liens = [
+  { href: '#prestations', texte: 'Prestations' },
+  { href: '#realisations', texte: 'Réalisations' },
+  { href: '#avis', texte: 'Avis' },
+  { href: '#nous-trouver', texte: 'Nous trouver' },
+];
+---
+
+<header class="en-tete">
+  <BandeauDemo />
+  <div class="en-tete__barre conteneur">
+    <a class="en-tete__logo" href="#accroche">
+      <Logo aria-label="Pistil & Ronce, fleuriste à Nantes" />
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <button class="nav__ouvrir" type="button" popovertarget="menu">
+        <span class="nav__traits" aria-hidden="true"></span>
+        <span class="visuellement-masque">Menu</span>
+      </button>
+
+      <div class="nav__panneau" id="menu" popover>
+        <button class="nav__fermer" type="button" popovertarget="menu" popovertargetaction="hide">
+          <span class="nav__croix" aria-hidden="true"></span>
+          <span class="visuellement-masque">Fermer le menu</span>
+        </button>
+        <ul class="nav__liens liste-nue">
+          {liens.map(({ href, texte }) => (
+            <li><a class="nav__lien" href={href}>{texte}</a></li>
+          ))}
+        </ul>
+        <a class="bouton-secondaire nav__commander" href="#contact">Commander</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const panneau = document.getElementById('menu');
+  const boutonMenu = document.querySelector('.nav__ouvrir');
+  const bureau = window.matchMedia('(min-width: 900px)');
+
+  if (panneau && boutonMenu && 'hidePopover' in panneau) {
+    // État annoncé aux lecteurs d'écran, quel que soit le support natif du navigateur.
+    boutonMenu.setAttribute('aria-expanded', 'false');
+    panneau.addEventListener('toggle', (evenement) => {
+      const ouvert = (evenement as ToggleEvent).newState === 'open';
+      boutonMenu.setAttribute('aria-expanded', String(ouvert));
+    });
+
+    // Un lien suivi ferme le menu mobile ; le menu se ferme aussi au passage en bureau.
+    panneau.addEventListener('click', (evenement) => {
+      if (evenement.target instanceof Element && evenement.target.closest('a')) {
+        panneau.hidePopover();
+      }
+    });
+    bureau.addEventListener('change', () => {
+      if (bureau.matches && panneau.matches(':popover-open')) {
+        panneau.hidePopover();
+      }
+    });
+  }
+</script>
+
+<style>
+  .en-tete {
+    border-bottom: 1px solid var(--lin);
+  }
+
+  .en-tete__barre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pas-3);
+    min-height: 92px;
+  }
+
+  .en-tete__logo {
+    display: block;
+    flex-shrink: 0;
+    color: var(--sapin);
+  }
+
+  .en-tete__logo :global(svg) {
+    width: 178px;
+    height: auto;
+  }
+
+  /* Liens du menu : sapin, survol pivoine souligné */
+
+  .nav__lien {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--sapin);
+    font-weight: 600;
+    text-decoration: none;
+    text-underline-offset: 6px;
+  }
+
+  .nav__lien:hover {
+    color: var(--pivoine);
+    text-decoration: underline;
+  }
+
+  /* Boutons d'ouverture et de fermeture du menu mobile : 48 × 48, rayon feuille */
+
+  .nav__ouvrir,
+  .nav__fermer {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--sapin);
+    border-radius: 0 24px 0 24px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav__traits,
+  .nav__traits::before,
+  .nav__traits::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--sapin);
+  }
+
+  .nav__traits {
+    position: relative;
+  }
+
+  .nav__traits::before,
+  .nav__traits::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .nav__traits::before {
+    top: -6px;
+  }
+
+  .nav__traits::after {
+    top: 6px;
+  }
+
+  .nav__croix {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav__croix::before,
+  .nav__croix::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: var(--sapin);
+    transform: rotate(45deg);
+  }
+
+  .nav__croix::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Mobile : panneau plein écran ouvert par le bouton menu (API Popover, sans script) */
+
+  .nav__panneau {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 22px var(--marge-laterale) var(--pas-5);
+    border: 0;
+    background: var(--papier);
+    color: var(--sapin);
+    overflow-y: auto;
+  }
+
+  .nav__panneau:popover-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--pas-4);
+  }
+
+  .nav__fermer {
+    align-self: flex-end;
+  }
+
+  .nav__panneau .nav__liens {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pas-1);
+  }
+
+  .nav__panneau .nav__lien {
+    font-family: var(--police-titre);
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  /* Bureau : menu en ligne, boutons du menu mobile masqués */
+
+  @media (min-width: 900px) {
+    .nav__ouvrir,
+    .nav__fermer {
+      display: none;
+    }
+
+    .nav__panneau,
+    .nav__panneau:popover-open {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--pas-4);
+      width: auto;
+      height: auto;
+      padding: 0;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .nav__panneau .nav__liens {
+      flex-direction: row;
+      gap: var(--pas-4);
+    }
+
+    .nav__panneau .nav__lien {
+      font-family: var(--police-texte);
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
+---
+
+<footer class="pied">
+  <div class="pied__haut conteneur">
+    <div class="pied__marque">
+      <p class="pied__nom">Pistil <span class="pied__esperluette">&amp;</span> Ronce</p>
+      <p>Fleuriste à Nantes</p>
+    </div>
+    <ul class="pied__liens liste-nue">
+      <li><a href="/mentions-legales/#mentions-legales">Mentions légales</a></li>
+      <li><a href="/mentions-legales/#confidentialite">Confidentialité</a></li>
+    </ul>
+  </div>
+  <div class="conteneur">
+    <p class="pied__bas">Démo réalisée par Simon Dabin — boutique fictive.</p>
+  </div>
+  <BrancheGravee class="pied__branche" aria-hidden="true" />
+</footer>
+
+<style>
+  .pied {
+    --focus: var(--papier);
+    position: relative;
+    overflow: hidden;
+    padding-block: var(--pas-5) var(--pas-4);
+    background: var(--sapin);
+    color: var(--papier);
+  }
+
+  .pied__haut {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--pas-3) var(--pas-5);
+    padding-bottom: var(--pas-4);
+  }
+
+  .pied__nom {
+    font-family: var(--police-titre);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+
+  .pied__esperluette {
+    font-style: italic;
+  }
+
+  .pied__marque p:last-child {
+    margin-top: var(--pas-1);
+  }
+
+  .pied__liens {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pas-1) 12px;
+  }
+
+  .pied__liens li + li::before {
+    content: '·' / '';
+    margin-right: 12px;
+  }
+
+  .pied a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-underline-offset: 6px;
+  }
+
+  .pied a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .pied__bas {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--pas-3);
+    border-top: 1px solid var(--sapin-doux);
+    font-size: 15px;
+  }
+
+  .pied__branche {
+    position: absolute;
+    right: -60px;
+    bottom: -70px;
+    width: 640px;
+    height: 200px;
+    max-width: none;
+    pointer-events: none;
+  }
+
+  /* Mobile : branche réduite, sous le texte et sans le recouvrir */
+  @media (max-width: 899.98px) {
+    .pied {
+      padding-bottom: 150px;
+    }
+
+    .pied__branche {
+      right: -40px;
+      bottom: -20px;
+      width: 420px;
+      height: 131px;
+    }
+  }
+</style>
