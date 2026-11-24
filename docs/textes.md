@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.7 — 2026-11-25 · Statut : **validé** (v1.7 : appels à l'action sur les cartes de prestation, sous la galerie et dans « Nous trouver »)
 > Version 1.6 — 2026-11-24 · Statut : **validé** (v1.6 : messages d'erreur du formulaire et libellés du calendrier de la date)
 > Version 1.5 — 2026-11-24 · Statut : **validé** (v1.5 : temps d'accès confirmé par l'emplacement du repère sur le plan)
 > Version 1.4 — 2026-11-24 · Statut : **validé** (v1.4 : calendrier des saisons ajouté à « Notre façon de faire », repris de la piste 07 de la DA)
@@ -54,6 +55,8 @@ Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton �
 | **Abonnements entreprises** | Des fleurs fraîches à l'accueil ou en salle de réunion, renouvelées chaque semaine ou toutes les deux semaines. | à partir de 25 € / semaine |
 | **Livraison locale** | Livraison du mardi au samedi dans Nantes et les communes voisines, avec un mot écrit à la main. | à partir de 8 € |
 
+**Liens en bas de chaque carte** (vers le formulaire, avec l'« Objet » présélectionné) : Commander un bouquet *(Bouquet)* · Demander un devis *(Mariage ou événement)* · Demander un devis *(Abonnement entreprise)* · Faire livrer des fleurs *(Bouquet)*
+
 ## 5. Notre façon de faire (bande courte)
 
 - **De saison :** pas de roses en janvier. Ce qui pousse en ce moment, au meilleur de sa forme.
@@ -88,6 +91,8 @@ Légendes et textes alternatifs (adaptés aux photos le 24/11, voir `photos.md`)
 7. Couronne de l'Avent en branches de sapin, avec ses bougies rouges
 8. L'atelier, un matin d'arrivage
 
+**Sous la galerie :** Un mariage, un événement ? Imaginons votre décor ensemble. · **Demander un devis** (bouton → formulaire, Objet « Mariage ou événement »)
+
 ## 7. Avis
 
 **Titre :** Ils nous ont fait confiance
@@ -116,6 +121,8 @@ Lien sous la mention : Lire tous nos avis sur Google ↗ *(fictif, lien désacti
 | Dimanche | 9 h – 13 h |
 
 Accès : tram ligne 1, arrêt Commerce, puis 5 min à pied.
+
+Lien sous l'accès : **Appeler la boutique** (lien `tel:`, numéro lu par les lecteurs d'écran)
 
 Plan : carte du centre de Nantes avec un repère (sans adresse réelle), à environ 350 m de l'arrêt Commerce.
 

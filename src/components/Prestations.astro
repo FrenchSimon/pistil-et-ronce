@@ -11,6 +11,9 @@ interface Prestation {
   texte: string;
   prix: string;
   photo?: ImageMetadata;
+  /* Appel à l'action vers le formulaire, avec l'« Objet » à présélectionner */
+  action: string;
+  objet: string;
 }
 
 const prestations: Prestation[] = [
@@ -19,6 +22,8 @@ const prestations: Prestation[] = [
     texte:
       'Composés chaque matin selon les arrivages. À emporter en boutique ou à commander la veille.',
     prix: 'à partir de 30\u00a0€',
+    action: 'Commander un bouquet',
+    objet: 'Bouquet',
     photo: bouquets,
   },
   {
@@ -26,6 +31,8 @@ const prestations: Prestation[] = [
     texte:
       'Bouquet de la mariée, boutonnières, centres de table, arche. On se rencontre pour imaginer ensemble votre décor.',
     prix: 'sur devis',
+    action: 'Demander un devis',
+    objet: 'Mariage ou événement',
     photo: mariages,
   },
   {
@@ -33,6 +40,8 @@ const prestations: Prestation[] = [
     texte:
       "Des fleurs fraîches à l'accueil ou en salle de réunion, renouvelées chaque semaine ou toutes les deux semaines.",
     prix: 'à partir de 25\u00a0€\u00a0/ semaine',
+    action: 'Demander un devis',
+    objet: 'Abonnement entreprise',
     photo: abonnements,
   },
   {
@@ -40,6 +49,8 @@ const prestations: Prestation[] = [
     texte:
       'Livraison du mardi au samedi dans Nantes et les communes voisines, avec un mot écrit à la main.',
     prix: 'à partir de 8\u00a0€',
+    action: 'Faire livrer des fleurs',
+    objet: 'Bouquet',
   },
 ];
 ---
@@ -49,7 +60,7 @@ const prestations: Prestation[] = [
     <h2 id="prestations-titre">Ce que nous faisons</h2>
 
     <ul class="prestations__grille liste-nue">
-      {prestations.map(({ titre, texte, prix, photo }) => (
+      {prestations.map(({ titre, texte, prix, photo, action, objet }) => (
         <li class="carte">
           {photo ? (
             <Picture
@@ -72,6 +83,7 @@ const prestations: Prestation[] = [
             <h3>{titre}</h3>
             <p>{texte}</p>
             <p class="carte__prix etiquette">{prix}</p>
+            <a class="lien-action carte__action" href="#contact" data-objet={objet}>{action}</a>
           </div>
         </li>
       ))}
@@ -172,6 +184,11 @@ const prestations: Prestation[] = [
     margin-top: auto;
     padding-top: var(--pas-2);
     border-top: 1px solid var(--lin);
+  }
+
+  .carte__action {
+    align-self: flex-start;
+    margin-top: var(--pas-1);
   }
 
   .carte__corps p:not(.carte__prix) {
