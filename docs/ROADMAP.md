@@ -47,8 +47,9 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 7. [x] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
 8. [x] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
 9. [ ] **Mentions légales et confidentialité.**
-10. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
-11. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
+10. [ ] **Page 404 :** `src/pages/404.astro`, servie par Vercel pour toute adresse inconnue ; bandeau démo, en-tête, pied de page et `noindex` comme les autres pages ; message court et lien de retour à l'accueil (texte à ajouter dans `textes.md` et à valider).
+11. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
+12. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
 
 Une PR par lot cohérent (socle, sections, finitions), sans captures : elles restent en local.
 
