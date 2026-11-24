@@ -4,7 +4,7 @@ import type { ImageMetadata } from 'astro';
 import bouquets from '../../contenu/photos/prestation-bouquets-du-jour.jpg';
 import mariages from '../../contenu/photos/prestation-mariages.jpg';
 import abonnements from '../../contenu/photos/prestation-abonnements.jpg';
-import Branche from '../assets/deco/branche-livraison.svg';
+import Velo from '../assets/deco/velo-livraison.svg';
 
 interface Prestation {
   titre: string;
@@ -65,7 +65,7 @@ const prestations: Prestation[] = [
             />
           ) : (
             <div class="carte__decor" aria-hidden="true">
-              <Branche />
+              <Velo />
             </div>
           )}
           <div class="carte__corps">
@@ -145,19 +145,10 @@ const prestations: Prestation[] = [
     background: var(--papier);
   }
 
-  /* Branche agrandie (×1,3) qui entre par le coin bas gauche ; la fleur reste toujours entière en haut à droite */
-  .carte__decor {
-    position: relative;
-    overflow: hidden;
-  }
-
+  /* Vélo fleuri au format du bloc (300 × 240), réduit sans déformation sur les cartes étroites */
   .carte__decor :global(svg) {
-    position: absolute;
-    top: 14px;
-    right: 24px;
-    width: 338px;
-    max-width: none;
-    height: auto;
+    width: 100%;
+    height: 100%;
   }
 
   .carte__corps {
