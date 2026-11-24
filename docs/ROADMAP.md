@@ -47,7 +47,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 7. [x] **Horaires et plan :** horaires en texte, adresse en texte, carte sans piège clavier.
 8. [x] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
 9. [x] **Mentions légales et confidentialité.**
-10. [ ] **Page 404 :** `src/pages/404.astro`, servie par Vercel pour toute adresse inconnue ; bandeau démo, en-tête, pied de page et `noindex` comme les autres pages ; message court et lien de retour à l'accueil (texte à ajouter dans `textes.md` et à valider).
+10. [x] **Page 404 :** `src/pages/404.astro`, servie par Vercel pour toute adresse inconnue ; bandeau démo, en-tête, pied de page et `noindex` comme les autres pages ; illustration de fleur fanée, message court et bouton de retour à l'accueil (textes au § 12 de `textes.md`).
 11. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
 12. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
 
