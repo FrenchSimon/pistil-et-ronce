@@ -71,7 +71,7 @@ Règles :
 
 - Conteneur : `max-width: 1440px`, marges latérales `clamp(20px, 5.5vw, 80px)`.
 - Pas : 8 · 16 · 24 · 32 · 56 · 80 px. Sections : `padding-block: clamp(56px, 7vw, 96px)`.
-- Grilles de cartes : `repeat(auto-fit, minmax(250px, 1fr))`, gouttière 24 px.
+- Grilles de cartes : `repeat(auto-fit, minmax(250px, 1fr))`, gouttière 24 px. Exception, les 4 cartes de prestation : 1 colonne, 2 dès 600 px, 4 dès 1 150 px (`auto-fit` laissait une carte seule sur sa ligne vers 1 000 px).
 - Point de rupture unique : **900 px** (menu replié, décor d'accroche masqué, galerie en 2 colonnes).
 
 ## Logo et favicon
@@ -118,7 +118,7 @@ Fond papier clair, filet lin, angles droits ; photo 240 px de haut en `object-fi
 2. **Bandeau démo** : fond sapin, Karla 13 px papier, centré, padding 9 / 16 px ; texte de `textes.md` § 0, lien « Voir le code » vers https://github.com/FrenchSimon/pistil-et-ronce (`rel="noopener noreferrer"`). Sur mobile, sur deux lignes.
 3. **En-tête** : filet lin en bas, hauteur 92 px ; logo à gauche (lien vers le haut de page) ; à droite le menu (Prestations, Réalisations, Avis, Nous trouver ; `gap: 32px`) puis le bouton secondaire « Commander » → `#contact`. Sous 900 px : liens et bouton masqués, bouton menu 48 × 48 (bord sapin, rayon feuille 24 px, trois traits) qui doit ouvrir un vrai menu (`aria-expanded`) ; le bandeau démo reste visible en haut du menu ouvert.
 4. **Accroche** (`#accroche`) : deux colonnes en `flex-wrap` (texte `flex: 1 1 460px`, max 640 px ; photo `flex: 1 1 360px`, max 600 px), écart `clamp(32px, 7vw, 112px)`. Texte : surtitre « Fleuriste à Nantes » (`textes.md` § 3), h1, chapeau, boutons (principal « Commander un bouquet » → `#contact`, lien d'action « Voir nos réalisations » → `#realisations`), puis les 3 infos rapides en grille sous un filet lin, chacune avec une petite étiquette (Horaires, Livraison, Boutique). Photo : `accroche-bouquet-kraft.jpg` dans un passe-partout papier clair de 14 px, filet lin, ombre cadre, au format 4:3 de l'original pour ne pas rogner le bouquet (`aspect-ratio: 4 / 3`), image LCP non différée ; légende sous la photo en Cormorant italique 17 sapin doux : « Bouquet de saison » / « papier kraft et raphia » (`textes.md` § 3). Décor : SVG F derrière l'en-tête et l'accroche (1440 × 900, positionné en haut à gauche, masqué sous 900 px).
-5. **Ce que nous faisons** (`#prestations`) : h2, puis 4 cartes (bouquets du jour, mariages et événements, abonnements entreprises, livraison locale) avec les photos `prestation-*.jpg`.
+5. **Ce que nous faisons** (`#prestations`) : h2, puis 4 cartes (bouquets du jour, mariages et événements, abonnements entreprises, livraison locale) avec les photos `prestation-*.jpg`. Section pleine largeur sur fond papier opaque : elle passe devant le bas du décor F, qui ne tombe plus sous le titre.
 6. **Notre façon de faire** : bande papier clair entre deux filets lin ; h2 ; 3 points en puces feuille sur 3 colonnes (`auto-fit, minmax(240px, 1fr)`), le début en gras en Cormorant 600 22 px sur sa propre ligne (« De saison : »), la suite en Karla 17. Section conservée.
 7. Séparateur.
 8. **Quelques réalisations** (`#realisations`) : grille de 3 colonnes (2 sous 900 px), `gap: 40px 24px` ; ordre 1, 2, 3 / 4, 6 (sur 2 colonnes, seule photo en paysage) / 5, 7, 8 ; photos 440 px de haut (260 px sous 900 px), filet lin ; légende cartel. Texte alternatif = légende de `textes.md` § 6. Images différées.
