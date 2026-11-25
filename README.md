@@ -51,7 +51,7 @@ npm run photos   # étalonne les photos de contenu/photos/ vers src/assets/photo
 
 ## Droits d'utilisation
 
-© 2026 Simon Dabin. Tous droits réservés.
+© 2026 Simon Dabin. Tous droits réservés, sauf :
 
 - photos : [licence Unsplash](https://unsplash.com/license), auteurs et sources dans `docs/photos.md` ;
 - polices Cormorant Garamond et Karla : licence SIL Open Font License, textes dans `src/assets/fonts/`.
