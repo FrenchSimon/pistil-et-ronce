@@ -135,11 +135,15 @@ const avis: Avis[] = [
     font-weight: 600;
   }
 
-  /* Souligné comme un lien, pour montrer ce qu'il serait sur un vrai site */
+  /* Souligné comme un lien, pour montrer ce qu'il serait sur un vrai site ;
+     même typographie que le lien OpenStreetMap du plan (petites capitales espacées) */
   .avis__google-texte {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 6px;
+    text-underline-offset: 3px;
   }
 
   .etiquette-fictif {
