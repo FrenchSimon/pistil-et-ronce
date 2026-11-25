@@ -1,5 +1,4 @@
 ---
-import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
 import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
 ---
 
@@ -21,7 +20,6 @@ import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
   <div class="conteneur">
     <p class="pied__bas">Démo réalisée par Simon Dabin — boutique fictive.</p>
   </div>
-  <BrancheGravee class="pied__branche" aria-hidden="true" />
 </footer>
 
 <style>
@@ -39,16 +37,12 @@ import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
 
   .pied {
     --focus: var(--papier);
-    position: relative;
-    overflow: hidden;
     padding-block: var(--pas-5) var(--pas-4);
     background: var(--sapin);
     color: var(--papier);
   }
 
   .pied__haut {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -97,34 +91,16 @@ import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
   }
 
   .pied__bas {
-    position: relative;
-    z-index: 1;
     padding-top: var(--pas-3);
     border-top: 1px solid var(--sapin-doux);
     font-size: 15px;
   }
 
-  .pied__branche {
-    position: absolute;
-    right: -60px;
-    bottom: -70px;
-    width: 640px;
-    height: 200px;
-    max-width: none;
-    pointer-events: none;
-  }
-
-  /* Mobile : branche réduite, sous le texte et sans le recouvrir */
+  /* Mobile : place pour le bouton « Revenir en haut » (48 px, à 24 px du bas), qui ne
+     doit pas recouvrir la dernière ligne en fin de page */
   @media (max-width: 899.98px) {
     .pied {
-      padding-bottom: 150px;
-    }
-
-    .pied__branche {
-      right: -40px;
-      bottom: -20px;
-      width: 420px;
-      height: 131px;
+      padding-bottom: 96px;
     }
   }
 </style>
