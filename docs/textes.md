@@ -158,6 +158,7 @@ Message après envoi : *Démo : ce message n'a pas été envoyé. Sur un vrai si
 ## 10. Pied de page
 
 Pistil & Ronce · Fleuriste à Nantes · Mentions légales · Confidentialité
+Réseaux sociaux (icônes sans lien, suivies de « fictifs » ; noms lus par les lecteurs d'écran) : Instagram (fictif) · Facebook (fictif) · Pinterest (fictif)
 Démo réalisée par Simon Dabin — boutique fictive.
 
 ## 11. Mentions légales et confidentialité (page `/mentions-legales/`)
