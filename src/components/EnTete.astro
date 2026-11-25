@@ -1,6 +1,7 @@
 ---
 import Logo from '../../contenu/logo/logo.svg';
 import BandeauDemo from './BandeauDemo.astro';
+import FeuilleBouton from './FeuilleBouton.astro';
 
 const liens = [
   { href: '/#prestations', texte: 'Prestations' },
@@ -36,7 +37,10 @@ const liens = [
             <li><a class="nav__lien" href={href}>{texte}</a></li>
           ))}
         </ul>
-        <a class="bouton-secondaire nav__commander" href="/#contact">Commander</a>
+        <a class="bouton-secondaire nav__commander" href="/#contact">
+          Commander
+          <FeuilleBouton />
+        </a>
       </div>
     </nav>
   </div>
@@ -101,13 +105,14 @@ const liens = [
     min-height: 44px;
     color: var(--sapin);
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: underline transparent;
     text-underline-offset: 6px;
   }
 
+  /* Soulignement présent mais transparent au repos : il apparaît en fondu au survol */
   .nav__lien:hover {
     color: var(--pivoine);
-    text-decoration: underline;
+    text-decoration-color: currentColor;
   }
 
   /* Boutons d'ouverture et de fermeture du menu mobile : 48 × 48, rayon feuille */
@@ -189,13 +194,15 @@ const liens = [
     background: var(--papier);
     color: var(--sapin);
     overflow-y: auto;
+    /* Mise en page portée par le panneau, et non par l'état ouvert : elle
+       reste en place pendant le fondu de fermeture (animations.css). */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--pas-4);
   }
 
   .nav__panneau:popover-open {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--pas-4);
   }
 
   /* Bandeau démo repris en haut du menu mobile ; le bouton de fermeture

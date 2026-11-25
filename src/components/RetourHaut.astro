@@ -1,0 +1,66 @@
+---
+/*
+ * Bouton « Revenir en haut », fixé en bas à droite. Sans script : il apparaît
+ * en fondu après un écran de défilement (animation liée au défilement) ; masqué,
+ * il sort aussi de l'ordre de tabulation. Navigateurs sans cette animation
+ * (Firefox) : toujours affiché.
+ */
+---
+
+<a class="retour-haut" href="#haut">
+  <svg width="16" height="18" viewBox="0 0 16 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16.5V2M2 8l6-6 6 6"></path></svg>
+  <span class="visuellement-masque">Revenir en haut de la page</span>
+</a>
+
+<style>
+  .retour-haut {
+    position: fixed;
+    /* Assez loin des coins arrondis des téléphones et de la barre d'accueil */
+    right: calc(clamp(20px, 3vw, 32px) + env(safe-area-inset-right, 0px));
+    bottom: calc(clamp(24px, 3vw, 32px) + env(safe-area-inset-bottom, 0px));
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--sapin);
+    border-radius: 0 24px 0 24px;
+    background: var(--papier-clair);
+    color: var(--sapin);
+    box-shadow: var(--ombre-cadre);
+  }
+
+  .retour-haut:hover {
+    background: var(--sapin);
+    color: var(--papier);
+  }
+
+  /* Propriétés détaillées, sans le raccourci « animation » (voir animations.css) */
+  @supports (animation-timeline: scroll()) {
+    .retour-haut {
+      animation-name: retour-haut-apparition;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 80vh calc(80vh + 160px);
+    }
+  }
+
+  @keyframes retour-haut-apparition {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @media print {
+    .retour-haut {
+      display: none;
+    }
+  }
+</style>

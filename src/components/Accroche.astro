@@ -1,7 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import photo from '../assets/photos/accroche-bouquet-kraft.jpg';
-import Ronces from '../assets/deco/ronces-accroche.svg';
+import ChampFleuri from '../assets/deco/champ-fleuri-sauge-pivoine-pale.svg';
+import FeuilleBouton from './FeuilleBouton.astro';
 
 const infos = [
   { etiquette: 'Horaires', texte: 'Ouvert du mardi au dimanche matin' },
@@ -10,13 +11,12 @@ const infos = [
 ];
 ---
 
-<div class="accroche__decor" aria-hidden="true">
-  <Ronces />
+<div class="accroche__champ" aria-hidden="true">
+  <ChampFleuri />
 </div>
 
 <section id="accroche" class="accroche conteneur" aria-labelledby="accroche-titre">
   <div class="accroche__texte">
-    <p class="accroche__surtitre">Fleuriste à Nantes</p>
     <h1 id="accroche-titre" class="accroche__titre">
       Des fleurs de saison, <em>cueillies près de chez vous</em>
     </h1>
@@ -28,7 +28,7 @@ const infos = [
     <div class="accroche__actions">
       <a class="bouton-principal" href="#contact">
         Commander un bouquet
-        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M1 6 Q9 -1 17 6 Q9 13 1 6 Z M3 6 H14"></path></svg>
+        <FeuilleBouton />
       </a>
       <a class="lien-action" href="#realisations">Voir nos réalisations</a>
     </div>
@@ -59,24 +59,31 @@ const infos = [
 </section>
 
 <style>
-  /* Décor F : derrière l'en-tête et l'accroche, jamais sous le texte, masqué sous 900 px */
-  .accroche__decor {
+  /* Champ fleuri : posé sur la ligne de flottaison (bas du premier écran), derrière
+     le contenu ; masqué sous 1166 px (tablette et mobile) */
+  .accroche__champ {
     display: none;
   }
 
-  @media (min-width: 900px) {
-    .accroche__decor {
-      display: block;
+  @media (min-width: 1166px) {
+    .accroche__champ {
       position: absolute;
       inset: 0 0 auto;
       z-index: -1;
-      height: 900px;
+      display: flex;
+      align-items: flex-end;
+      height: 100svh;
       overflow: hidden;
       pointer-events: none;
     }
 
-    .accroche__decor :global(svg) {
+    /* Légèrement transparent, pour rester en retrait du contenu */
+    .accroche__champ :global(svg) {
+      flex: none;
+      width: 100%;
       max-width: none;
+      height: auto;
+      opacity: 0.7;
     }
   }
 
@@ -89,19 +96,17 @@ const infos = [
     padding-block: var(--pas-5) var(--espace-section);
   }
 
+  /* Avec le champ fleuri, l'accroche remplit le premier écran : le champ repose sur le
+     haut des prestations. 135 px = hauteur de l'en-tête (bandeau, barre, filet). */
+  @media (min-width: 1166px) {
+    .accroche {
+      min-height: calc(100svh - 135px);
+    }
+  }
+
   .accroche__texte {
     flex: 1 1 460px;
     max-width: 640px;
-  }
-
-  .accroche__surtitre {
-    margin-bottom: var(--pas-2);
-    color: var(--sapin-doux);
-    font-family: var(--police-titre);
-    font-size: 22px;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.3;
   }
 
   .accroche__titre {
@@ -176,5 +181,6 @@ const infos = [
     font-style: italic;
     font-weight: 500;
     line-height: 1.35;
+    text-align: center;
   }
 </style>

@@ -1,0 +1,129 @@
+/*
+ * Animations : discrètes, en CSS seul (aucun script) et réservées aux visiteurs
+ * qui n'ont pas demandé à réduire les animations (prefers-reduced-motion).
+ * Seules l'opacité, les couleurs et transform sont animées : aucun recalcul de
+ * mise en page, donc aucun décalage (CLS). L'accroche n'est jamais masquée,
+ * pour ne pas retarder l'affichage du plus grand élément (LCP).
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --duree-survol: 180ms;
+    --courbe-douce: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  /* Survols : les couleurs et les soulignements changent en fondu */
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition:
+      color var(--duree-survol) ease,
+      background-color var(--duree-survol) ease,
+      border-color var(--duree-survol) ease,
+      text-decoration-color var(--duree-survol) ease,
+      text-decoration-thickness var(--duree-survol) ease;
+  }
+
+  /* La feuille des boutons s'incline, la flèche des liens sortants avance */
+
+  .feuille-bouton,
+  .fleche-sortante {
+    transition: transform 240ms var(--courbe-douce);
+  }
+
+  :is(.bouton-principal, .bouton-secondaire):hover .feuille-bouton {
+    transform: translateX(3px) rotate(-12deg);
+  }
+
+  /* Le lien fictif vers les avis Google n'est pas un lien, mais se comporte comme tel */
+  :is(a, .avis__google-texte):hover .fleche-sortante {
+    transform: translate(2px, -2px);
+  }
+
+  /* Champ fleuri de l'accroche : apparaît en fondu au chargement (purement décoratif) */
+
+  .accroche__champ {
+    animation: fondu 1.2s var(--courbe-douce) both;
+  }
+
+  /* Fenêtres (calendrier des saisons, menu mobile) : fondu à l'ouverture et à la fermeture */
+
+  .calendrier[popover] {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 200ms ease,
+      transform 200ms var(--courbe-douce),
+      overlay 200ms allow-discrete,
+      display 200ms allow-discrete;
+  }
+
+  .calendrier[popover]:popover-open {
+    opacity: 1;
+    transform: none;
+  }
+
+  @starting-style {
+    .calendrier[popover]:popover-open {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  @media (max-width: 899.98px) {
+    .nav__panneau {
+      opacity: 0;
+      transition:
+        opacity 200ms ease,
+        overlay 200ms allow-discrete,
+        display 200ms allow-discrete;
+    }
+
+    .nav__panneau:popover-open {
+      opacity: 1;
+    }
+
+    @starting-style {
+      .nav__panneau:popover-open {
+        opacity: 0;
+      }
+    }
+  }
+
+  /*
+   * Apparition au défilement : les cartes et les photos montent légèrement en
+   * fondu quand elles entrent à l'écran. Navigateurs sans animations liées au
+   * défilement (Firefox) : tout reste simplement affiché.
+   */
+
+  @supports (animation-timeline: view()) {
+    .carte,
+    .facon__points li,
+    .realisation,
+    .avis__carte {
+      /* Propriétés détaillées, sans le raccourci « animation » : le minifieur y
+         rangerait view(), que les navigateurs refusent dans le raccourci. */
+      animation-name: apparition;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+
+@keyframes fondu {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}

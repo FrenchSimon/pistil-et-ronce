@@ -30,9 +30,9 @@ Boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://gi
 
 Prestations · Réalisations · Avis · Nous trouver · **Commander** (bouton → contact)
 
-## 3. Accroche
+Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran) : **Revenir en haut de la page**
 
-**Surtitre :** Fleuriste à Nantes
+## 3. Accroche
 
 **Titre :** Des fleurs de saison, cueillies près de chez vous
 
@@ -156,7 +156,8 @@ Message après envoi : *Démo : ce message n'a pas été envoyé. Sur un vrai si
 ## 10. Pied de page
 
 Pistil & Ronce · Fleuriste à Nantes · Mentions légales · Confidentialité
-Démo réalisée par Simon Dabin — boutique fictive.
+Réseaux sociaux (icônes sans lien, suivies de « fictifs » ; noms lus par les lecteurs d'écran) : Instagram (fictif) · Facebook (fictif) · Pinterest (fictif)
+Site réalisé par Simon Dabin — boutique fictive.
 
 ## 11. Mentions légales et confidentialité (page `/mentions-legales/`)
 

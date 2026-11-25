@@ -51,7 +51,7 @@ const avis: Avis[] = [
 
     {/* Sur un vrai site : lien vers la fiche Google, en nouvel onglet. Ici la fiche n'existe pas, donc texte simple. */}
     <p class="avis__google">
-      <span>Lire tous nos avis sur Google<FlecheSortante /></span>
+      <span class="avis__google-texte">Lire tous nos avis sur Google<FlecheSortante /></span>
       <span class="etiquette-fictif">fictif</span>
     </p>
   </div>
@@ -133,6 +133,18 @@ const avis: Avis[] = [
     gap: 4px 10px;
     margin-top: var(--pas-2);
     font-weight: 600;
+  }
+
+  /* Souligné comme un lien, pour montrer ce qu'il serait sur un vrai site ;
+     même typographie que le lien OpenStreetMap du plan (petites capitales espacées) */
+  .avis__google-texte {
+    color: var(--sapin-doux);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
 
   .etiquette-fictif {

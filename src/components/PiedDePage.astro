@@ -1,12 +1,34 @@
 ---
-import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
+import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
 ---
+
+<div class="lisiere" aria-hidden="true">
+  <Lisiere />
+</div>
 
 <footer class="pied">
   <div class="pied__haut conteneur">
     <div class="pied__marque">
       <p class="pied__nom">Pistil <span class="pied__esperluette">&amp;</span> Ronce</p>
       <p>Fleuriste à Nantes</p>
+      {/* Comptes fictifs : icônes sans lien (sur un vrai site, liens vers les comptes en nouvel onglet) */}
+      <div class="reseaux">
+        <ul class="reseaux__liste liste-nue" aria-label="Réseaux sociaux">
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"></circle></svg>
+            <span class="visuellement-masque">Instagram (fictif)</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.25"></circle><path d="M15.25 7.75h-1.5a2.5 2.5 0 0 0-2.5 2.5v11 M9 13h5.5"></path></svg>
+            <span class="visuellement-masque">Facebook (fictif)</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.25"></circle><path d="M11.4 11.8 9.6 20.6 M8.9 14.4c-.6-.6-1-1.5-1-2.6 0-2.5 2-4.3 4.5-4.3s4.1 1.7 4.1 4c0 2.6-1.4 4.4-3.3 4.4-1 0-1.7-.5-1.9-1.2"></path></svg>
+            <span class="visuellement-masque">Pinterest (fictif)</span>
+          </li>
+        </ul>
+        <span class="reseaux__fictif" aria-hidden="true">fictifs</span>
+      </div>
     </div>
     <ul class="pied__liens liste-nue">
       <li><a href="/mentions-legales/#mentions-legales">Mentions légales</a></li>
@@ -14,24 +36,31 @@ import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
     </ul>
   </div>
   <div class="conteneur">
-    <p class="pied__bas">Démo réalisée par Simon Dabin — boutique fictive.</p>
+    <p class="pied__bas">Site réalisé par Simon Dabin — boutique fictive.</p>
   </div>
-  <BrancheGravee class="pied__branche" aria-hidden="true" />
 </footer>
 
 <style>
+  /* Lisière fleurie posée sur le haut du pied de page, dans le flux : elle ne recouvre rien.
+     76 px au moins : sur mobile, les fleurs gardent leur taille et la bande est recadrée
+     au centre (preserveAspectRatio du SVG) ; plus large, elle suit la largeur. */
+  .lisiere :global(svg) {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 76px;
+    aspect-ratio: 1440 / 76;
+  }
+
   .pied {
     --focus: var(--papier);
-    position: relative;
-    overflow: hidden;
-    padding-block: var(--pas-5) var(--pas-4);
+    padding-block: var(--pas-6) var(--pas-4);
     background: var(--sapin);
     color: var(--papier);
   }
 
   .pied__haut {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -52,8 +81,28 @@ import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
     font-style: italic;
   }
 
-  .pied__marque p:last-child {
+  .pied__marque p + p {
     margin-top: var(--pas-1);
+  }
+
+  /* Icônes au trait, papier sur sapin ; pas de lien, donc pas de survol */
+  .reseaux {
+    display: flex;
+    align-items: center;
+    gap: var(--pas-2);
+    margin-top: var(--pas-3);
+  }
+
+  .reseaux__liste {
+    display: flex;
+    gap: var(--pas-2);
+  }
+
+  .reseaux__fictif {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   .pied__liens {
@@ -80,34 +129,16 @@ import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
   }
 
   .pied__bas {
-    position: relative;
-    z-index: 1;
     padding-top: var(--pas-3);
     border-top: 1px solid var(--sapin-doux);
     font-size: 15px;
   }
 
-  .pied__branche {
-    position: absolute;
-    right: -60px;
-    bottom: -70px;
-    width: 640px;
-    height: 200px;
-    max-width: none;
-    pointer-events: none;
-  }
-
-  /* Mobile : branche réduite, sous le texte et sans le recouvrir */
+  /* Mobile : place pour le bouton « Revenir en haut » (48 px, à 24 px du bas), qui ne
+     doit pas recouvrir la dernière ligne en fin de page */
   @media (max-width: 899.98px) {
     .pied {
-      padding-bottom: 150px;
-    }
-
-    .pied__branche {
-      right: -40px;
-      bottom: -20px;
-      width: 420px;
-      height: 131px;
+      padding-bottom: 96px;
     }
   }
 </style>

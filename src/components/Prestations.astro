@@ -95,18 +95,8 @@ const prestations: Prestation[] = [
   /* Fond opaque et positionné : la section passe devant le décor de l'accroche, qui ne déborde plus sous le titre */
   .prestations {
     position: relative;
-    padding-bottom: var(--espace-section);
+    padding-block: var(--espace-section);
     background: var(--papier);
-  }
-
-  /* Fondu dans la marge basse de l'accroche (zone sans texte) : la ronce s'efface au lieu d'être coupée net */
-  .prestations::before {
-    content: '';
-    position: absolute;
-    inset: auto 0 100%;
-    height: calc(var(--espace-section) - 8px);
-    background: linear-gradient(to bottom, transparent, var(--papier));
-    pointer-events: none;
   }
 
   h2 {

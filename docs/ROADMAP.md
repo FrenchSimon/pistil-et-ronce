@@ -9,7 +9,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 2 | Photos | Planche de sélection + `docs/photos.md` | 0,5 j | ✅ validé le 24/11 (définitif quand le site sera avancé) |
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
-| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations, avis, horaires et plan, contact validés le 24/11 ; mentions légales et appels à l'action le 25/11) |
+| 5 | Réalisation | Site complet en local | 2 j | ⏳ en cours (socle, accroche, prestations et façon de faire, réalisations, avis, horaires et plan, contact validés le 24/11 ; mentions légales, appels à l'action, page 404, animations et finitions le 25/11) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | — |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
@@ -48,8 +48,9 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 8. [x] **Contact :** formulaire accessible, validation, message de démo annoncé (`aria-live`), aucun envoi.
 9. [x] **Mentions légales et confidentialité.**
 10. [x] **Page 404 :** `src/pages/404.astro`, servie par Vercel pour toute adresse inconnue ; bandeau démo, en-tête, pied de page et `noindex` comme les autres pages ; illustration de fleur fanée, message court et bouton de retour à l'accueil (textes au § 12 de `textes.md`).
-11. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
-12. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
+11. [x] **Animations :** apparitions discrètes au défilement et transitions au survol, en CSS ; désactivées avec `prefers-reduced-motion`, sans effet sur le LCP ni le CLS.
+12. [ ] **SEO :** `title`, `meta description`, Open Graph, JSON-LD `Florist`, `noindex`.
+13. [ ] **Sécurité :** `vercel.json` avec les en-têtes HTTP (CSP, HSTS, etc.).
 
 Une PR par lot cohérent (socle, sections, finitions), sans captures : elles restent en local.
 

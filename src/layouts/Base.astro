@@ -5,6 +5,7 @@ import policeTitre from '../assets/fonts/cormorant-garamond-latin-500-normal.wof
 import LienEvitement from '../components/LienEvitement.astro';
 import EnTete from '../components/EnTete.astro';
 import PiedDePage from '../components/PiedDePage.astro';
+import RetourHaut from '../components/RetourHaut.astro';
 
 interface Props {
   title: string;
@@ -26,12 +27,13 @@ const { title, description } = Astro.props;
     <link rel="icon" href={favicon} type="image/svg+xml" />
     <link rel="preload" href={policeTitre} as="font" type="font/woff2" crossorigin />
   </head>
-  <body>
+  <body id="haut">
     <LienEvitement />
     <EnTete />
     <main id="contenu">
       <slot />
     </main>
     <PiedDePage />
+    <RetourHaut />
   </body>
 </html>
