@@ -53,11 +53,5 @@ npm run photos   # étalonne les photos de contenu/photos/ vers src/assets/photo
 
 © 2026 Simon Dabin. Tous droits réservés.
 
-Ce dépôt est public pour montrer mon travail, pas pour être réutilisé : aucune licence n'est accordée. Vous pouvez lire le code et vous en inspirer, mais pas copier, modifier, redistribuer ni mettre en ligne tout ou partie du site (code, design, textes, logo, illustrations) sans mon accord écrit.
-
-Le site est une démo de mon offre de site vitrine : pour un site sur mesure, [contactez-moi](https://github.com/FrenchSimon).
-
-Éléments de tiers, sous leur propre licence :
-
 - photos : [licence Unsplash](https://unsplash.com/license), auteurs et sources dans `docs/photos.md` ;
 - polices Cormorant Garamond et Karla : licence SIL Open Font License, textes dans `src/assets/fonts/`.
