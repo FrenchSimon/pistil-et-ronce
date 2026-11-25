@@ -22,7 +22,7 @@
 | SEO | Un `h1` par page, titres hiérarchisés, `title`, `meta description`, `lang="fr"`, `noindex` | Conformes sur les 3 pages | ✅ |
 | Responsive | 320, 375, 768, 1024, 1440, 1920 px, 3 pages | Aucun débordement horizontal | ✅ |
 | Navigateurs | Chrome | Testé | ✅ |
-| Navigateurs | Firefox, Safari, iOS, Android | À faire à la main (Playwright ne prend plus en charge Firefox ni WebKit sous macOS 12) | ⏳ |
+| Navigateurs | Firefox, Safari, iOS, Android | Testés à la main (Playwright ne prend plus en charge Firefox ni WebKit sous macOS 12) | ✅ |
 | Sécurité | `npm audit` | 0 faille | ✅ |
 | Sécurité | CSP stricte | Aucune violation sur les 3 pages ni sur le formulaire ; un style injecté par test est bien bloqué | ✅ |
 | Sécurité | Liens externes | Tous en `rel="noopener noreferrer"` | ✅ |
@@ -44,5 +44,4 @@
 
 ## Reste à faire
 
-- [ ] Firefox et Safari sur macOS ; Safari sur iPhone ; Chrome sur Android.
 - [ ] securityheaders.com et Lighthouse sur l'URL de prévisualisation Vercel.
