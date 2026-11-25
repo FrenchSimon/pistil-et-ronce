@@ -48,3 +48,16 @@ npm run photos   # étalonne les photos de contenu/photos/ vers src/assets/photo
 
 - `contenu/photos/` : originaux des 12 photos retenues (3000 px) et planche contact des candidats (`planche.html`). Le site utilise leurs versions étalonnées (`src/assets/photos/`, générées par `npm run photos`).
 - `contenu/logo/` : logo et favicon vectorisés, utilisés directement par le site.
+
+## Droits d'utilisation
+
+© 2026 Simon Dabin. Tous droits réservés.
+
+Ce dépôt est public pour montrer mon travail, pas pour être réutilisé : aucune licence n'est accordée. Vous pouvez lire le code et vous en inspirer, mais pas copier, modifier, redistribuer ni mettre en ligne tout ou partie du site (code, design, textes, logo, illustrations) sans mon accord écrit.
+
+Le site est une démo de mon offre de site vitrine : pour un site sur mesure, [contactez-moi](https://github.com/FrenchSimon).
+
+Éléments de tiers, sous leur propre licence :
+
+- photos : [licence Unsplash](https://unsplash.com/license), auteurs et sources dans `docs/photos.md` ;
+- polices Cormorant Garamond et Karla : licence SIL Open Font License, textes dans `src/assets/fonts/`.
