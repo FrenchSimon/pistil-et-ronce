@@ -57,7 +57,7 @@ Une PR par lot cohérent (socle, sections, finitions), sans captures : elles res
 ## 6. Recette qualité
 
 - [x] **Accessibilité :** navigation au clavier complète, axe sans erreur, contrastes (25/11, 2 corrections).
-- [ ] **Lecteur d'écran :** VoiceOver sur le formulaire.
+- [x] **Lecteur d'écran :** VoiceOver sur macOS avec Safari, parcours complet du formulaire (25/11).
 - [x] **Performance :** Lighthouse mobile ≥ 95, LCP < 2,5 s, INP < 200 ms, CLS < 0,1 (25/11 en local : 96 à 98, CLS corrigé ; à confirmer en production).
 - [x] **Responsive :** 320, 375, 768, 1024, 1440 et 1920 px dans Chrome, sans débordement (25/11).
 - [ ] **Navigateurs :** Firefox, Safari, iOS, Android, à la main.

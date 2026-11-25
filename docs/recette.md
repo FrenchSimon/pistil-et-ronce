@@ -13,7 +13,7 @@
 | Accessibilité | Contrastes du texte posé sur image (accroche, navigation) | Mesurés au pixel : 5,4:1 au minimum | ✅ |
 | Accessibilité | Formulaire | Erreurs reliées aux champs (`aria-describedby`, `aria-invalid`), focus sur le premier champ en erreur, message de démo annoncé (`aria-live="polite"`) | ✅ |
 | Accessibilité | `prefers-reduced-motion` | Aucune animation ni transition, aucun contenu laissé invisible | ✅ |
-| Accessibilité | VoiceOver sur le formulaire | À faire à la main | ⏳ |
+| Accessibilité | VoiceOver (macOS, Safari) | Lien d'évitement, titres et repères au rotor, libellés, erreurs annoncées, calendrier, message de démo lu, photos annoncées une fois | ✅ |
 | Performance | Lighthouse mobile, accueil (3 passes) | 96 · 98 · 97 ; LCP 2,1 à 2,4 s ; CLS 0 ; TBT 0 ms | ✅ |
 | Performance | Lighthouse bureau, accueil (3 passes) | 99 · 100 · 99 ; LCP 0,6 s ; CLS 0 (0,109 avant correction) | ✅ |
 | Performance | Lighthouse mobile, mentions légales | 99 ; LCP 1,7 s | ✅ |
@@ -44,6 +44,5 @@
 
 ## Reste à faire
 
-- [ ] VoiceOver (macOS ou iOS) : parcours du formulaire, erreurs, message de démo.
 - [ ] Firefox et Safari sur macOS ; Safari sur iPhone ; Chrome sur Android.
 - [ ] securityheaders.com et Lighthouse sur l'URL de prévisualisation Vercel.
