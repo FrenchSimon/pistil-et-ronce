@@ -11,8 +11,8 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
 | 5 | Réalisation | Site complet en local | 2 j | ✅ terminé le 25/11 (socle et sections le 24/11 ; mentions légales, appels à l'action, page 404, animations, SEO et sécurité le 25/11) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | ✅ le 25/11 (`docs/recette.md`) ; securityheaders.com A+ en production |
-| 7 | Mise en ligne | URL Vercel de production | 0,25 j | ✅ le 25/11 : https://pistil-et-ronce.vercel.app ; reste le lien dans le portfolio |
-| 8 | Étude de cas | Fiche portfolio à jour | — | — |
+| 7 | Mise en ligne | URL Vercel de production | 0,25 j | ✅ le 25/11 : https://pistil-et-ronce.vercel.app ; lien ajouté dans le portfolio |
+| 8 | Étude de cas | Fiche portfolio à jour | — | 🔄 en cours |
 
 ## 2. Photos — `docs/photos`
 
@@ -69,7 +69,7 @@ Une PR par lot cohérent (socle, sections, finitions), sans captures : elles res
 
 - [x] Projet Vercel relié au dépôt, prévisualisation sur chaque PR, production sur `main` (25/11).
 - [x] Vérifier en production : en-têtes HTTP, `noindex`, image de partage (aperçu Open Graph), Lighthouse (25/11 : PageSpeed 100 en mobile et en bureau, A+ sur securityheaders.com).
-- [ ] Ajouter le lien du site et du code dans le portfolio.
+- [x] Ajouter le lien du site et du code dans le portfolio (25/11, inventaire `docs/projets.md` ; le site du portfolio n'existe pas encore).
 
 ## 8. Étude de cas
 
