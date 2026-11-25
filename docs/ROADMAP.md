@@ -10,8 +10,8 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 3 | Direction artistique | Planche de style + maquette de l'accroche | 1 j | ✅ validé le 24/11 |
 | 4 | Stack | Proposition argumentée (`docs/stack.md`) | 0,25 j | ✅ validé le 24/11 : Astro 7 |
 | 5 | Réalisation | Site complet en local | 2 j | ✅ terminé le 25/11 (socle et sections le 24/11 ; mentions légales, appels à l'action, page 404, animations, SEO et sécurité le 25/11) |
-| 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | ✅ le 25/11 (`docs/recette.md`) ; securityheaders.com après la mise en ligne |
-| 7 | Mise en ligne | URL Vercel de production | 0,25 j | — |
+| 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | ✅ le 25/11 (`docs/recette.md`) ; securityheaders.com A+ en production |
+| 7 | Mise en ligne | URL Vercel de production | 0,25 j | ✅ le 25/11 : https://pistil-et-ronce.vercel.app ; reste le lien dans le portfolio |
 | 8 | Étude de cas | Fiche portfolio à jour | — | — |
 
 ## 2. Photos — `docs/photos`
@@ -61,14 +61,14 @@ Une PR par lot cohérent (socle, sections, finitions), sans captures : elles res
 - [x] **Performance :** Lighthouse mobile ≥ 95, LCP < 2,5 s, INP < 200 ms, CLS < 0,1 (25/11 en local : 96 à 98, CLS corrigé ; à confirmer en production).
 - [x] **Responsive :** 320, 375, 768, 1024, 1440 et 1920 px dans Chrome, sans débordement (25/11).
 - [x] **Navigateurs :** Firefox, Safari, iOS, Android, à la main (25/11).
-- [ ] **Sécurité :** `npm audit` propre, note A sur securityheaders.com (après mise en ligne de prévisualisation).
+- [x] **Sécurité :** `npm audit` propre, A+ sur securityheaders.com en production (25/11).
 - [x] **Fiction :** relire que rien ne renvoie à une vraie boutique (liens, données structurées, photos).
 - [x] **Livrable :** tableau des résultats dans `docs/recette.md`, résumé dans la PR.
 
 ## 7. Mise en ligne
 
-- [ ] Projet Vercel relié au dépôt, prévisualisation sur chaque PR, production sur `main`.
-- [ ] Vérifier en production : en-têtes HTTP, `noindex`, image de partage (aperçu Open Graph), Lighthouse.
+- [x] Projet Vercel relié au dépôt, prévisualisation sur chaque PR, production sur `main` (25/11).
+- [x] Vérifier en production : en-têtes HTTP, `noindex`, image de partage (aperçu Open Graph), Lighthouse (25/11 : PageSpeed 100 en mobile et en bureau, A+ sur securityheaders.com).
 - [ ] Ajouter le lien du site et du code dans le portfolio.
 
 ## 8. Étude de cas
