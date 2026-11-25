@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.11 — 2026-11-25 · Statut : **validé** (v1.11 : titre de l'accroche et titres des prestations et des réalisations, avec les mots-clés du référencement)
 > Version 1.10 — 2026-11-25 · Statut : **validé** (v1.10 : textes des données structurées, § 1)
 > Version 1.9 — 2026-11-25 · Statut : **validé** (v1.9 : textes de la page 404, § 12)
 > Version 1.8 — 2026-11-25 · Statut : **validé** (v1.8 : textes de la page Mentions légales et confidentialité, § 11)
@@ -36,7 +37,7 @@ Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran
 
 ## 3. Accroche
 
-**Titre :** Des fleurs de saison, cueillies près de chez vous
+**Titre :** Fleuriste à Nantes, *des fleurs de saison cueillies près de chez vous*
 
 **Sous-titre :** Pistil & Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.
 
@@ -50,7 +51,7 @@ Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran
 
 ## 4. Prestations
 
-**Titre :** Ce que nous faisons
+**Titre :** Bouquets, mariages et abonnements
 
 | Prestation | Texte | Indication de prix |
 |---|---|---|
@@ -83,7 +84,7 @@ Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran
 
 ## 6. Réalisations (galerie, 6 à 8 photos)
 
-**Titre :** Quelques réalisations
+**Titre :** Nos bouquets et décors de mariage
 
 Légendes et textes alternatifs (adaptés aux photos le 24/11, voir `photos.md`) :
 1. Bouquet champêtre de printemps : tulipes et renoncules, noué d'un ruban blanc
