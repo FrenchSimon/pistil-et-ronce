@@ -2,6 +2,8 @@
 
 Site vitrine one page d'une fleuriste **fictive** à Nantes : démo de portfolio de Simon Dabin.
 
+**Démo :** https://pistil-et-ronce.vercel.app
+
 - Boutique, adresse, téléphone et avis : **fictifs**.
 - Suivi du projet et étude de cas : `~/Local Sites/portfolio/docs/demo-fleuriste.md`.
 
