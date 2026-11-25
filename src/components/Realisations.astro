@@ -53,9 +53,10 @@ const deuxColonnes = '(min-width: 1440px) 846px, (min-width: 900px) calc((89vw -
               alt={legende}
               class="realisation__photo"
             />
+            {/* La légende répète le texte alternatif : masquée aux lecteurs d'écran pour ne pas la lire deux fois */}
             <figcaption class="cartel">
               <span class="cartel__numero" aria-hidden="true">N° {String(index + 1).padStart(2, '0')}</span>
-              <span class="cartel__legende">{legende}</span>
+              <span class="cartel__legende" aria-hidden="true">{legende}</span>
             </figcaption>
           </figure>
         </li>

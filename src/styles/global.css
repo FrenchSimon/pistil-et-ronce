@@ -22,8 +22,8 @@
   --focus: var(--sapin);
 
   /* Typographies */
-  --police-titre: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
-  --police-texte: 'Karla', 'Helvetica Neue', Arial, sans-serif;
+  --police-titre: 'Cormorant Garamond', 'Cormorant Garamond repli', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --police-texte: 'Karla', 'Karla repli', 'Helvetica Neue', Arial, sans-serif;
 
   /* Espacements */
   --pas-1: 8px;
