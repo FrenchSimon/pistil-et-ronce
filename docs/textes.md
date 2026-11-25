@@ -1,5 +1,6 @@
 # Textes — Pistil & Ronce (one page)
 
+> Version 1.10 — 2026-11-25 · Statut : **validé** (v1.10 : textes des données structurées, § 1)
 > Version 1.9 — 2026-11-25 · Statut : **validé** (v1.9 : textes de la page 404, § 12)
 > Version 1.8 — 2026-11-25 · Statut : **validé** (v1.8 : textes de la page Mentions légales et confidentialité, § 11)
 > Version 1.7 — 2026-11-25 · Statut : **validé** (v1.7 : appels à l'action sur les cartes de prestation, sous la galerie et dans « Nous trouver »)
@@ -25,6 +26,7 @@ Boutique fictive — Site réalisé par Simon Dabin · [Voir le code](https://gi
 
 - **Title :** Pistil & Ronce — Fleuriste à Nantes · bouquets, mariages, livraison
 - **Meta description :** Fleuriste artisanale à Nantes. Bouquets du jour de saison, fleurs de mariage et d'événement, abonnements pour entreprises et livraison dans Nantes et alentours.
+- **Données structurées (JSON-LD `Florist`) :** mention « Boutique fictive : site de démonstration réalisé par Simon Dabin. » · gamme de prix « €€ »
 
 ## 2. Navigation
 
