@@ -109,7 +109,7 @@ Fond papier clair, filet lin, angles droits ; photo 240 px de haut en `object-fi
 ### Éléments de décor (tous `aria-hidden="true"`)
 - **Séparateur** : branche fleurie D (224 × 40) centrée entre deux filets lin qui prennent la largeur restante. Deux sur la page : avant « Quelques réalisations » et avant « Une envie de fleurs ? ».
 - **Puces feuille** : SVG B en sauge, 18 × 12, décalé de 7 px vers le bas, `gap: 14px`.
-- **Cartel** (légendes de la galerie) : « N° 01 » en étiquette 11 px sapin doux, puis la légende en Cormorant italique.
+- **Cartel** (légendes de la galerie) : « N° 01 » en étiquette 13 px sapin doux, puis la légende en Cormorant italique 500 (20 px, 23 px dès 900 px).
 - **Guillemet d'avis** : « en Cormorant italique 600 64 px, pivoine pâle.
 
 ## La page, section par section
