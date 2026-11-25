@@ -12,7 +12,7 @@ Règle : chaque étape se termine par un livrable que je valide avant de passer 
 | 5 | Réalisation | Site complet en local | 2 j | ✅ terminé le 25/11 (socle et sections le 24/11 ; mentions légales, appels à l'action, page 404, animations, SEO et sécurité le 25/11) |
 | 6 | Recette qualité | Rapport a11y, perf, SEO, sécurité, responsive | 0,5 j | ✅ le 25/11 (`docs/recette.md`) ; securityheaders.com A+ en production |
 | 7 | Mise en ligne | URL Vercel de production | 0,25 j | ✅ le 25/11 : https://pistil-et-ronce.vercel.app ; lien ajouté dans le portfolio |
-| 8 | Étude de cas | Fiche portfolio à jour | — | 🔄 en cours |
+| 8 | Étude de cas | Fiche portfolio à jour | — | ✅ le 25/11 (fiche `demo-fleuriste.md` du portfolio) |
 
 ## 2. Photos — `docs/photos`
 
@@ -73,9 +73,9 @@ Une PR par lot cohérent (socle, sections, finitions), sans captures : elles res
 
 ## 8. Étude de cas
 
-- [ ] Temps total par étape (`docs/TEMPS-PASSE.md`) comparé à la promesse d'~1 semaine.
-- [ ] Captures avant/après, scores Lighthouse, bilan du design obtenu avec l'IA (ce qui a marché, ce qu'il a fallu reprendre).
-- [ ] Mettre à jour `demo-fleuriste.md` et le journal de `ROADMAP.md` du portfolio.
+- [x] Temps total par étape (`docs/TEMPS-PASSE.md`) comparé à la promesse d'~1 semaine (25/11 : délai tenu ; détail interne, hors du dépôt).
+- [x] Captures avant/après, scores Lighthouse, bilan du design obtenu avec l'IA (ce qui a marché, ce qu'il a fallu reprendre) (25/11, captures rangées dans le portfolio).
+- [x] Mettre à jour `demo-fleuriste.md` et le journal de `ROADMAP.md` du portfolio (25/11).
 
 ## Décisions ouvertes
 
