@@ -71,7 +71,7 @@ Règles :
 ## Espacements et grille
 
 - Conteneur : `max-width: 1440px`, marges latérales `clamp(20px, 5.5vw, 80px)`.
-- Pas : 8 · 16 · 24 · 32 · 56 · 80 px. Sections : `padding-block: clamp(56px, 7vw, 96px)`.
+- Pas : 8 · 16 · 24 · 32 · 56 · 80 px. Sections : `padding-block: clamp(72px, 8.5vw, 120px)` (agrandi le 25/11).
 - Grilles de cartes : `repeat(auto-fit, minmax(250px, 1fr))`, gouttière 24 px. Exception, les 4 cartes de prestation : 1 colonne, 2 dès 600 px, 4 dès 1 150 px (`auto-fit` laissait une carte seule sur sa ligne vers 1 000 px).
 - Point de rupture unique : **900 px** (menu replié, décor d'accroche masqué, galerie en 2 colonnes).
 
