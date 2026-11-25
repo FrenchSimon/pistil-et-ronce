@@ -38,7 +38,8 @@
     transform: translateX(3px) rotate(-12deg);
   }
 
-  a:hover .fleche-sortante {
+  /* Le lien fictif vers les avis Google n'est pas un lien, mais se comporte comme tel */
+  :is(a, .avis__google-texte):hover .fleche-sortante {
     transform: translate(2px, -2px);
   }
 
