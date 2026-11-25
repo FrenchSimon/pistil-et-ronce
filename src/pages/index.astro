@@ -8,13 +8,54 @@ import Avis from '../components/Avis.astro';
 import NousTrouver from '../components/NousTrouver.astro';
 import Separateur from '../components/Separateur.astro';
 import Contact from '../components/Contact.astro';
+import { imagePartage } from '../scripts/partage';
 
 const title = 'Pistil & Ronce — Fleuriste à Nantes · bouquets, mariages, livraison';
 const description =
   "Fleuriste artisanale à Nantes. Bouquets du jour de saison, fleurs de mariage et d'événement, abonnements pour entreprises et livraison dans Nantes et alentours.";
+
+const site = Astro.site ?? Astro.url;
+
+/* Données structurées schema.org : uniquement les infos fictives de docs/textes.md.
+   Ni e-mail, ni réseaux sociaux, ni coordonnées GPS : rien qui renvoie à un vrai lieu ou compte. */
+const fleuriste = {
+  '@context': 'https://schema.org',
+  '@type': 'Florist',
+  '@id': new URL('/#fleuriste', site).href,
+  name: 'Pistil & Ronce',
+  description,
+  disambiguatingDescription: 'Boutique fictive : site de démonstration réalisé par Simon Dabin.',
+  url: new URL('/', site).href,
+  image: new URL(imagePartage.src, site).href,
+  telephone: '+33 2 61 91 24 07',
+  priceRange: '€€',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2 rue des Glaneuses',
+    postalCode: '44000',
+    addressLocality: 'Nantes',
+    addressCountry: 'FR',
+  },
+  areaServed: { '@type': 'City', name: 'Nantes' },
+  openingHoursSpecification: [
+    { days: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:30', closes: '13:00' },
+    { days: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '14:30', closes: '19:00' },
+    { days: ['Saturday'], opens: '09:00', closes: '19:00' },
+    { days: ['Sunday'], opens: '09:00', closes: '13:00' },
+  ].map(({ days, opens, closes }) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: days.map((jour) => `https://schema.org/${jour}`),
+    opens,
+    closes,
+  })),
+};
+
+/* « < » échappé : le JSON ne peut pas fermer la balise script. */
+const jsonLd = JSON.stringify(fleuriste).replace(/</g, '\\u003c');
 ---
 
 <Base title={title} description={description}>
+  <script slot="head" type="application/ld+json" is:inline set:html={jsonLd} />
   <Accroche />
   <Prestations />
   <FaconDeFaire />
