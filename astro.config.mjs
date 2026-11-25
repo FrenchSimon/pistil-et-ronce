@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  // Adresse de production : sert aux URL absolues d'Open Graph, du lien canonique et du JSON-LD.
+  site: 'https://pistil-et-ronce.vercel.app',
   // HTML compressé sans supprimer les espaces entre éléments en ligne
   // (le mode 'jsx' de la v7 collerait des mots lus par les lecteurs d'écran).
   compressHTML: true,
