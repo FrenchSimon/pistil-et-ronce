@@ -26,7 +26,7 @@
 | Sécurité | `npm audit` | 0 faille | ✅ |
 | Sécurité | CSP stricte | Aucune violation sur les 3 pages ni sur le formulaire ; un style injecté par test est bien bloqué | ✅ |
 | Sécurité | Liens externes | Tous en `rel="noopener noreferrer"` | ✅ |
-| Sécurité | Note securityheaders.com | Après la première mise en ligne de prévisualisation | ⏳ |
+| Sécurité | Note securityheaders.com (production) | A+ | ✅ |
 | Fiction | Données structurées, liens, coordonnées | Téléphone du bloc 02 61 91 réservé à la fiction, `pistil-et-ronce.fr` non enregistré, JSON-LD signalé comme fictif (`disambiguatingDescription`), aucun lien vers une vraie boutique | ✅ |
 
 ## Corrections faites pendant la recette
@@ -42,6 +42,17 @@
 - **Liens de la page Mentions légales hauts de 20 px** : ce sont des liens dans le texte, exemptés par le critère 2.5.8 (taille des cibles), et axe ne relève rien.
 - **Mesures locales** : elles sont plus favorables que le réseau réel. À confirmer sur l'URL de production (étape 7).
 
-## Reste à faire
+## En production
 
-- [ ] securityheaders.com et Lighthouse sur l'URL de prévisualisation Vercel.
+Mesures du 25/11/2026 sur https://pistil-et-ronce.vercel.app, avec PageSpeed Insights (Lighthouse 13.6, serveurs de Google) :
+
+| Appareil | Performance | Accessibilité | Bonnes pratiques | SEO | FCP | LCP | TBT | CLS |
+|---|---|---|---|---|---|---|---|---|
+| Mobile (Moto G Power, 4G lente) | 100 | 100 | 100 | 66 (`noindex`) | 1,1 s | 1,1 s | 0 ms | 0 |
+| Bureau | 100 | — | — | — | 0,3 s | 0,4 s | 0 ms | 0,003 |
+
+- **securityheaders.com :** A+.
+- **En-têtes HTTP :** identiques à `vercel.json`, `X-Robots-Tag: noindex` compris ; http redirigé vers https (308) ; fichiers `/_astro/` en cache un an (`immutable`).
+- **Pages :** accueil et mentions légales en 200, adresse inconnue en 404 avec la page « fanée ».
+- **Partage :** image Open Graph servie en 1200 × 630.
+- **Données réelles (Chrome UX Report) :** aucune, faute de trafic suffisant.
