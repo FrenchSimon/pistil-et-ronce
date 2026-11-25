@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import photo from '../assets/photos/accroche-bouquet-kraft.jpg';
-import Ronces from '../assets/deco/ronces-accroche.svg';
+import ChampFleuri from '../assets/deco/champ-fleuri-sauge-pivoine-pale.svg';
 import FeuilleBouton from './FeuilleBouton.astro';
 
 const infos = [
@@ -11,8 +11,8 @@ const infos = [
 ];
 ---
 
-<div class="accroche__decor" aria-hidden="true">
-  <Ronces />
+<div class="accroche__champ" aria-hidden="true">
+  <ChampFleuri />
 </div>
 
 <section id="accroche" class="accroche conteneur" aria-labelledby="accroche-titre">
@@ -60,25 +60,25 @@ const infos = [
 </section>
 
 <style>
-  /* Décor F : derrière l'en-tête et l'accroche, jamais sous le texte, masqué sous 900 px */
-  .accroche__decor {
-    display: none;
+  /* Champ fleuri : posé sur la ligne de flottaison (bas du premier écran), derrière le contenu */
+  .accroche__champ {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100svh;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  @media (min-width: 900px) {
-    .accroche__decor {
-      display: block;
-      position: absolute;
-      inset: 0 0 auto;
-      z-index: -1;
-      height: 900px;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .accroche__decor :global(svg) {
-      max-width: none;
-    }
+  /* Pleine largeur ; sur mobile, 900 px au moins, recadré au centre, pour garder la taille des fleurs */
+  .accroche__champ :global(svg) {
+    flex: none;
+    width: max(100%, 900px);
+    max-width: none;
+    height: auto;
   }
 
   .accroche {
@@ -88,6 +88,14 @@ const infos = [
     justify-content: space-between;
     gap: var(--pas-5) clamp(32px, 7vw, 112px);
     padding-block: var(--pas-5) var(--espace-section);
+  }
+
+  /* En bureau, l'accroche remplit le premier écran : le champ fleuri repose sur le
+     haut des prestations. 135 px = hauteur de l'en-tête (bandeau, barre, filet). */
+  @media (min-width: 900px) {
+    .accroche {
+      min-height: calc(100svh - 135px);
+    }
   }
 
   .accroche__texte {

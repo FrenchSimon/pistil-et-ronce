@@ -42,9 +42,9 @@
     transform: translate(2px, -2px);
   }
 
-  /* Décor de l'accroche : apparaît en fondu au chargement (purement décoratif) */
+  /* Champ fleuri de l'accroche : apparaît en fondu au chargement (purement décoratif) */
 
-  .accroche__decor {
+  .accroche__champ {
     animation: fondu 1.2s var(--courbe-douce) both;
   }
 
