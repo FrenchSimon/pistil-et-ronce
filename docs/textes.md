@@ -34,8 +34,6 @@ Bouton fixé en bas à droite (flèche seule, texte lu par les lecteurs d'écran
 
 ## 3. Accroche
 
-**Surtitre :** Fleuriste à Nantes
-
 **Titre :** Des fleurs de saison, cueillies près de chez vous
 
 **Sous-titre :** Pistil & Ronce compose à Nantes des bouquets libres et champêtres, avec des fleurs choisies chaque semaine chez des producteurs de la région.
