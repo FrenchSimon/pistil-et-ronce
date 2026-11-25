@@ -1,6 +1,11 @@
 ---
 import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
+import Lisiere from '../assets/deco/champ-fleuri-lisiere-footer.svg';
 ---
+
+<div class="lisiere" aria-hidden="true">
+  <Lisiere />
+</div>
 
 <footer class="pied">
   <div class="pied__haut conteneur">
@@ -20,6 +25,18 @@ import BrancheGravee from '../assets/deco/branche-pied-de-page.svg';
 </footer>
 
 <style>
+  /* Lisière fleurie posée sur le haut du pied de page, dans le flux : elle ne recouvre rien.
+     76 px au moins : sur mobile, les fleurs gardent leur taille et la bande est recadrée
+     au centre (preserveAspectRatio du SVG) ; plus large, elle suit la largeur. */
+  .lisiere :global(svg) {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 76px;
+    aspect-ratio: 1440 / 76;
+  }
+
   .pied {
     --focus: var(--papier);
     position: relative;
